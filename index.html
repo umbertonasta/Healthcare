@@ -69,11 +69,18 @@
   .week-day { background:var(--surface2); border-radius:8px; padding:8px 4px; text-align:center; }
   .week-day.gym { background:rgba(170,255,0,.12); border:1px solid rgba(170,255,0,.3); }
   .week-day.rest { opacity:.4; }
+  .week-day.calcio { background:rgba(255,179,71,.12); border:1px solid rgba(255,179,71,.3); }
+  .week-day.no-gym { background:rgba(255,143,171,.08); border:1px solid rgba(255,143,171,.25); opacity:.85; }
   .wd-name { font-size:9px; color:var(--text2); text-transform:uppercase; letter-spacing:0.05em; }
   .wd-badge { font-size:11px; font-weight:500; margin-top:3px; }
   .wd-badge.a { color:var(--accent); }
   .wd-badge.b { color:var(--accent2); }
   .wd-badge.r { color:var(--text3); }
+  .wd-badge.cal { color:var(--accent3); }
+  .wd-badge.no { color:var(--accent4); font-size:10px; }
+  .variant-label { font-size:11px; font-weight:700; font-family:'Syne',sans-serif; text-transform:uppercase; letter-spacing:0.08em; margin:16px 0 8px; padding:6px 10px; border-radius:6px; display:inline-block; }
+  .variant-base { background:rgba(170,255,0,.1); color:var(--accent); }
+  .variant-alt { background:rgba(255,143,171,.1); color:var(--accent4); }
 
   .workout-card { background:var(--surface); border-radius:var(--radius); overflow:hidden; margin-bottom:10px; }
   .wc-header { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid #1E1E1E; }
@@ -180,18 +187,41 @@
         <div class="section-label">Schema settimanale</div>
       </div>
 
+      <div class="variant-label variant-base">📅 Settimana standard</div>
       <div class="week-row">
         <div class="week-day gym"><div class="wd-name">Lun</div><div class="wd-badge a">A</div></div>
-        <div class="week-day rest"><div class="wd-name">Mar</div><div class="wd-badge r">—</div></div>
+        <div class="week-day calcio"><div class="wd-name">Mar</div><div class="wd-badge cal">⚽</div></div>
         <div class="week-day gym"><div class="wd-name">Mer</div><div class="wd-badge b">B</div></div>
-        <div class="week-day rest"><div class="wd-name">Gio</div><div class="wd-badge r">—</div></div>
+        <div class="week-day calcio"><div class="wd-name">Gio</div><div class="wd-badge cal">⚽</div></div>
         <div class="week-day gym"><div class="wd-name">Ven</div><div class="wd-badge a">A</div></div>
         <div class="week-day rest"><div class="wd-name">Sab</div><div class="wd-badge r">—</div></div>
         <div class="week-day rest"><div class="wd-name">Dom</div><div class="wd-badge r">—</div></div>
       </div>
-
       <div class="tip-box" style="margin-bottom:14px;">
-        <div class="tip-text">Sett. pari: <strong>A · — · B · — · A</strong> &nbsp;|&nbsp; Sett. dispari: <strong>B · — · A · — · B</strong></div>
+        <div class="tip-text">Sett. pari: <strong>A · ⚽ · B · ⚽ · A</strong> &nbsp;|&nbsp; Sett. dispari: <strong>B · ⚽ · A · ⚽ · B</strong><br>Il calcio cade nei giorni di riposo dalla palestra — nessun conflitto.</div>
+      </div>
+
+      <div class="variant-label variant-alt">⚽ Settimana con partita venerdì</div>
+      <div class="week-row">
+        <div class="week-day gym"><div class="wd-name">Lun</div><div class="wd-badge a">A</div></div>
+        <div class="week-day calcio"><div class="wd-name">Mar</div><div class="wd-badge cal">⚽</div></div>
+        <div class="week-day gym"><div class="wd-name">Mer</div><div class="wd-badge b">B</div></div>
+        <div class="week-day calcio"><div class="wd-name">Gio</div><div class="wd-badge cal">⚽</div></div>
+        <div class="week-day no-gym"><div class="wd-name">Ven</div><div class="wd-badge no">partita</div></div>
+        <div class="week-day rest"><div class="wd-name">Sab</div><div class="wd-badge r">—</div></div>
+        <div class="week-day rest"><div class="wd-name">Dom</div><div class="wd-badge r">—</div></div>
+      </div>
+      <div class="tip-box" style="margin-bottom:14px; border-color:rgba(255,143,171,.25); background:rgba(255,143,171,.05);">
+        <div class="tip-text" style="color:var(--text2);">Quando c'è la partita al venerdì: <strong style="color:var(--accent4);">solo 2 sessioni in palestra</strong> quella settimana (lunedì + mercoledì). È comunque abbastanza.</div>
+      </div>
+
+      <div class="card" style="margin-bottom:14px; background:var(--surface2);">
+        <div style="font-size:12px; font-weight:700; color:var(--accent3); font-family:'Syne',sans-serif; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">⚽ Note giorni di calcio (Mar + Gio)</div>
+        <div style="font-size:13px; color:var(--text2); line-height:1.8;">
+          <div>• <span style="color:var(--text);">Workout A il venerdì:</span> vieni dal calcio del giovedì, riduci le serie gambe 3→2 e scala il peso del 10-15%</div>
+          <div>• <span style="color:var(--text);">Cena Mar + Gio:</span> aggiungi una porzione extra di carboidrati — serve al recupero muscolare</div>
+          <div>• <span style="color:var(--text);">Riscaldamento:</span> puoi scendere a 5 min invece di 8, il calcio copre già il cardio settimanale</div>
+        </div>
       </div>
 
       <!-- WORKOUT A -->
