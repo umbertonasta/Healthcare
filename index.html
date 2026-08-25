@@ -184,6 +184,23 @@ html,body{height:100%;background:var(--bg);color:var(--t1);font-family:'DM Sans'
 .tag{font-size:10px;padding:3px 8px;border-radius:20px;background:var(--s2);color:var(--t2)}
 .avoid-card{background:var(--s1);border-radius:var(--r);padding:13px 15px;margin-bottom:9px;border-left:2px solid var(--pink)}
 .avoid-row{font-size:13px;color:var(--t2);padding:4px 0;line-height:1.5}
+
+/* ═══ ROUTINE SCHIENA ═══ */
+.back-flow{background:var(--s1);border-radius:var(--r);overflow:hidden;margin-bottom:9px}
+.back-step{display:flex;align-items:flex-start;gap:12px;padding:13px 15px;border-bottom:1px solid var(--s2)}
+.back-step:last-child{border-bottom:none}
+.back-num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+.bn-blue{background:rgba(123,200,246,.13);color:var(--blue)}
+.bn-lime{background:rgba(170,255,0,.13);color:var(--lime)}
+.bn-orange{background:rgba(255,179,71,.13);color:var(--orange)}
+.back-info{flex:1}
+.back-label{font-size:10px;font-weight:700;font-family:'Syne',sans-serif;letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
+.back-prod{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;line-height:1.3;margin-bottom:2px}
+.back-brand{font-size:11px;color:var(--t3);margin-bottom:6px}
+.back-note{font-size:12px;color:var(--t2);line-height:1.55}
+.back-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.warn-card{background:rgba(255,179,71,.06);border:1px solid rgba(255,179,71,.18);border-radius:var(--rs);padding:10px 13px;margin-bottom:9px;font-size:12px;color:var(--t2);line-height:1.65}
+.warn-card strong{color:var(--orange)}
 </style>
 </head>
 <body>
@@ -478,13 +495,11 @@ html,body{height:100%;background:var(--bg);color:var(--t1);font-family:'DM Sans'
         <div class="tl-title" style="color:var(--blue)">Pranzo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">~35g prot</span></div>
         <div class="tl-hint">Tocca il giorno per vedere cosa mangiare</div>
         <div class="acc">
-          <!-- GIORNI SETTIMANA -->
-          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Lun</span><span class="ac-lbl">Lunedì 25/05 🏋 — Mensa Elmec</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-p">Farro in insalata con gamberi, feta e fave</div><div class="ac-line ac-s">Merluzzo gratinato alla mediterranea</div><div class="ac-line ac-c">Fagiolini al vapore</div><div class="ac-note green">Palestra — pasto completo, non saltare il primo</div></div></div>
-          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mar</span><span class="ac-lbl">Martedì 26/05 ⚽ — Mensa Elmec</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-p">Cous cous con straccetti di manzo e pomodorini</div><div class="ac-line ac-s">Filetto di orata patate e rosmarino</div><div class="ac-line ac-c">Carote al vapore</div><div class="ac-note">Calcio sera — carbo extra a cena</div></div></div>
-          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mer</span><span class="ac-lbl">Mercoledì 27/05 🏋 — Mensa Elmec</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-p">Riso in insalata con tonno, pomodorini e mais</div><div class="ac-line ac-s">Petto di pollo alla griglia</div><div class="ac-line ac-c">Zucchine trifolate</div><div class="ac-note green">Palestra — pasto completo</div></div></div>
-          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Gio</span><span class="ac-lbl">Giovedì 28/05 ⚽ — Mensa Elmec</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-p">Insalata di riso con gamberi, edamame e lime</div><div class="ac-line ac-s">Trancio di nasello olive e prezzemolo</div><div class="ac-line ac-c">Piselli stufati</div><div class="ac-note">Calcio sera — carbo extra a cena</div></div></div>
-          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Ven</span><span class="ac-lbl">Venerdì 29/05 🏋/⚽ — ITS Legnano</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-s">🥇 Pasta fredda tonno + mais + olio (preparata gio sera)</div><div class="ac-line ac-p">Non serve scaldarla, regge benissimo fredda</div><div class="ac-line ac-s">🥈 Alternativa: insalatona proteica al Tigros</div><div class="ac-note green">Stessa soluzione del 22/05 — funziona</div></div></div>
-          <!-- WEEKEND -->
+          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Lun</span><span class="ac-lbl">Lunedì 02/06 — fuori azienda</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-c">Non in mensa Elmec questa settimana</div><div class="ac-note">Segui le indicazioni generali: proteina + verdura + carbo moderati</div></div></div>
+          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mar</span><span class="ac-lbl">Martedì 03/06 ⚽ — fuori azienda</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-c">Non in mensa Elmec questa settimana</div><div class="ac-note">Calcio sera — ricordati carbo extra a cena</div></div></div>
+          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mer</span><span class="ac-lbl">Mercoledì 04/06 🏋 — Mensa Elmec</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-p">Insalata di pasta tricolore tonno e pomodorini</div><div class="ac-line ac-s">Merluzzo impanato con arancia e basilico</div><div class="ac-line ac-c">Spinaci al vapore</div><div class="ac-note green">Palestra — pasto completo</div></div></div>
+          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Gio</span><span class="ac-lbl">Giovedì 05/06 ⚽ — Mensa Elmec</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-p">Cous cous con pomodori secchi e polpo</div><div class="ac-line ac-s">Bresaola con grana e insalata</div><div class="ac-line ac-c">Broccoli al vapore</div><div class="ac-note">Calcio sera — carbo extra a cena</div></div></div>
+          <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Ven</span><span class="ac-lbl">Venerdì 06/06 🏋/⚽ — Mensa Elmec</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line ac-p">Insalata di pasta con salmone e fave</div><div class="ac-line ac-s">Filetto di trota in saor</div><div class="ac-line ac-c">Carote al vapore</div><div class="ac-note green">Palestra o partita — vedi settimana</div></div></div>
           <div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day we">Sab</span><span class="ac-lbl">Sabato — Ristorante Tigros</span><span class="ac-chev">﹀</span></div><div class="ac-body">
             <div class="ac-line ac-s">🥇 Insalatona con pollo grigliato + verdure miste + uova</div>
             <div class="ac-line ac-s">🥇 Insalatona con tonno + pomodori + mais + uova</div>
@@ -508,20 +523,18 @@ html,body{height:100%;background:var(--bg);color:var(--t1);font-family:'DM Sans'
       </div>
     </div>
 
-    <!-- 20:00 / 18:00 MERENDA -->
+    <!-- 18-20 -->
     <div class="tl-row">
       <div class="tl-time">18–20</div>
       <div class="tl-dot" style="background:var(--orange)"></div>
       <div class="tl-body">
         <div class="tl-title" style="color:var(--orange)">Merenda <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">~20g prot</span></div>
-
         <div style="font-size:11px;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;">🏋 Dopo palestra (ore 20) — Lun · Mer · Ven</div>
         <div class="tl-items" style="margin-bottom:12px;">
           <div class="tl-item main">Shaker whey + banana — recupero immediato, fallo appena entri in casa</div>
           <div class="tl-item">Oppure: yogurt greco + miele + gallette di riso</div>
           <div class="tl-item alt">Poi ceni normalmente alle 21:30/22 — aspetta almeno 1,5 ore</div>
         </div>
-
         <div style="font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;">⚽ Prima del calcio (ore 18) — Mar · Gio</div>
         <div class="tl-items">
           <div class="tl-item main">Banana + yogurt greco + cucchiaino di miele — carbo rapidi, proteina moderata</div>
@@ -552,73 +565,107 @@ html,body{height:100%;background:var(--bg);color:var(--t1);font-family:'DM Sans'
 <!-- ══════════ CORPO ══════════ -->
 <div class="pg" id="pg-corpo">
 
-  <div class="sec"><div class="sec-dot" style="background:var(--lime)"></div><div class="sec-lbl">Composizione corporea · 13 mag 2026</div></div>
+  <div class="sec"><div class="sec-dot" style="background:var(--lime)"></div><div class="sec-lbl">Composizione corporea · 25 mag 2026</div></div>
   <div class="sg">
-    <div class="sc"><div class="sc-lbl">Peso</div><div><span class="sc-val">63</span><span class="sc-unit"> kg</span></div><div class="sc-badge bg">nella media</div></div>
-    <div class="sc"><div class="sc-lbl">Massa grassa</div><div><span class="sc-val">29,8</span><span class="sc-unit">%</span></div><div class="sc-badge bw">alto per 21 anni</div></div>
-    <div class="sc"><div class="sc-lbl">Massa muscolare</div><div><span class="sc-val">24,1</span><span class="sc-unit"> kg</span></div><div class="sc-badge br">bassa</div></div>
-    <div class="sc"><div class="sc-lbl">BMI</div><div><span class="sc-val">20,6</span></div><div class="sc-badge bg">nella media</div></div>
-    <div class="sc"><div class="sc-lbl">BMR</div><div><span class="sc-val">1326</span><span class="sc-unit"> kcal</span></div><div class="sc-badge bw">basso</div></div>
-    <div class="sc"><div class="sc-lbl">VO2 Max</div><div><span class="sc-val">35,2</span><span class="sc-unit"> ml</span></div><div class="sc-badge bg">discreto</div></div>
+    <div class="sc"><div class="sc-lbl">Peso</div><div><span class="sc-val">64,9</span><span class="sc-unit"> kg</span></div><div class="sc-badge bg">nella media</div></div>
+    <div class="sc"><div class="sc-lbl">Massa grassa</div><div><span class="sc-val">19,8</span><span class="sc-unit">%</span></div><div class="sc-badge bg">discreto</div></div>
+    <div class="sc"><div class="sc-lbl">Massa muscolare</div><div><span class="sc-val">28,8</span><span class="sc-unit"> kg</span></div><div class="sc-badge bg">in crescita</div></div>
+    <div class="sc"><div class="sc-lbl">BMI</div><div><span class="sc-val">21,2</span></div><div class="sc-badge bg">nella media</div></div>
+    <div class="sc"><div class="sc-lbl">BMR</div><div><span class="sc-val">1494</span><span class="sc-unit"> kcal</span></div><div class="sc-badge bw">in crescita</div></div>
+    <div class="sc"><div class="sc-lbl">Grasso viscerale</div><div><span class="sc-val">5</span></div><div class="sc-badge bg">migliorato</div></div>
   </div>
 
-  <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Obiettivo Inbody</div></div>
+  <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Confronto 13 mag → 25 mag</div></div>
   <div class="goal-card">
-    <div class="gr"><span class="gr-l">Peso target</span><span style="font-weight:500">63 → <span style="color:var(--lime)">67,4 kg</span></span></div>
-    <div class="gr"><span class="gr-l">Muscolo da aggiungere</span><span style="font-weight:500;color:var(--lime)">+13 kg</span></div>
-    <div class="gr"><span class="gr-l">Grasso da perdere</span><span style="font-weight:500;color:var(--pink)">−8,6 kg</span></div>
-    <div class="gr"><span class="gr-l">Punteggio Inbody</span><span style="font-weight:500">58 / 100</span></div>
-    <div class="gr"><span class="gr-l">Rapporto vita/fianchi</span><span style="font-weight:500">0,84 — normale</span></div>
+    <div class="gr"><span class="gr-l">Peso</span><span style="font-weight:500">63 → <span style="color:var(--lime)">64,9 kg</span> <span style="color:var(--t3);font-size:11px">(+1,9)</span></span></div>
+    <div class="gr"><span class="gr-l">Massa grassa</span><span style="font-weight:500">29,8% → <span style="color:var(--lime)">19,8%</span> <span style="color:var(--t3);font-size:11px">(-10%)*</span></span></div>
+    <div class="gr"><span class="gr-l">Massa muscolare</span><span style="font-weight:500">24,1 → <span style="color:var(--lime)">28,8 kg</span> <span style="color:var(--t3);font-size:11px">(+4,7)*</span></span></div>
+    <div class="gr"><span class="gr-l">BMR</span><span style="font-weight:500">1326 → <span style="color:var(--lime)">1494 kcal</span> <span style="color:var(--t3);font-size:11px">(+168)</span></span></div>
+    <div class="gr"><span class="gr-l">Grasso viscerale</span><span style="font-weight:500">7 → <span style="color:var(--lime)">5</span></span></div>
+    <div class="gr"><span class="gr-l">Punteggio Inbody</span><span style="font-weight:500">58 → <span style="color:var(--lime)">72</span> <span style="color:var(--t3);font-size:11px">(+14)</span></span></div>
+  </div>
+
+  <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Obiettivo aggiornato</div></div>
+  <div class="goal-card">
+    <div class="gr"><span class="gr-l">Peso target</span><span style="font-weight:500">64,9 → <span style="color:var(--lime)">67,3 kg</span></span></div>
+    <div class="gr"><span class="gr-l">Massa magra da aggiungere</span><span style="font-weight:500;color:var(--lime)">+5,2 kg</span></div>
+    <div class="gr"><span class="gr-l">Rapporto vita/fianchi</span><span style="font-weight:500">normale</span></div>
   </div>
 
   <div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Note chiave</div></div>
   <div class="card" style="border-left:2px solid var(--orange);font-size:13px;color:var(--t2);line-height:1.9">
-    <div>• Il BMR basso è causato dalla scarsa massa muscolare — aumenterà con la palestra</div>
-    <div>• Sei nel punto ideale per la <span style="color:var(--orange)">recomposizione corporea</span></div>
-    <div>• Grasso concentrato nelle braccia (&gt;108% rispetto all'ideale)</div>
-    <div>• Grasso viscerale 7 — accettabile, da monitorare</div>
+    <div>• * I valori grasso/muscolo sono gonfiati dalla disidratazione del 13/05 — la direzione è reale, i numeri esatti no</div>
+    <div>• Il BMR è salito da 1326 a <span style="color:var(--lime)">1494 kcal</span> — il metabolismo si sta già alzando</div>
+    <div>• Grasso viscerale sceso da 7 a <span style="color:var(--lime)">5</span> — dato affidabile, ottimo segnale</div>
+    <div>• Punteggio Inbody <span style="color:var(--lime)">72/100</span> — da 58, miglioramento reale</div>
+    <div>• Prossima misurazione: falla a stomaco vuoto, stessa ora, ben idratato la sera prima</div>
   </div>
 </div>
 
 <!-- ══════════ SKINCARE ══════════ -->
 <div class="pg" id="pg-skin">
 
-  <div class="sec"><div class="sec-dot" style="background:var(--pink)"></div><div class="sec-lbl">🌅 Mattina</div></div>
+  <div class="sec"><div class="sec-dot" style="background:var(--pink)"></div><div class="sec-lbl">Routine mattutina — in ordine</div></div>
 
-  <div class="step"><div class="step-n n1">1</div><div><div class="step-prod">CeraVe Blemish Control Cleanser</div><div class="step-brand">hai già</div><div class="step-tags"><span class="tag">Moneta da 1€</span><span class="tag">60 secondi</span><span class="tag">risciacqua</span><span class="tag">tampona</span></div></div></div>
-  <div class="step"><div class="step-n n2">2</div><div><div class="step-prod">The Ordinary Niacinamide 10% + Zinc 1%</div><div class="step-brand">The Ordinary</div><div class="step-tags"><span class="tag">3-4 gocce</span><span class="tag">picchietta</span><span class="tag">2-3 minuti</span></div></div></div>
-  <div class="step"><div class="step-n n3">3</div><div><div class="step-prod">COSRX Oil Free Ultra Moisturizing Lotion</div><div class="step-brand">COSRX</div><div class="step-tags"><span class="tag">4-5 puntini</span><span class="tag">spalma</span><span class="tag">picchietta</span></div></div></div>
-  <div class="step"><div class="step-n n4">4</div><div><div class="step-prod">LRP Anthelios UVMUNE 400 Invisible SPF50+</div><div class="step-brand">LRP</div><div class="step-tags"><span class="tag">Moneta da 2€</span><span class="tag">picchietta</span><span class="tag">ultimo step</span></div></div></div>
+  <div class="step"><div class="step-n n1">1</div><div><div class="step-prod">Blemish Control Cleanser</div><div class="step-brand">CeraVe</div><div class="step-tags"><span class="tag">Acido salicilico</span><span class="tag">Ceramidi</span><span class="tag">Niacinamide</span><span class="tag">Sblocca i pori</span></div></div></div>
+  <div class="step"><div class="step-n n2">2</div><div><div class="step-prod">Niacinamide 10% + Zinc 1%</div><div class="step-brand">The Ordinary</div><div class="step-tags"><span class="tag">Riduce sebo</span><span class="tag">Chiude i pori</span><span class="tag">Sbiadisce segni</span></div></div></div>
+  <div class="step"><div class="step-n n3">3</div><div><div class="step-prod">Oil-Free Ultra Moisturizing Lotion</div><div class="step-brand">COSRX</div><div class="step-tags"><span class="tag">Oil-free</span><span class="tag">Non comedogenico</span><span class="tag">Linfa di betulla</span></div></div></div>
+  <div class="step"><div class="step-n n4">4</div><div><div class="step-prod">Anthelios UVMUNE 400 SPF50+</div><div class="step-brand">La Roche-Posay</div><div class="step-tags"><span class="tag">SPF50+</span><span class="tag">Invisible</span><span class="tag">Ultimo step sempre</span></div></div></div>
 
-  <div class="sec"><div class="sec-dot" style="background:var(--pink)"></div><div class="sec-lbl">🌙 Sera</div></div>
+  <div class="tip"><strong>Ordine fondamentale:</strong> detergente → siero → idratante → SPF. L'SPF va sempre per ultimo, ogni mattina, anche in inverno.</div>
 
-  <div class="step"><div class="step-n n1">1</div><div><div class="step-prod">CeraVe Blemish Control Cleanser</div><div class="step-brand">Stesso del mattino</div><div class="step-tags"><span class="tag">Detergente</span><span class="tag">Risciacqua</span></div></div></div>
-  <div class="step"><div class="step-n n2">2</div><div><div class="step-prod">The Ordinary Niacinamide 10% + Zinc 1%</div><div class="step-brand">Stesso del mattino</div><div class="step-tags"><span class="tag">3-4 gocce</span><span class="tag">picchietta</span></div></div></div>
-  <div class="step"><div class="step-n n3">3</div><div><div class="step-prod">The Ordinary Retinol 1% in Squalane</div><div class="step-brand">⚠️</div><div class="step-tags"><span class="tag">2-3 gocce</span><span class="tag">evita occhi e bocca</span><span class="tag">1-2 volte</span></div></div></div>
-  <div class="tip">Solo 1 volta a settimana le prime 2 settimane, poi 2 volte.</div>
-  <div class="step"><div class="step-n n4">4</div><div><div class="step-prod">COSRX Oil Free Ultra Moisturizing Lotion</div><div class="step-brand">Stesso del mattino</div><div class="step-tags"><span class="tag">dopo il retinolo</span><span class="tag">riduce irritazione</span></div></div></div>
+  <div class="sec"><div class="sec-dot" style="background:var(--pink)"></div><div class="sec-lbl">Routine serale — in ordine</div></div>
 
-  <div class="sec"><div class="sec-dot" style="background:var(--pink)"></div><div class="sec-lbl">⚠️ Regole fondamentali col Retinol 1%</div></div>
-  <div class="card" style="padding:12px 14px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div>
-        <strong>Cosa fare</strong>
-        <div class="avoid-row">• Usarlo solo la sera</div>
-        <div class="avoid-row">• Sempre la crema dopo</div>
-        <div class="avoid-row">• SPF ogni mattina senza eccezioni</div>
-        <div class="avoid-row">• Iniziare 1x settimana</div>
-        <div class="avoid-row">• Pelle completamente asciutta</div>
-      </div>
-      <div>
-        <strong>Cosa evitare</strong>
-        <div class="avoid-row">• Mai la mattina</div>
-        <div class="avoid-row">• Saltare la crema</div>
-        <div class="avoid-row">• Uscire senza SPF</div>
-        <div class="avoid-row">• Partire subito 3x</div>
-        <div class="avoid-row">• Applicarlo su pelle umida</div>
+  <div class="step"><div class="step-n n1">1</div><div><div class="step-prod">Blemish Control Cleanser</div><div class="step-brand">CeraVe</div><div class="step-tags"><span class="tag">Stesso del mattino</span></div></div></div>
+  <div class="step"><div class="step-n n2">2</div><div><div class="step-prod">Niacinamide 10% + Zinc 1%</div><div class="step-brand">The Ordinary</div><div class="step-tags"><span class="tag">3-4 gocce sul palmo</span></div></div></div>
+  <div class="step"><div class="step-n n3" style="background:rgba(255,179,71,.12);color:var(--orange)">3</div><div><div class="step-prod">Retinol 1% in Squalane</div><div class="step-brand">The Ordinary</div><div class="step-tags"><span class="tag">Solo sera</span><span class="tag">1× sett. le prime 2 sett.</span><span class="tag">Poi 2× sett.</span><span class="tag">Evita occhi/bocca</span></div></div></div>
+  <div class="step"><div class="step-n n4">4</div><div><div class="step-prod">Oil-Free Ultra Moisturizing Lotion</div><div class="step-brand">COSRX</div><div class="step-tags"><span class="tag">Sempre dopo retinolo</span><span class="tag">Riduce irritazione</span></div></div></div>
+
+  <div class="tip" style="border-color:rgba(255,179,71,.25);background:rgba(255,179,71,.05)"><strong style="color:var(--orange)">⚠️ Retinolo:</strong> pelle completamente asciutta prima di applicarlo. Se compare eccessiva secchezza o rossore, salta una settimana e riprendi.</div>
+
+  <!-- ROUTINE SCHIENA -->
+  <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Routine schiena e spalle — in doccia</div></div>
+
+  <div class="back-flow">
+    <div class="back-step">
+      <div class="back-num bn-orange">0</div>
+      <div class="back-info">
+        <div class="back-label" style="color:var(--orange)">Prima di tutto</div>
+        <div class="back-prod">Risciacqua i capelli</div>
+        <div class="back-note">I residui di shampoo e balsamo che colano sulla schiena sono una causa principale dei brufoli. Risciacqua sempre la testa prima di lavare la schiena.</div>
       </div>
     </div>
-    <div class="tip" style="margin-top:12px;">Le prime settimane potresti avere rossore o secchezza localizzata — è normale con l'1%. Se diventa troppo intensa, salta una settimana e riprendi.</div>
+    <div class="back-step">
+      <div class="back-num bn-blue">1</div>
+      <div class="back-info">
+        <div class="back-label" style="color:var(--blue)">In doccia</div>
+        <div class="back-prod">SA Smoothing Cleanser</div>
+        <div class="back-brand">CeraVe · 2 flaconi da 236ml</div>
+        <div class="back-note">Applica con la fascia esfoliante sulla schiena. Lascia agire 1-2 minuti prima di risciacquare — il BHA ha bisogno di tempo per penetrare nei pori.</div>
+        <div class="back-tags"><span class="tag">Acido salicilico</span><span class="tag">Ceramidi</span><span class="tag">Niacinamide</span><span class="tag">Ogni doccia</span></div>
+      </div>
+    </div>
+    <div class="back-step">
+      <div class="back-num bn-lime">2</div>
+      <div class="back-info">
+        <div class="back-label" style="color:var(--lime)">Dopo la doccia — su pelle asciutta</div>
+        <div class="back-prod">Acniben Body Spray</div>
+        <div class="back-brand">ISDIN · 150ml</div>
+        <div class="back-note">Spruzza sulla schiena asciutta, lascia assorbire senza risciacquare. Trattamento localizzato che agisce sui brufoli esistenti e previene i nuovi.</div>
+        <div class="back-tags"><span class="tag">Acido salicilico</span><span class="tag">Acido glicolico</span><span class="tag">Non risciacquare</span><span class="tag">2-3× a settimana</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-card"><strong>Regole extra:</strong> Cambia la maglietta dopo aver sudato · Doccia subito dopo la palestra · Cambia le lenzuola ogni settimana · Non toccare i brufoli sulla schiena</div>
+
+  <div class="sec"><div class="sec-dot" style="background:var(--pink)"></div><div class="sec-lbl">Cosa evitare — viso</div></div>
+  <div class="avoid-card">
+    <div class="avoid-row">• Non toccarti il viso durante il giorno</div>
+    <div class="avoid-row">• Niente scrub fisici aggressivi — hai già l'acido salicilico</div>
+    <div class="avoid-row">• Non saltare l'SPF — le imperfezioni scuriscono senza protezione</div>
+    <div class="avoid-row">• Aspetta 30 sec dopo il detergente prima della Niacinamide</div>
+    <div class="avoid-row">• Gel capelli: lavati le mani subito dopo — non toccarti la fronte</div>
   </div>
 </div>
 
