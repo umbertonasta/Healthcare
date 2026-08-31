@@ -524,6 +524,32 @@
         margin-top: 2px;
       }
 
+
+      .meal-toggle {
+        display: flex;
+        background: var(--s2);
+        border-radius: 10px;
+        padding: 3px;
+        margin: 10px 0 14px;
+        gap: 3px;
+      }
+      .meal-toggle-btn {
+        flex: 1;
+        border: 0;
+        border-radius: 8px;
+        padding: 9px 6px;
+        background: transparent;
+        color: var(--t3);
+        font: 700 11px "Syne", sans-serif;
+        cursor: pointer;
+      }
+      .meal-toggle-btn.on {
+        color: var(--lime);
+        background: var(--s1);
+        box-shadow: 0 1px 5px rgba(0,0,0,.5);
+      }
+      .meal-plan { display: none; }
+      .meal-plan.on { display: block; animation: up .2s ease; }
       /* ═══ PASTI ═══ */
       .prot-banner {
         background: rgba(170, 255, 0, 0.07);
@@ -1681,35 +1707,50 @@
               </div>
             </div>
 
-            <!-- 16:00–17:00 --><div class="tl-row"><div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div><div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino principale <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">trasportabile</span></div><div class="tl-hint">Da portare al lavoro, soprattutto nei giorni di palestra</div><div class="tl-items"><div class="tl-item main">Banana + yogurt greco o skyr + 2–3 gallette di riso</div><div class="tl-item">Senza frigorifero: banana + shaker con 30 g di whey da preparare con acqua + 2–4 gallette</div><div class="tl-item">Alternativa solida: piccolo panino con affettato magro + un frutto</div><div class="tl-item alt">Lun · Mer · Ven: scegli una delle opzioni se vai direttamente dal lavoro in palestra</div></div></div></div><!-- 18:30–19:00 --><div class="tl-row"><div class="tl-time">18:30</div><div class="tl-dot" style="background:var(--blue)"></div><div class="tl-body"><div class="tl-title" style="color:var(--blue)">Richiamo facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div><div class="tl-items"><div class="tl-item main">Se hai fame o l’allenamento inizia tardi: una banana oppure 2–3 gallette</div><div class="tl-item">In alternativa: una barretta semplice e facilmente digeribile</div><div class="tl-item alt">Non serve se alle 16–17 hai già consumato lo spuntino completo e hai energia sufficiente</div></div></div></div><!-- 22:00 -->
-            <div class="tl-row" style="margin-bottom: 0">
-              <div class="tl-time">21–22</div>
-              <div class="tl-dot" style="background: var(--pink)"></div>
-              <div class="tl-body" style="padding-bottom: 6px">
-                <div class="tl-title" style="color: var(--pink)">
-                  Cena
-                  <span
-                    class="tl-pil"
-                    style="
-                      background: rgba(255, 143, 171, 0.1);
-                      color: var(--pink);
-                    "
-                    >~40g prot</span
-                  >
+            <div class="meal-toggle" role="tablist" aria-label="Orario palestra">
+              <button class="meal-toggle-btn on" type="button" role="tab" aria-selected="true" onclick="swMealPlan('post',this)">Cena post-workout</button>
+              <button class="meal-toggle-btn" type="button" role="tab" aria-selected="false" onclick="swMealPlan('pre',this)">Cena pre-workout</button>
+            </div>
+
+            <div class="meal-plan on" id="meal-post">
+              <div class="tl-row">
+                <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
+                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino principale <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">trasportabile</span></div>
+                  <div class="tl-hint">Da portare al lavoro se vai direttamente in palestra</div>
+                  <div class="tl-items"><div class="tl-item main">Banana + yogurt greco o skyr + 2–3 gallette di riso</div><div class="tl-item">Senza frigorifero: banana + shaker con 30 g di whey da preparare con acqua + 2–4 gallette</div><div class="tl-item">Alternativa solida: piccolo panino con affettato magro + un frutto</div></div>
                 </div>
-                <div class="tl-items">
-                  <div class="tl-item main">
-                    Dopo palestra: carne o pesce + verdure + riso o patate
-                  </div>
-                  <div class="tl-item main">
-                    Giorno di recupero: proteina magra + verdure + carboidrati moderati
-                  </div>
-                  <div class="tl-item alt">
-                    Riposo: uova / fiocchi di latte / pesce + verdure
-                  </div>
-                  <div class="tl-item alt">
-                    Se ceni tardi, mantieni comunque una cena completa e digeribile
-                  </div>
+              </div>
+              <div class="tl-row">
+                <div class="tl-time">18:30</div><div class="tl-dot" style="background:var(--blue)"></div>
+                <div class="tl-body"><div class="tl-title" style="color:var(--blue)">Richiamo facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div>
+                  <div class="tl-items"><div class="tl-item main">Se hai fame o inizi più tardi: una banana oppure 2–3 gallette</div><div class="tl-item alt">Non serve se lo spuntino delle 16–17 è stato sufficiente</div></div>
+                </div>
+              </div>
+              <div class="tl-row">
+                <div class="tl-time">21–22</div><div class="tl-dot" style="background:var(--pink)"></div>
+                <div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena post-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">completa</span></div>
+                  <div class="tl-items"><div class="tl-item main">Carne o pesce + verdure + riso, pasta o patate</div><div class="tl-item">Alternativa: uova o fiocchi di latte + pane o patate + verdure</div><div class="tl-item alt">Se ceni tardi, mantieni una cena completa ma digeribile</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="meal-plan" id="meal-pre">
+              <div class="tl-row">
+                <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
+                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino moderato <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">prima della cena</span></div>
+                  <div class="tl-items"><div class="tl-item main">Yogurt greco o skyr + una banana</div><div class="tl-item">Senza frigorifero: shaker con 30 g di whey + un frutto</div><div class="tl-item">Alternativa: piccolo panino con affettato magro</div><div class="tl-item alt">Evita di sommare un grande spuntino alla cena delle 19:30–20:00</div></div>
+                </div>
+              </div>
+              <div class="tl-row">
+                <div class="tl-time">19:30</div><div class="tl-dot" style="background:var(--pink)"></div>
+                <div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena pre-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">palestra 21–21:30</span></div>
+                  <div class="tl-items"><div class="tl-item main">Riso o pasta semplice + pollo, tacchino o pesce magro + poche verdure cotte</div><div class="tl-item">Alternativa rapida: panino con tacchino o bresaola + banana + yogurt greco se ben tollerato</div><div class="tl-item alt">Limita fritti, salse, formaggi grassi, legumi abbondanti e grandi quantità di verdure crude</div></div>
+                </div>
+              </div>
+              <div class="tl-row">
+                <div class="tl-time">23:00</div><div class="tl-dot" style="background:var(--blue)"></div>
+                <div class="tl-body"><div class="tl-title" style="color:var(--blue)">Recupero facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div>
+                  <div class="tl-items"><div class="tl-item main">Se hai fame o la cena era leggera: yogurt greco, skyr oppure whey con acqua o latte</div><div class="tl-item">Aggiungi banana o qualche galletta solo se serve altra energia</div><div class="tl-item alt">Non è necessaria una seconda cena completa</div></div>
                 </div>
               </div>
             </div>
@@ -2201,6 +2242,16 @@
         row.classList.toggle("on", !open);
       }
 
+      function swMealPlan(id, btn) {
+        document.querySelectorAll(".meal-plan").forEach((p) => p.classList.remove("on"));
+        document.querySelectorAll(".meal-toggle-btn").forEach((b) => {
+          b.classList.remove("on");
+          b.setAttribute("aria-selected", "false");
+        });
+        document.getElementById("meal-" + id).classList.add("on");
+        btn.classList.add("on");
+        btn.setAttribute("aria-selected", "true");
+      }
       function swAcc(head) {
         const body = head.nextElementSibling;
         const open = body.classList.contains("on");
