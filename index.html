@@ -1,0 +1,2450 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="theme-color" content="#0A0A0A" />
+    <meta name="apple-mobile-web-app-title" content="La Mia Routine" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <title>La Mia Routine</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      :root {
+        --bg: #0a0a0a;
+        --s1: #141414;
+        --s2: #1e1e1e;
+        --s3: #2a2a2a;
+        --lime: #aaff00;
+        --blue: #7bc8f6;
+        --orange: #ffb347;
+        --pink: #ff8fab;
+        --t1: #f0f0f0;
+        --t2: #888;
+        --t3: #454545;
+        --r: 14px;
+        --rs: 9px;
+      }
+      html,
+      body {
+        height: 100%;
+        background: var(--bg);
+        color: var(--t1);
+        font-family: "DM Sans", sans-serif;
+        overflow: hidden;
+      }
+      .app {
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      /* HEADER */
+      .hdr {
+        padding: 16px 18px 8px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      .h-title {
+        font-family: "Syne", sans-serif;
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+      .h-title em {
+        color: var(--lime);
+        font-style: normal;
+      }
+      .h-sub {
+        font-size: 11px;
+        color: var(--t3);
+        margin-top: 2px;
+      }
+      .h-date {
+        font-size: 12px;
+        color: var(--t2);
+      }
+
+      /* CONTENT */
+      .cnt {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0 15px 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .cnt::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* NAV */
+      .nav {
+        display: flex;
+        background: var(--s1);
+        border-top: 1px solid #1f1f1f;
+        flex-shrink: 0;
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      .nb {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        padding: 10px 0;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: var(--t3);
+        transition: color 0.2s;
+      }
+      .nb.on {
+        color: var(--lime);
+      }
+      .nb svg {
+        width: 22px;
+        height: 22px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .nb span {
+        font-size: 10px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 500;
+      }
+
+      /* PAGES */
+      .pg {
+        display: none;
+      }
+      .pg.on {
+        display: block;
+        animation: up 0.2s ease;
+      }
+      @keyframes up {
+        from {
+          opacity: 0;
+          transform: translateY(5px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* SHARED */
+      .sec {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 18px 0 9px;
+      }
+      .sec-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .sec-lbl {
+        font-family: "Syne", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--t2);
+      }
+      .card {
+        background: var(--s1);
+        border-radius: var(--r);
+        padding: 13px 15px;
+        margin-bottom: 9px;
+      }
+      .tip {
+        background: rgba(170, 255, 0, 0.06);
+        border: 1px solid rgba(170, 255, 0, 0.13);
+        border-radius: var(--rs);
+        padding: 10px 13px;
+        margin-bottom: 9px;
+        font-size: 12px;
+        color: var(--t2);
+        line-height: 1.65;
+      }
+      .tip strong {
+        color: var(--lime);
+      }
+
+      /* ═══ WORKOUT ═══ */
+      .wtoggle {
+        display: flex;
+        background: var(--s2);
+        border-radius: 10px;
+        padding: 3px;
+        margin: 12px 0;
+        gap: 3px;
+      }
+      .wtb {
+        flex: 1;
+        text-align: center;
+        padding: 7px 4px;
+        border-radius: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        font-family: "Syne", sans-serif;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: var(--t3);
+        transition: all 0.2s;
+        line-height: 1.4;
+      }
+      .wtb.on {
+        background: var(--s1);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+      }
+      .wtb.on.std {
+        color: var(--lime);
+      }
+      .wtb.on.alt {
+        color: var(--pink);
+      }
+
+      .cal {
+        display: none;
+      }
+      .cal.on {
+        display: block;
+      }
+      .week {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4px;
+        margin-bottom: 8px;
+      }
+      .wd {
+        background: var(--s2);
+        border-radius: 7px;
+        padding: 7px 3px;
+        text-align: center;
+      }
+      .wd.gym {
+        background: rgba(170, 255, 0, 0.09);
+        border: 1px solid rgba(170, 255, 0, 0.22);
+      }
+      .wd.calcio {
+        background: rgba(255, 179, 71, 0.09);
+        border: 1px solid rgba(255, 179, 71, 0.22);
+      }
+      .wd.nogym {
+        background: rgba(255, 143, 171, 0.07);
+        border: 1px solid rgba(255, 143, 171, 0.18);
+      }
+      .wd.rest {
+        opacity: 0.3;
+      }
+      .wd-n {
+        font-size: 9px;
+        color: var(--t2);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .wd-b {
+        font-size: 11px;
+        font-weight: 700;
+        margin-top: 3px;
+      }
+      .wd-b.a {
+        color: var(--lime);
+      }
+      .wd-b.b {
+        color: var(--blue);
+      }
+      .wd-b.c {
+        color: var(--orange);
+      }
+      .wd-b.p {
+        color: var(--pink);
+        font-size: 10px;
+      }
+      .wd-b.r {
+        color: var(--t3);
+      }
+
+      .calnote {
+        font-size: 11px;
+        color: var(--t3);
+        background: var(--s2);
+        border-radius: 6px;
+        padding: 7px 10px;
+        margin-bottom: 12px;
+        line-height: 1.65;
+      }
+      .calnote strong {
+        color: var(--t2);
+      }
+      .calnote.alt {
+        border-left: 2px solid var(--pink);
+        color: var(--t2);
+      }
+
+      .fnotes {
+        background: var(--s2);
+        border-radius: var(--rs);
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+      .fn {
+        font-size: 12px;
+        color: var(--t2);
+        padding: 8px 12px;
+        border-bottom: 1px solid var(--s3);
+        line-height: 1.5;
+      }
+      .fn:last-child {
+        border-bottom: none;
+      }
+      .fn strong {
+        color: var(--t1);
+      }
+
+      /* Workout accordion */
+      .wo {
+        background: var(--s1);
+        border-radius: var(--r);
+        margin-bottom: 8px;
+        overflow: hidden;
+      }
+      .wo-h {
+        display: flex;
+        align-items: center;
+        padding: 13px 15px;
+        cursor: pointer;
+        gap: 10px;
+        user-select: none;
+      }
+      .wo-badge {
+        font-size: 11px;
+        font-weight: 700;
+        font-family: "Syne", sans-serif;
+        padding: 4px 11px;
+        border-radius: 20px;
+        flex-shrink: 0;
+      }
+      .wo-badge.a {
+        background: rgba(170, 255, 0, 0.13);
+        color: var(--lime);
+      }
+      .wo-badge.b {
+        background: rgba(123, 200, 246, 0.13);
+        color: var(--blue);
+      }
+      .wo-info {
+        flex: 1;
+      }
+      .wo-title {
+        font-family: "Syne", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .wo-meta {
+        font-size: 11px;
+        color: var(--t3);
+        margin-top: 1px;
+      }
+      .wo-chev {
+        font-size: 13px;
+        color: var(--t3);
+        transition: transform 0.2s;
+        flex-shrink: 0;
+      }
+      .wo-h.on .wo-chev {
+        transform: rotate(180deg);
+      }
+      .wo-body {
+        display: none;
+        border-top: 1px solid var(--s2);
+      }
+      .wo-body.on {
+        display: block;
+      }
+
+      /* Exercise rows with technique */
+      .ex-sec {
+        padding: 5px 15px 3px;
+        background: var(--s2);
+      }
+      .ex-sec span {
+        font-size: 10px;
+        color: var(--t3);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-weight: 500;
+      }
+      .ex-wrap {
+        border-bottom: 1px solid #181818;
+      }
+      .ex-wrap:last-child {
+        border-bottom: none;
+      }
+      .ex-r {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 11px 15px;
+        gap: 8px;
+        cursor: pointer;
+        user-select: none;
+      }
+      .ex-left {
+        flex: 1;
+      }
+      .ex-name {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .ex-mus {
+        font-size: 11px;
+        color: var(--t3);
+        margin-top: 2px;
+      }
+      .ex-right {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        flex-shrink: 0;
+      }
+      .ex-sets {
+        font-size: 12px;
+        color: var(--t2);
+        background: var(--s2);
+        padding: 4px 9px;
+        border-radius: 20px;
+        white-space: nowrap;
+      }
+      .ex-ico {
+        font-size: 13px;
+        color: var(--t3);
+        transition: transform 0.2s;
+      }
+      .ex-r.on .ex-ico {
+        transform: rotate(180deg);
+      }
+      .ex-tech {
+        display: none;
+        padding: 0 15px 12px;
+        background: rgba(170, 255, 0, 0.03);
+        border-top: 1px dashed var(--s3);
+      }
+      .ex-tech.on {
+        display: block;
+      }
+      .tech-title {
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--lime);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 7px;
+        margin-top: 10px;
+      }
+      .tech-item {
+        font-size: 12px;
+        color: var(--t2);
+        padding: 5px 0;
+        border-bottom: 1px solid var(--s3);
+        line-height: 1.5;
+        padding-left: 10px;
+        position: relative;
+      }
+      .tech-item::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--lime);
+        font-size: 11px;
+      }
+      .tech-item:last-child {
+        border-bottom: none;
+      }
+
+      .rm-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+      .rm-c {
+        background: var(--s2);
+        border-radius: var(--rs);
+        padding: 12px 10px;
+        text-align: center;
+      }
+      .rm-n {
+        font-size: 10px;
+        color: var(--t3);
+        line-height: 1.3;
+        margin-bottom: 5px;
+      }
+      .rm-v {
+        font-family: "Syne", sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--lime);
+      }
+      .rm-u {
+        font-size: 11px;
+        color: var(--t3);
+      }
+      .rm-s {
+        font-size: 10px;
+        color: var(--t3);
+        margin-top: 2px;
+      }
+
+      /* ═══ PASTI ═══ */
+      .prot-banner {
+        background: rgba(170, 255, 0, 0.07);
+        border: 1px solid rgba(170, 255, 0, 0.17);
+        border-radius: var(--r);
+        padding: 12px 15px;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .pb-icon {
+        font-size: 24px;
+      }
+      .pb-val {
+        font-family: "Syne", sans-serif;
+        font-size: 19px;
+        font-weight: 800;
+        color: var(--lime);
+      }
+      .pb-sub {
+        font-size: 11px;
+        color: var(--t2);
+      }
+
+      .tl {
+        padding: 4px 0 8px;
+      }
+      .tl-row {
+        display: grid;
+        grid-template-columns: 44px 12px 1fr;
+        gap: 0 10px;
+        position: relative;
+      }
+      .tl-row:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 49px;
+        top: 20px;
+        bottom: 0;
+        width: 1px;
+        background: var(--s3);
+      }
+      .tl-time {
+        font-size: 11px;
+        font-weight: 700;
+        font-family: "Syne", sans-serif;
+        color: var(--t3);
+        padding-top: 4px;
+        text-align: right;
+      }
+      .tl-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-top: 5px;
+        position: relative;
+        z-index: 1;
+        border: 2px solid var(--bg);
+        flex-shrink: 0;
+      }
+      .tl-body {
+        padding: 2px 0 18px;
+      }
+      .tl-title {
+        font-family: "Syne", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        flex-wrap: wrap;
+      }
+      .tl-pil {
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 20px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 500;
+      }
+      .tl-hint {
+        font-size: 11px;
+        color: var(--t3);
+        margin-bottom: 6px;
+      }
+      .tl-items {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .tl-item {
+        font-size: 13px;
+        color: var(--t2);
+        background: var(--s2);
+        border-radius: var(--rs);
+        padding: 8px 11px;
+        line-height: 1.5;
+      }
+      .tl-item.main {
+        color: var(--t1);
+        background: var(--s1);
+        border-left: 2px solid var(--s3);
+      }
+      .tl-item.alt {
+        font-size: 12px;
+        color: var(--t3);
+        background: transparent;
+        padding: 3px 0;
+        border-radius: 0;
+      }
+
+      /* Meal accordion */
+      .acc {
+        background: var(--s2);
+        border-radius: var(--rs);
+        overflow: hidden;
+        margin-bottom: 6px;
+      }
+      .ac-item + .ac-item {
+        border-top: 1px solid var(--s3);
+      }
+      .ac-h {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        cursor: pointer;
+        gap: 8px;
+        user-select: none;
+      }
+      .ac-day {
+        font-family: "Syne", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--blue);
+        width: 28px;
+        flex-shrink: 0;
+      }
+      .ac-day.we {
+        color: var(--orange);
+      }
+      .ac-lbl {
+        font-size: 13px;
+        color: var(--t1);
+        flex: 1;
+      }
+      .ac-chev {
+        font-size: 12px;
+        color: var(--t3);
+        transition: transform 0.2s;
+      }
+      .ac-h.on .ac-chev {
+        transform: rotate(180deg);
+      }
+      .ac-body {
+        display: none;
+        border-top: 1px solid var(--s3);
+        padding: 9px 12px 12px;
+      }
+      .ac-body.on {
+        display: block;
+      }
+      .ac-line {
+        font-size: 13px;
+        padding: 4px 0;
+        border-bottom: 1px solid var(--s3);
+      }
+      .ac-line:last-of-type {
+        border-bottom: none;
+      }
+      .ac-p {
+        color: var(--t2);
+      }
+      .ac-s {
+        color: var(--t1);
+        font-weight: 500;
+      }
+      .ac-c {
+        color: var(--t3);
+      }
+      .ac-note {
+        font-size: 11px;
+        color: var(--orange);
+        background: rgba(255, 179, 71, 0.07);
+        padding: 5px 8px;
+        border-radius: 5px;
+        margin-top: 8px;
+      }
+      .ac-note.green {
+        color: var(--lime);
+        background: rgba(170, 255, 0, 0.06);
+      }
+
+      /* ═══ CORPO ═══ */
+      .sg {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      .sc {
+        background: var(--s2);
+        border-radius: var(--rs);
+        padding: 12px;
+      }
+      .sc-lbl {
+        font-size: 11px;
+        color: var(--t3);
+        margin-bottom: 4px;
+      }
+      .sc-val {
+        font-family: "Syne", sans-serif;
+        font-size: 23px;
+        font-weight: 800;
+      }
+      .sc-unit {
+        font-size: 12px;
+        color: var(--t3);
+        font-family: "DM Sans", sans-serif;
+      }
+      .sc-badge {
+        display: inline-block;
+        font-size: 10px;
+        padding: 2px 7px;
+        border-radius: 20px;
+        margin-top: 4px;
+      }
+      .bw {
+        background: rgba(255, 179, 71, 0.13);
+        color: var(--orange);
+      }
+      .bg {
+        background: rgba(170, 255, 0, 0.11);
+        color: var(--lime);
+      }
+      .br {
+        background: rgba(255, 143, 171, 0.11);
+        color: var(--pink);
+      }
+      .goal-card {
+        background: var(--s1);
+        border-radius: var(--r);
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+      .gr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 9px 14px;
+        border-bottom: 1px solid var(--s2);
+        font-size: 13px;
+      }
+      .gr:last-child {
+        border-bottom: none;
+      }
+      .gr-l {
+        color: var(--t2);
+      }
+
+      /* ═══ SKINCARE ═══ */
+      .step {
+        background: var(--s1);
+        border-radius: var(--r);
+        padding: 14px;
+        margin-bottom: 9px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .step-n {
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Syne", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+      .n1 {
+        background: rgba(170, 255, 0, 0.12);
+        color: var(--lime);
+      }
+      .n2 {
+        background: rgba(123, 200, 246, 0.12);
+        color: var(--blue);
+      }
+      .n3 {
+        background: rgba(255, 179, 71, 0.12);
+        color: var(--orange);
+      }
+      .n4 {
+        background: rgba(255, 143, 171, 0.12);
+        color: var(--pink);
+      }
+      .step-prod {
+        font-family: "Syne", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 2px;
+        line-height: 1.3;
+      }
+      .step-brand {
+        font-size: 11px;
+        color: var(--t3);
+        margin-bottom: 7px;
+      }
+      .step-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .tag {
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 20px;
+        background: var(--s2);
+        color: var(--t2);
+      }
+      .avoid-card {
+        background: var(--s1);
+        border-radius: var(--r);
+        padding: 13px 15px;
+        margin-bottom: 9px;
+        border-left: 2px solid var(--pink);
+      }
+      .avoid-row {
+        font-size: 13px;
+        color: var(--t2);
+        padding: 4px 0;
+        line-height: 1.5;
+      }
+
+      /* ═══ ROUTINE SCHIENA ═══ */
+      .back-flow {
+        background: var(--s1);
+        border-radius: var(--r);
+        overflow: hidden;
+        margin-bottom: 9px;
+      }
+      .back-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 13px 15px;
+        border-bottom: 1px solid var(--s2);
+      }
+      .back-step:last-child {
+        border-bottom: none;
+      }
+      .back-num {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Syne", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .bn-blue {
+        background: rgba(123, 200, 246, 0.13);
+        color: var(--blue);
+      }
+      .bn-lime {
+        background: rgba(170, 255, 0, 0.13);
+        color: var(--lime);
+      }
+      .bn-orange {
+        background: rgba(255, 179, 71, 0.13);
+        color: var(--orange);
+      }
+      .back-info {
+        flex: 1;
+      }
+      .back-label {
+        font-size: 10px;
+        font-weight: 700;
+        font-family: "Syne", sans-serif;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+      .back-prod {
+        font-family: "Syne", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 2px;
+      }
+      .back-brand {
+        font-size: 11px;
+        color: var(--t3);
+        margin-bottom: 6px;
+      }
+      .back-note {
+        font-size: 12px;
+        color: var(--t2);
+        line-height: 1.55;
+      }
+      .back-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 6px;
+      }
+      .warn-card {
+        background: rgba(255, 179, 71, 0.06);
+        border: 1px solid rgba(255, 179, 71, 0.18);
+        border-radius: var(--rs);
+        padding: 10px 13px;
+        margin-bottom: 9px;
+        font-size: 12px;
+        color: var(--t2);
+        line-height: 1.65;
+      }
+      .warn-card strong {
+        color: var(--orange);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <!-- HEADER -->
+      <div class="hdr">
+        <div>
+          <div class="h-title">La Mia <em>Routine</em></div>
+          <div class="h-sub">
+            Allenamento · Alimentazione · Corpo · Skincare
+          </div>
+        </div>
+        <div class="h-date" id="dateEl"></div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="cnt" id="cnt">
+        <!-- ══════════ WORKOUT ══════════ -->
+        <div class="pg on" id="pg-workout">
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--lime)"></div>
+            <div class="sec-lbl">Schema settimanale</div>
+          </div>
+
+          <div class="cal on">
+            <div class="week">
+              <div class="wd gym">
+                <div class="wd-n">Lun</div>
+                <div class="wd-b a">UA</div>
+              </div>
+              <div class="wd rest">
+                <div class="wd-n">Mar</div>
+                <div class="wd-b r">—</div>
+              </div>
+              <div class="wd gym">
+                <div class="wd-n">Mer</div>
+                <div class="wd-b b">L</div>
+              </div>
+              <div class="wd rest">
+                <div class="wd-n">Gio</div>
+                <div class="wd-b r">—</div>
+              </div>
+              <div class="wd gym">
+                <div class="wd-n">Ven</div>
+                <div class="wd-b a">UB</div>
+              </div>
+              <div class="wd gym">
+                <div class="wd-n">Sab</div>
+                <div class="wd-b c">FB</div>
+              </div>
+              <div class="wd rest">
+                <div class="wd-n">Dom</div>
+                <div class="wd-b r">—</div>
+              </div>
+            </div>
+
+            <div class="calnote">
+              <strong>Lunedì:</strong> Upper A<br />
+              <strong>Mercoledì:</strong> Lower Body<br />
+              <strong>Venerdì:</strong> Upper B<br />
+              <strong>Sabato mattina:</strong> Full Body + Core
+            </div>
+          </div>
+
+          <div class="fnotes">
+            <div class="fn">
+              <strong>Obiettivo:</strong> aumento massa muscolare mantenendo la
+              massa grassa sotto controllo
+            </div>
+            <div class="fn">
+              <strong>Durata:</strong> 55-65 minuti per allenamento
+            </div>
+            <div class="fn">
+              <strong>Progressione:</strong> raggiunte tutte le ripetizioni per
+              2 allenamenti consecutivi → aumenta il carico
+            </div>
+          </div>
+
+          <!-- WORKOUT A -->
+          <div class="wo">
+            <div class="wo-h" onclick="swWo(this)">
+              <span class="wo-badge a">A</span>
+              <div class="wo-info">
+                <div class="wo-title">Upper A</div>
+                <div class="wo-meta">Lunedì &nbsp;·&nbsp; ~60 min</div>
+              </div>
+              <span class="wo-chev">﹀</span>
+            </div>
+            <div class="wo-body">
+              <div class="ex-sec"><span>Riscaldamento</span></div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Bike o Treadmill</div>
+                    <div class="ex-mus">Cardio leggero</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">8 min</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Intensità bassa — dovresti riuscire a parlare senza fiatone
+                  </div>
+                  <div class="tech-item">
+                    Bike: sella all'altezza del fianco, ginocchio quasi teso in
+                    basso
+                  </div>
+                  <div class="tech-item">
+                    Treadmill: postura dritta, non aggrapparti ai corrimano
+                  </div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Gambe</span></div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Leg Press</div>
+                    <div class="ex-mus">Quadricipiti, glutei</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×12 · 74kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Piedi alla larghezza delle spalle, leggermente extraruotati
+                  </div>
+                  <div class="tech-item">
+                    Scendi finché le cosce non sono parallele al pavimento — non
+                    oltre se senti la schiena staccarsi
+                  </div>
+                  <div class="tech-item">
+                    Spingi col tallone, non con la punta — senti i glutei
+                    lavorare
+                  </div>
+                  <div class="tech-item">
+                    Non bloccare completamente le ginocchia in estensione
+                  </div>
+                </div>
+              </div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Leg Extension</div>
+                    <div class="ex-mus">Quadricipiti</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×7–9 · 45kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Schiena appoggiata allo schienale per tutta la serie
+                  </div>
+                  <div class="tech-item">
+                    Estendi completamente la gamba, tieni 1 secondo in cima
+                  </div>
+                  <div class="tech-item">
+                    Scendi lentamente — il negativo (discesa) conta quanto la
+                    salita
+                  </div>
+                  <div class="tech-item">
+                    Non usare lo slancio: movimento controllato da inizio a fine
+                  </div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Petto e spalle</span></div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Chest Press</div>
+                    <div class="ex-mus">Petto, spalle, tricipiti</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×5–8 · 30kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Schiena e testa appoggiate, piedi a terra piatti
+                  </div>
+                  <div class="tech-item">
+                    Impugna con i pollici sotto la barra, polsi dritti
+                  </div>
+                  <div class="tech-item">
+                    Abbassa lentamente (2–3 sec) finché le braccia sono a 90°
+                  </div>
+                  <div class="tech-item">
+                    Spingi espirando — immagina di allontanare la panca da te
+                  </div>
+                </div>
+              </div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Dumbbell Overhead Press</div>
+                    <div class="ex-mus">Spalle, tricipiti</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×8 · 7,5kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Seduto o in piedi, core contratto, schiena dritta — non
+                    inarcarti
+                  </div>
+                  <div class="tech-item">
+                    Manubri all'altezza delle orecchie con gomiti a 90°, poi
+                    spingi verticalmente
+                  </div>
+                  <div class="tech-item">
+                    Porta le braccia a estensione completa senza bloccare i
+                    gomiti
+                  </div>
+                  <div class="tech-item">
+                    Abbassa controllato — i manubri tornano all'altezza delle
+                    orecchie
+                  </div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Core</span></div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Kettlebell Swing</div>
+                    <div class="ex-mus">Glutei, lombari, core</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×15</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Non è uno squat — è un hip hinge: piega i fianchi, non le
+                    ginocchia
+                  </div>
+                  <div class="tech-item">
+                    La potenza viene dai glutei che scattano in avanti, non
+                    dalle braccia
+                  </div>
+                  <div class="tech-item">
+                    In cima: corpo dritto, glutei stretti, kettlebell
+                    all'altezza del petto
+                  </div>
+                  <div class="tech-item">
+                    Schiena piatta per tutto il movimento — non arrotondare
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WORKOUT B -->
+          <div class="wo">
+            <div class="wo-h" onclick="swWo(this)">
+              <span class="wo-badge b">B</span>
+              <div class="wo-info">
+                <div class="wo-title">Lower Body</div>
+                <div class="wo-meta">Mercoledì &nbsp;·&nbsp; ~60 min</div>
+              </div>
+              <span class="wo-chev">﹀</span>
+            </div>
+            <div class="wo-body">
+              <div class="ex-sec"><span>Riscaldamento</span></div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Skillrow o Bike</div>
+                    <div class="ex-mus">Cardio leggero</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">8 min</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Skillrow: tira con i gomiti indietro e in basso, non verso
+                    l'alto
+                  </div>
+                  <div class="tech-item">
+                    Ritmo costante, respira regolarmente — non è uno sprint
+                  </div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Gambe posteriori</span></div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Smith Machine RDL</div>
+                    <div class="ex-mus">Femorali, glutei, lombari</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×10 · 20–30kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Piedi alla larghezza dei fianchi, ginocchia leggermente
+                    piegate (non bloccate)
+                  </div>
+                  <div class="tech-item">
+                    Spingi i fianchi indietro — immagina di toccare il muro
+                    dietro di te
+                  </div>
+                  <div class="tech-item">
+                    Barra scorre vicino alle gambe, schiena piatta per tutto il
+                    movimento
+                  </div>
+                  <div class="tech-item">
+                    Scendi finché senti lo stretch nei femorali, poi spingi i
+                    fianchi avanti per tornare su
+                  </div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Schiena e bicipiti</span></div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Cavi — Lat Pulldown</div>
+                    <div class="ex-mus">Dorsali, bicipiti</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×12 · 10–15kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Presa larga, leggermente più larga delle spalle
+                  </div>
+                  <div class="tech-item">
+                    Tira verso il petto — non verso la nuca — aprendo i gomiti
+                    in basso
+                  </div>
+                  <div class="tech-item">
+                    Inclinati leggermente indietro, petto aperto verso la barra
+                  </div>
+                  <div class="tech-item">
+                    Risali lentamente — non lasciare che il peso ti strappi su
+                  </div>
+                </div>
+              </div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Cavi — Seated Row</div>
+                    <div class="ex-mus">Romboidi, trapezio</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×12 · 10–15kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Schiena dritta durante tutto il movimento — non inarcarti
+                    per tirare di più
+                  </div>
+                  <div class="tech-item">
+                    Tira verso l'ombelico, gomiti lungo i fianchi
+                  </div>
+                  <div class="tech-item">
+                    In fondo: stringi le scapole come se volessi tenere una
+                    matita tra di esse
+                  </div>
+                  <div class="tech-item">
+                    Ritorno lento e controllato — 2-3 secondi in allungamento
+                  </div>
+                </div>
+              </div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Panca Scott — Curl</div>
+                    <div class="ex-mus">Bicipiti</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×6 · sbarra +2,5kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Braccia appoggiate completamente sulla panca, non staccarle
+                    mai
+                  </div>
+                  <div class="tech-item">
+                    Scendi fino a estensione quasi completa — non fermarti a
+                    metà
+                  </div>
+                  <div class="tech-item">
+                    Risali lentamente senza usare lo slancio del busto
+                  </div>
+                  <div class="tech-item">
+                    Polsi neutri — non piegarli verso l'interno durante il curl
+                  </div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Tricipiti</span></div>
+              <div class="ex-wrap">
+                <div class="ex-r" onclick="swTech(this)">
+                  <div class="ex-left">
+                    <div class="ex-name">Cavi — Tricep Pushdown</div>
+                    <div class="ex-mus">Tricipiti</div>
+                  </div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×12 · 10–15kg</div>
+                    <div class="ex-ico">ⓘ</div>
+                  </div>
+                </div>
+                <div class="ex-tech">
+                  <div class="tech-title">Tecnica</div>
+                  <div class="tech-item">
+                    Gomiti fissi ai fianchi — non devono muoversi durante la
+                    serie
+                  </div>
+                  <div class="tech-item">
+                    Spingi verso il basso fino a estensione completa, tieni 1
+                    sec
+                  </div>
+                  <div class="tech-item">
+                    Risali lento — fermati quando i gomiti sono a 90°
+                  </div>
+                  <div class="tech-item">
+                    Busto leggermente inclinato in avanti, core contratto
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wo">
+            <div class="wo-h" onclick="swWo(this)">
+              <span class="wo-badge a">C</span>
+              <div class="wo-info">
+                <div class="wo-title">Upper B</div>
+                <div class="wo-meta">Venerdì · ~60 min</div>
+              </div>
+              <span class="wo-chev">﹀</span>
+            </div>
+
+            <div class="wo-body">
+              <div class="ex-sec"><span>Petto</span></div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Chest Press</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×8</div></div>
+                </div>
+              </div>
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Croci ai cavi</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×12</div></div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Schiena</span></div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Lat Pulldown</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×10</div></div>
+                </div>
+              </div>
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Rematore macchina</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×10</div></div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Spalle</span></div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Alzate laterali</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">4×12</div></div>
+                </div>
+              </div>
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Rear Delt Fly</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×12</div></div>
+                </div>
+              </div>
+
+              <div class="ex-sec"><span>Braccia</span></div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Curl manubri</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×10</div></div>
+                </div>
+              </div>
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">French Press</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×10</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wo">
+            <div class="wo-h" onclick="swWo(this)">
+              <span class="wo-badge b">D</span>
+              <div class="wo-info">
+                <div class="wo-title">Full Body + Core</div>
+                <div class="wo-meta">Sabato mattina · ~60 min</div>
+              </div>
+              <span class="wo-chev">﹀</span>
+            </div>
+
+            <div class="wo-body">
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Leg Press</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×12</div></div>
+                </div>
+              </div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Chest Press</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×10</div></div>
+                </div>
+              </div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Lat Pulldown</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×10</div></div>
+                </div>
+              </div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Shoulder Press</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×10</div></div>
+                </div>
+              </div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Kettlebell Swing</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3×20</div></div>
+                </div>
+              </div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left">
+                    <div class="ex-name">Farmer Walk</div>
+                  </div>
+                  <div class="ex-right"><div class="ex-sets">3 giri</div></div>
+                </div>
+              </div>
+
+              <div class="ex-wrap">
+                <div class="ex-r">
+                  <div class="ex-left"><div class="ex-name">Plank</div></div>
+                  <div class="ex-right">
+                    <div class="ex-sets">3×60 sec</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>Progressione:</strong>
+            quando completi tutte le serie al numero massimo di ripetizioni per
+            due allenamenti consecutivi, aumenta il peso del 2,5-5%.
+
+            <br /><br />
+
+            <strong>Recupero:</strong>
+            90-120 sec sugli esercizi principali, 60-90 sec sugli esercizi di
+            isolamento.
+
+            <br /><br />
+
+            <strong>Obiettivo fisico:</strong>
+            68 kg mantenendo la massa grassa sotto il 18%.
+          </div>
+
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--lime)"></div>
+            <div class="sec-lbl">1RM rilevati</div>
+          </div>
+          <div class="rm-grid">
+            <div class="rm-c">
+              <div class="rm-n">Chest Press</div>
+              <div>
+                <span class="rm-v">45</span><span class="rm-u"> kg</span>
+              </div>
+              <div class="rm-s">scarso</div>
+            </div>
+            <div class="rm-c">
+              <div class="rm-n">Leg Extension</div>
+              <div>
+                <span class="rm-v">75</span><span class="rm-u"> kg</span>
+              </div>
+              <div class="rm-s">nella media</div>
+            </div>
+            <div class="rm-c">
+              <div class="rm-n">Leg Press</div>
+              <div>
+                <span class="rm-v">98</span><span class="rm-u"> kg</span>
+              </div>
+              <div class="rm-s">scarso</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════ PASTI ══════════ -->
+        <div class="pg" id="pg-pasti">
+          <div class="prot-banner">
+            <div class="pb-icon">🥩</div>
+            <div>
+              <div class="pb-val">130g proteine/giorno</div>
+              <div class="pb-sub">obiettivo per costruire massa muscolare</div>
+            </div>
+          </div>
+
+          <div class="tl">
+            <!-- 08:00 -->
+            <div class="tl-row">
+              <div class="tl-time">08:00</div>
+              <div class="tl-dot" style="background: var(--lime)"></div>
+              <div class="tl-body">
+                <div class="tl-title" style="color: var(--lime)">
+                  Colazione
+                  <span
+                    class="tl-pil"
+                    style="
+                      background: rgba(170, 255, 0, 0.1);
+                      color: var(--lime);
+                    "
+                    >~30g prot</span
+                  >
+                </div>
+                <div class="tl-items">
+                  <div class="tl-item main">30g Impact Whey + 200ml latte</div>
+                  <div class="tl-item">
+                    + banana o 40g avena se hai ancora fame
+                  </div>
+                  <div class="tl-item alt">
+                    Alt: yogurt greco 0% + frutta + 30g mandorle
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 13:00 -->
+            <div class="tl-row">
+              <div class="tl-time">13:00</div>
+              <div class="tl-dot" style="background: var(--blue)"></div>
+              <div class="tl-body">
+                <div class="tl-title" style="color: var(--blue)">
+                  Pranzo
+                  <span
+                    class="tl-pil"
+                    style="
+                      background: rgba(123, 200, 246, 0.1);
+                      color: var(--blue);
+                    "
+                    >~35g prot</span
+                  >
+                </div>
+                <div class="tl-hint">
+                  Tocca il giorno per vedere cosa mangiare
+                </div>
+                <div class="acc">
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Lun</span
+                      ><span class="ac-lbl">Lunedì 02/06 — fuori azienda</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-c">
+                        Non in mensa Elmec questa settimana
+                      </div>
+                      <div class="ac-note">
+                        Segui le indicazioni generali: proteina + verdura +
+                        carbo moderati
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Mar</span
+                      ><span class="ac-lbl"
+                        >Martedì 03/06 ⚽ — fuori azienda</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-c">
+                        Non in mensa Elmec questa settimana
+                      </div>
+                      <div class="ac-note">
+                        Calcio sera — ricordati carbo extra a cena
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Mer</span
+                      ><span class="ac-lbl"
+                        >Mercoledì 04/06 🏋 — Mensa Elmec</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-p">
+                        Insalata di pasta tricolore tonno e pomodorini
+                      </div>
+                      <div class="ac-line ac-s">
+                        Merluzzo impanato con arancia e basilico
+                      </div>
+                      <div class="ac-line ac-c">Spinaci al vapore</div>
+                      <div class="ac-note green">Palestra — pasto completo</div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Gio</span
+                      ><span class="ac-lbl">Giovedì 05/06 ⚽ — Mensa Elmec</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-p">
+                        Cous cous con pomodori secchi e polpo
+                      </div>
+                      <div class="ac-line ac-s">
+                        Bresaola con grana e insalata
+                      </div>
+                      <div class="ac-line ac-c">Broccoli al vapore</div>
+                      <div class="ac-note">
+                        Calcio sera — carbo extra a cena
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Ven</span
+                      ><span class="ac-lbl"
+                        >Venerdì 06/06 🏋/⚽ — Mensa Elmec</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-p">
+                        Insalata di pasta con salmone e fave
+                      </div>
+                      <div class="ac-line ac-s">Filetto di trota in saor</div>
+                      <div class="ac-line ac-c">Carote al vapore</div>
+                      <div class="ac-note green">
+                        Palestra o partita — vedi settimana
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day we">Sab</span
+                      ><span class="ac-lbl">Sabato — Ristorante Tigros</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-s">
+                        🥇 Insalatona con pollo grigliato + verdure miste + uova
+                      </div>
+                      <div class="ac-line ac-s">
+                        🥇 Insalatona con tonno + pomodori + mais + uova
+                      </div>
+                      <div class="ac-line ac-s">
+                        🥈 Piatto freddo del giorno con proteina (pesce, pollo,
+                        affettato)
+                      </div>
+                      <div class="ac-line ac-p">
+                        + acqua o tè freddo non zuccherato
+                      </div>
+                      <div class="ac-line ac-c">
+                        Cosa chiedere: "qualcosa di proteico, leggero, senza
+                        fritto"
+                      </div>
+                      <div class="ac-line ac-c">
+                        Evita: paste ripiene cremose, piatti con salse pesanti,
+                        dolci
+                      </div>
+                      <div class="ac-note">
+                        Weekend senza palestra — punta sulla proteina, carbo
+                        moderati
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day we">Dom</span
+                      ><span class="ac-lbl">Domenica — Ristorante Tigros</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-s">
+                        🥇 Insalatona con mozzarella + prosciutto + verdure
+                        grigliate
+                      </div>
+                      <div class="ac-line ac-s">
+                        🥇 Piatto freddo: pollo o tacchino + contorno di verdure
+                      </div>
+                      <div class="ac-line ac-s">
+                        🥈 Riso freddo o pasta fredda con proteina (tonno,
+                        pollo)
+                      </div>
+                      <div class="ac-line ac-p">
+                        + acqua o tè freddo non zuccherato
+                      </div>
+                      <div class="ac-line ac-c">
+                        Cosa chiedere: "l'insalatona più proteica che avete"
+                      </div>
+                      <div class="ac-line ac-c">
+                        Evita: fritto, sughi pesanti, dessert
+                      </div>
+                      <div class="ac-note">
+                        Dom sera: cena abbondante e proteica — domani è lunedì
+                        di palestra
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tl-hint">
+                  ⚠️ Mensa: evita i piatti col triangolo arancione quando puoi
+                </div>
+              </div>
+            </div>
+
+            <!-- 18-20 -->
+            <div class="tl-row">
+              <div class="tl-time">18–20</div>
+              <div class="tl-dot" style="background: var(--orange)"></div>
+              <div class="tl-body">
+                <div class="tl-title" style="color: var(--orange)">
+                  Merenda
+                  <span
+                    class="tl-pil"
+                    style="
+                      background: rgba(255, 179, 71, 0.1);
+                      color: var(--orange);
+                    "
+                    >~20g prot</span
+                  >
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: var(--lime);
+                    text-transform: uppercase;
+                    letter-spacing: 0.07em;
+                    margin-bottom: 6px;
+                  "
+                >
+                  🏋 Dopo palestra (ore 20) — Lun · Mer · Ven
+                </div>
+                <div class="tl-items" style="margin-bottom: 12px">
+                  <div class="tl-item main">
+                    Shaker whey + banana — recupero immediato, fallo appena
+                    entri in casa
+                  </div>
+                  <div class="tl-item">
+                    Oppure: yogurt greco + miele + gallette di riso
+                  </div>
+                  <div class="tl-item alt">
+                    Poi ceni normalmente alle 21:30/22 — aspetta almeno 1,5 ore
+                  </div>
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: var(--orange);
+                    text-transform: uppercase;
+                    letter-spacing: 0.07em;
+                    margin-bottom: 6px;
+                  "
+                >
+                  ⚽ Prima del calcio (ore 18) — Mar · Gio
+                </div>
+                <div class="tl-items">
+                  <div class="tl-item main">
+                    Banana + yogurt greco + cucchiaino di miele — carbo rapidi,
+                    proteina moderata
+                  </div>
+                  <div class="tl-item">
+                    Oppure: pane integrale + marmellata + yogurt greco
+                  </div>
+                  <div class="tl-item alt">
+                    Niente di pesante — devi giocare tra 1–2 ore
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 22:00 -->
+            <div class="tl-row" style="margin-bottom: 0">
+              <div class="tl-time">22:00</div>
+              <div class="tl-dot" style="background: var(--pink)"></div>
+              <div class="tl-body" style="padding-bottom: 6px">
+                <div class="tl-title" style="color: var(--pink)">
+                  Cena
+                  <span
+                    class="tl-pil"
+                    style="
+                      background: rgba(255, 143, 171, 0.1);
+                      color: var(--pink);
+                    "
+                    >~40g prot</span
+                  >
+                </div>
+                <div class="tl-items">
+                  <div class="tl-item main">
+                    🏋 Dopo palestra: carne/pesce + verdure + riso o patate
+                  </div>
+                  <div class="tl-item main">
+                    ⚽ Dopo calcio: pasta/riso + secondo proteico leggero
+                  </div>
+                  <div class="tl-item alt">
+                    Riposo: uova / fiocchi di latte / pesce + verdure
+                  </div>
+                  <div class="tl-item alt">
+                    Ceni tardi — non saltarla, il muscolo si costruisce di notte
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════ CORPO ══════════ -->
+        <div class="pg" id="pg-corpo">
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--lime)"></div>
+            <div class="sec-lbl">Composizione corporea · 25 mag 2026</div>
+          </div>
+          <div class="sg">
+            <div class="sc">
+              <div class="sc-lbl">Peso</div>
+              <div>
+                <span class="sc-val">64,9</span><span class="sc-unit"> kg</span>
+              </div>
+              <div class="sc-badge bg">nella media</div>
+            </div>
+            <div class="sc">
+              <div class="sc-lbl">Massa grassa</div>
+              <div>
+                <span class="sc-val">19,8</span><span class="sc-unit">%</span>
+              </div>
+              <div class="sc-badge bg">discreto</div>
+            </div>
+            <div class="sc">
+              <div class="sc-lbl">Massa muscolare</div>
+              <div>
+                <span class="sc-val">28,8</span><span class="sc-unit"> kg</span>
+              </div>
+              <div class="sc-badge bg">in crescita</div>
+            </div>
+            <div class="sc">
+              <div class="sc-lbl">BMI</div>
+              <div><span class="sc-val">21,2</span></div>
+              <div class="sc-badge bg">nella media</div>
+            </div>
+            <div class="sc">
+              <div class="sc-lbl">BMR</div>
+              <div>
+                <span class="sc-val">1494</span
+                ><span class="sc-unit"> kcal</span>
+              </div>
+              <div class="sc-badge bw">in crescita</div>
+            </div>
+            <div class="sc">
+              <div class="sc-lbl">Grasso viscerale</div>
+              <div><span class="sc-val">5</span></div>
+              <div class="sc-badge bg">migliorato</div>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--blue)"></div>
+            <div class="sec-lbl">Confronto 13 mag → 25 mag</div>
+          </div>
+          <div class="goal-card">
+            <div class="gr">
+              <span class="gr-l">Peso</span
+              ><span style="font-weight: 500"
+                >63 → <span style="color: var(--lime)">64,9 kg</span>
+                <span style="color: var(--t3); font-size: 11px"
+                  >(+1,9)</span
+                ></span
+              >
+            </div>
+            <div class="gr">
+              <span class="gr-l">Massa grassa</span
+              ><span style="font-weight: 500"
+                >29,8% → <span style="color: var(--lime)">19,8%</span>
+                <span style="color: var(--t3); font-size: 11px"
+                  >(-10%)*</span
+                ></span
+              >
+            </div>
+            <div class="gr">
+              <span class="gr-l">Massa muscolare</span
+              ><span style="font-weight: 500"
+                >24,1 → <span style="color: var(--lime)">28,8 kg</span>
+                <span style="color: var(--t3); font-size: 11px"
+                  >(+4,7)*</span
+                ></span
+              >
+            </div>
+            <div class="gr">
+              <span class="gr-l">BMR</span
+              ><span style="font-weight: 500"
+                >1326 → <span style="color: var(--lime)">1494 kcal</span>
+                <span style="color: var(--t3); font-size: 11px"
+                  >(+168)</span
+                ></span
+              >
+            </div>
+            <div class="gr">
+              <span class="gr-l">Grasso viscerale</span
+              ><span style="font-weight: 500"
+                >7 → <span style="color: var(--lime)">5</span></span
+              >
+            </div>
+            <div class="gr">
+              <span class="gr-l">Punteggio Inbody</span
+              ><span style="font-weight: 500"
+                >58 → <span style="color: var(--lime)">72</span>
+                <span style="color: var(--t3); font-size: 11px"
+                  >(+14)</span
+                ></span
+              >
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--blue)"></div>
+            <div class="sec-lbl">Obiettivo aggiornato</div>
+          </div>
+          <div class="goal-card">
+            <div class="gr">
+              <span class="gr-l">Peso target</span
+              ><span style="font-weight: 500"
+                >64,9 → <span style="color: var(--lime)">68 kg</span></span
+              >
+            </div>
+            <div class="gr">
+              <span class="gr-l">Massa magra da aggiungere</span
+              ><span style="font-weight: 500; color: var(--lime)">+5,2 kg</span>
+            </div>
+            <div class="gr">
+              <span class="gr-l">Rapporto vita/fianchi</span
+              ><span style="font-weight: 500">normale</span>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--orange)"></div>
+            <div class="sec-lbl">Note chiave</div>
+          </div>
+          <div
+            class="card"
+            style="
+              border-left: 2px solid var(--orange);
+              font-size: 13px;
+              color: var(--t2);
+              line-height: 1.9;
+            "
+          >
+            <div>
+              • * I valori grasso/muscolo sono gonfiati dalla disidratazione del
+              13/05 — la direzione è reale, i numeri esatti no
+            </div>
+            <div>
+              • Il BMR è salito da 1326 a
+              <span style="color: var(--lime)">1494 kcal</span> — il metabolismo
+              si sta già alzando
+            </div>
+            <div>
+              • Grasso viscerale sceso da 7 a
+              <span style="color: var(--lime)">5</span> — dato affidabile,
+              ottimo segnale
+            </div>
+            <div>
+              • Punteggio Inbody
+              <span style="color: var(--lime)">72/100</span> — da 58,
+              miglioramento reale
+            </div>
+            <div>
+              • Prossima misurazione: falla a stomaco vuoto, stessa ora, ben
+              idratato la sera prima
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════ SKINCARE ══════════ -->
+        <div class="pg" id="pg-skin">
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--pink)"></div>
+            <div class="sec-lbl">Routine mattutina — in ordine</div>
+          </div>
+
+          <div class="step">
+            <div class="step-n n1">1</div>
+            <div>
+              <div class="step-prod">Blemish Control Cleanser</div>
+              <div class="step-brand">CeraVe</div>
+              <div class="step-tags">
+                <span class="tag">Acido salicilico</span
+                ><span class="tag">Ceramidi</span
+                ><span class="tag">Niacinamide</span
+                ><span class="tag">Sblocca i pori</span>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n n2">2</div>
+            <div>
+              <div class="step-prod">Niacinamide 10% + Zinc 1%</div>
+              <div class="step-brand">The Ordinary</div>
+              <div class="step-tags">
+                <span class="tag">Riduce sebo</span
+                ><span class="tag">Chiude i pori</span
+                ><span class="tag">Sbiadisce segni</span>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n n3">3</div>
+            <div>
+              <div class="step-prod">Oil-Free Ultra Moisturizing Lotion</div>
+              <div class="step-brand">COSRX</div>
+              <div class="step-tags">
+                <span class="tag">Oil-free</span
+                ><span class="tag">Non comedogenico</span
+                ><span class="tag">Linfa di betulla</span>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n n4">4</div>
+            <div>
+              <div class="step-prod">Anthelios UVMUNE 400 SPF50+</div>
+              <div class="step-brand">La Roche-Posay</div>
+              <div class="step-tags">
+                <span class="tag">SPF50+</span><span class="tag">Invisible</span
+                ><span class="tag">Ultimo step sempre</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>Ordine fondamentale:</strong> detergente → siero → idratante
+            → SPF. L'SPF va sempre per ultimo, ogni mattina, anche in inverno.
+          </div>
+
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--pink)"></div>
+            <div class="sec-lbl">Routine serale — in ordine</div>
+          </div>
+
+          <div class="step">
+            <div class="step-n n1">1</div>
+            <div>
+              <div class="step-prod">Blemish Control Cleanser</div>
+              <div class="step-brand">CeraVe</div>
+              <div class="step-tags">
+                <span class="tag">Stesso del mattino</span>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n n2">2</div>
+            <div>
+              <div class="step-prod">Niacinamide 10% + Zinc 1%</div>
+              <div class="step-brand">The Ordinary</div>
+              <div class="step-tags">
+                <span class="tag">3-4 gocce sul palmo</span>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div
+              class="step-n n3"
+              style="background: rgba(255, 179, 71, 0.12); color: var(--orange)"
+            >
+              3
+            </div>
+            <div>
+              <div class="step-prod">Retinol 1% in Squalane</div>
+              <div class="step-brand">The Ordinary</div>
+              <div class="step-tags">
+                <span class="tag">Solo sera</span
+                ><span class="tag">1× sett. le prime 2 sett.</span
+                ><span class="tag">Poi 2× sett.</span
+                ><span class="tag">Evita occhi/bocca</span>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n n4">4</div>
+            <div>
+              <div class="step-prod">Oil-Free Ultra Moisturizing Lotion</div>
+              <div class="step-brand">COSRX</div>
+              <div class="step-tags">
+                <span class="tag">Sempre dopo retinolo</span
+                ><span class="tag">Riduce irritazione</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="tip"
+            style="
+              border-color: rgba(255, 179, 71, 0.25);
+              background: rgba(255, 179, 71, 0.05);
+            "
+          >
+            <strong style="color: var(--orange)">⚠️ Retinolo:</strong> pelle
+            completamente asciutta prima di applicarlo. Se compare eccessiva
+            secchezza o rossore, salta una settimana e riprendi.
+          </div>
+
+          <!-- ROUTINE SCHIENA -->
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--blue)"></div>
+            <div class="sec-lbl">Routine schiena e spalle — in doccia</div>
+          </div>
+
+          <div class="back-flow">
+            <div class="back-step">
+              <div class="back-num bn-orange">0</div>
+              <div class="back-info">
+                <div class="back-label" style="color: var(--orange)">
+                  Prima di tutto
+                </div>
+                <div class="back-prod">Risciacqua i capelli</div>
+                <div class="back-note">
+                  I residui di shampoo e balsamo che colano sulla schiena sono
+                  una causa principale dei brufoli. Risciacqua sempre la testa
+                  prima di lavare la schiena.
+                </div>
+              </div>
+            </div>
+            <div class="back-step">
+              <div class="back-num bn-blue">1</div>
+              <div class="back-info">
+                <div class="back-label" style="color: var(--blue)">
+                  In doccia
+                </div>
+                <div class="back-prod">SA Smoothing Cleanser</div>
+                <div class="back-brand">CeraVe · 2 flaconi da 236ml</div>
+                <div class="back-note">
+                  Applica con la fascia esfoliante sulla schiena. Lascia agire
+                  1-2 minuti prima di risciacquare — il BHA ha bisogno di tempo
+                  per penetrare nei pori.
+                </div>
+                <div class="back-tags">
+                  <span class="tag">Acido salicilico</span
+                  ><span class="tag">Ceramidi</span
+                  ><span class="tag">Niacinamide</span
+                  ><span class="tag">Ogni doccia</span>
+                </div>
+              </div>
+            </div>
+            <div class="back-step">
+              <div class="back-num bn-lime">2</div>
+              <div class="back-info">
+                <div class="back-label" style="color: var(--lime)">
+                  Dopo la doccia — su pelle asciutta
+                </div>
+                <div class="back-prod">Acniben Body Spray</div>
+                <div class="back-brand">ISDIN · 150ml</div>
+                <div class="back-note">
+                  Spruzza sulla schiena asciutta, lascia assorbire senza
+                  risciacquare. Trattamento localizzato che agisce sui brufoli
+                  esistenti e previene i nuovi.
+                </div>
+                <div class="back-tags">
+                  <span class="tag">Acido salicilico</span
+                  ><span class="tag">Acido glicolico</span
+                  ><span class="tag">Non risciacquare</span
+                  ><span class="tag">2-3× a settimana</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="warn-card">
+            <strong>Regole extra:</strong> Cambia la maglietta dopo aver sudato
+            · Doccia subito dopo la palestra · Cambia le lenzuola ogni settimana
+            · Non toccare i brufoli sulla schiena
+          </div>
+
+          <div class="sec">
+            <div class="sec-dot" style="background: var(--pink)"></div>
+            <div class="sec-lbl">Cosa evitare — viso</div>
+          </div>
+          <div class="avoid-card">
+            <div class="avoid-row">
+              • Non toccarti il viso durante il giorno
+            </div>
+            <div class="avoid-row">
+              • Niente scrub fisici aggressivi — hai già l'acido salicilico
+            </div>
+            <div class="avoid-row">
+              • Non saltare l'SPF — le imperfezioni scuriscono senza protezione
+            </div>
+            <div class="avoid-row">
+              • Aspetta 30 sec dopo il detergente prima della Niacinamide
+            </div>
+            <div class="avoid-row">
+              • Gel capelli: lavati le mani subito dopo — non toccarti la fronte
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /cnt -->
+
+      <!-- NAV -->
+      <nav class="nav">
+        <button class="nb on" onclick="swPage('workout', this)">
+          <svg viewBox="0 0 24 24">
+            <path d="M6.5 6.5h11M6.5 12h11M6.5 17.5h11" />
+            <rect x="2" y="5" width="3" height="4" rx="1" />
+            <rect x="2" y="10.5" width="3" height="3" rx="1" />
+            <rect x="2" y="16" width="3" height="4" rx="1" />
+            <rect x="19" y="5" width="3" height="4" rx="1" />
+            <rect x="19" y="10.5" width="3" height="3" rx="1" />
+            <rect x="19" y="16" width="3" height="4" rx="1" />
+          </svg>
+          <span>Workout</span>
+        </button>
+        <button class="nb" onclick="swPage('pasti', this)">
+          <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z" /></svg>
+          <span>Pasti</span>
+        </button>
+        <button class="nb" onclick="swPage('corpo', this)">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="5" r="2" />
+            <path d="M12 7v6M9 12l-2 5M15 12l2 5M9.5 17h5" />
+          </svg>
+          <span>Corpo</span>
+        </button>
+        <button class="nb" onclick="swPage('skin', this)">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M12 6c-1.5 2-2 4-2 6s.5 4 2 6M12 6c1.5 2 2 4 2 6s-.5 4-2 6M6 12h12"
+            />
+          </svg>
+          <span>Skin</span>
+        </button>
+      </nav>
+    </div>
+    <!-- /app -->
+
+    <script>
+      const D = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+        M = [
+          "gen",
+          "feb",
+          "mar",
+          "apr",
+          "mag",
+          "giu",
+          "lug",
+          "ago",
+          "set",
+          "ott",
+          "nov",
+          "dic",
+        ];
+      const n = new Date();
+      document.getElementById("dateEl").textContent =
+        D[n.getDay()] + " " + n.getDate() + " " + M[n.getMonth()];
+
+      function swPage(id, btn) {
+        document
+          .querySelectorAll(".pg")
+          .forEach((p) => p.classList.remove("on"));
+        document
+          .querySelectorAll(".nb")
+          .forEach((b) => b.classList.remove("on"));
+        document.getElementById("pg-" + id).classList.add("on");
+        btn.classList.add("on");
+        document.getElementById("cnt").scrollTop = 0;
+      }
+
+      function swWeek(id, btn) {
+        document
+          .querySelectorAll(".cal")
+          .forEach((c) => c.classList.remove("on"));
+        document
+          .querySelectorAll(".wtb")
+          .forEach((b) => b.classList.remove("on"));
+        document.getElementById("cal-" + id).classList.add("on");
+        btn.classList.add("on");
+      }
+
+      function swWo(head) {
+        const body = head.nextElementSibling;
+        const open = body.classList.contains("on");
+        body.classList.toggle("on", !open);
+        head.classList.toggle("on", !open);
+      }
+
+      function swTech(row) {
+        const tech = row.nextElementSibling;
+        const open = tech.classList.contains("on");
+        tech.classList.toggle("on", !open);
+        row.classList.toggle("on", !open);
+      }
+
+      function swAcc(head) {
+        const body = head.nextElementSibling;
+        const open = body.classList.contains("on");
+        head
+          .closest(".acc")
+          .querySelectorAll(".ac-body")
+          .forEach((b) => b.classList.remove("on"));
+        head
+          .closest(".acc")
+          .querySelectorAll(".ac-h")
+          .forEach((h) => h.classList.remove("on"));
+        if (!open) {
+          body.classList.add("on");
+          head.classList.add("on");
+        }
+      }
+    </script>
+  </body>
+</html>
