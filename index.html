@@ -259,6 +259,10 @@
         background: rgba(170, 255, 0, 0.09);
         border: 1px solid rgba(170, 255, 0, 0.22);
       }
+      .wd.calcio {
+        background: rgba(255, 179, 71, 0.09);
+        border: 1px solid rgba(255, 179, 71, 0.22);
+      }
       .wd.nogym {
         background: rgba(255, 143, 171, 0.07);
         border: 1px solid rgba(255, 143, 171, 0.18);
@@ -524,32 +528,6 @@
         margin-top: 2px;
       }
 
-
-      .meal-toggle {
-        display: flex;
-        background: var(--s2);
-        border-radius: 10px;
-        padding: 3px;
-        margin: 10px 0 14px;
-        gap: 3px;
-      }
-      .meal-toggle-btn {
-        flex: 1;
-        border: 0;
-        border-radius: 8px;
-        padding: 9px 6px;
-        background: transparent;
-        color: var(--t3);
-        font: 700 11px "Syne", sans-serif;
-        cursor: pointer;
-      }
-      .meal-toggle-btn.on {
-        color: var(--lime);
-        background: var(--s1);
-        box-shadow: 0 1px 5px rgba(0,0,0,.5);
-      }
-      .meal-plan { display: none; }
-      .meal-plan.on { display: block; animation: up .2s ease; }
       /* ═══ PASTI ═══ */
       .prot-banner {
         background: rgba(170, 255, 0, 0.07);
@@ -1214,31 +1192,21 @@
               <div class="ex-wrap">
                 <div class="ex-r" onclick="swTech(this)">
                   <div class="ex-left">
-                    <div class="ex-name">Kettlebell Swing</div>
-                    <div class="ex-mus">Glutei, lombari, core</div>
+                    <div class="ex-name">Crunch macchina</div>
+                    <div class="ex-mus">Retto addominale, core</div>
                   </div>
                   <div class="ex-right">
-                    <div class="ex-sets">3×15</div>
+                    <div class="ex-sets">3×12–15</div>
                     <div class="ex-ico">ⓘ</div>
                   </div>
                 </div>
                 <div class="ex-tech">
                   <div class="tech-title">Tecnica</div>
-                  <div class="tech-item">
-                    Non è uno squat — è un hip hinge: piega i fianchi, non le
-                    ginocchia
-                  </div>
-                  <div class="tech-item">
-                    La potenza viene dai glutei che scattano in avanti, non
-                    dalle braccia
-                  </div>
-                  <div class="tech-item">
-                    In cima: corpo dritto, glutei stretti, kettlebell
-                    all'altezza del petto
-                  </div>
-                  <div class="tech-item">
-                    Schiena piatta per tutto il movimento — non arrotondare
-                  </div>
+                  <div class="tech-item">Regola il sedile e gli appoggi per assumere una posizione stabile e confortevole</div>
+                  <div class="tech-item">Mantieni piedi e bacino stabili durante tutta la serie</div>
+                  <div class="tech-item">Avvicina il torace al bacino contraendo gli addominali, senza tirare soltanto con le braccia</div>
+                  <div class="tech-item">Espira durante la chiusura e mantieni la contrazione per circa un secondo</div>
+                  <div class="tech-item">Torna lentamente alla posizione iniziale senza lasciare cadere il peso e senza usare slancio</div>
                 </div>
               </div>
             </div>
@@ -1702,55 +1670,264 @@
                 <div class="tl-hint">
                   Tocca il giorno per vedere cosa mangiare
                 </div>
-                <div class="acc"><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Lun</span><span class="ac-lbl">Lunedì 31/08 · Upper Push/Pull</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Riso basmati con verdure di stagione</span> <span class="ac-c">· 175 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Bocconcini di tacchino al curry</span> <span class="ac-c">· 215 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Fagiolini all’olio</span> <span class="ac-c">· 75 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Totale dichiarato: 465 kcal + frutta</div><div class="ac-note">Alternativa più sostanziosa: insalata di pasta con tonno, pomodorini e basilico + tacchino al curry + carote al vapore + frutta (758 kcal + frutta).</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mar</span><span class="ac-lbl">Martedì 01/09 · Recupero</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di riso rosso con peperoni arrosto e Praga</span> <span class="ac-c">· 367 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Nodino di maiale alla griglia</span> <span class="ac-c">· 156 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Zucchine al forno</span> <span class="ac-c">· 73 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Totale dichiarato: 596 kcal + frutta</div><div class="ac-note">Alternativa: pasta con crema di pomodoro e basilico + merluzzo carbonaro panato + verdure grigliate + frutta (649 kcal + frutta).</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mer</span><span class="ac-lbl">Mercoledì 02/09 · Lower Body + Core</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di pasta con salmone, carote e zucchine</span> <span class="ac-c">· 451 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Pesce spada con uvetta, pinoli e pomodorini</span> <span class="ac-c">· 238 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Piselli stufati</span> <span class="ac-c">· 125 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Totale dichiarato: 814 kcal + frutta</div><div class="ac-note">Alternativa più leggera: cous cous con verdure trifolate + pesce spada + piselli stufati + yogurt alla frutta (523 kcal + yogurt).</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Gio</span><span class="ac-lbl">Giovedì 03/09 · Recupero</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Riso integrale con prosciutto arrosto e piselli</span> <span class="ac-c">· 394 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Trancio di persico con pane alle erbe</span> <span class="ac-c">· 205 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Carote al prezzemolo</span> <span class="ac-c">· 115 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Totale dichiarato: 714 kcal + frutta</div><div class="ac-note">Alternativa più sostanziosa: pasta con ragù bianco + frittata con spinaci + fagiolini all’olio + frutta (833 kcal + frutta).</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Ven</span><span class="ac-lbl">Venerdì 04/09 · Upper Focus</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Pasta con ragù bianco</span> <span class="ac-c">· 522 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Trancio di persico con pane alle erbe</span> <span class="ac-c">· 205 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Carote al prezzemolo</span> <span class="ac-c">· 115 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Totale dichiarato: 842 kcal + frutta</div><div class="ac-note">Alternativa meno calorica: riso integrale con prosciutto arrosto e piselli + frittata con spinaci + fagiolini all’olio + yogurt alla frutta (705 kcal + yogurt).</div></div></div></div><div class="tl-hint">Le calorie sono quelle dichiarate dal menu aziendale. Frutta e yogurt non sono inclusi quando il valore non è disponibile.</div>
-                
+                <div class="acc">
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Lun</span
+                      ><span class="ac-lbl">Lunedì 02/06 — fuori azienda</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-c">
+                        Non in mensa Elmec questa settimana
+                      </div>
+                      <div class="ac-note">
+                        Segui le indicazioni generali: proteina + verdura +
+                        carbo moderati
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Mar</span
+                      ><span class="ac-lbl"
+                        >Martedì 03/06 ⚽ — fuori azienda</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-c">
+                        Non in mensa Elmec questa settimana
+                      </div>
+                      <div class="ac-note">
+                        Calcio sera — ricordati carbo extra a cena
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Mer</span
+                      ><span class="ac-lbl"
+                        >Mercoledì 04/06 🏋 — Mensa Elmec</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-p">
+                        Insalata di pasta tricolore tonno e pomodorini
+                      </div>
+                      <div class="ac-line ac-s">
+                        Merluzzo impanato con arancia e basilico
+                      </div>
+                      <div class="ac-line ac-c">Spinaci al vapore</div>
+                      <div class="ac-note green">Palestra — pasto completo</div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Gio</span
+                      ><span class="ac-lbl">Giovedì 05/06 ⚽ — Mensa Elmec</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-p">
+                        Cous cous con pomodori secchi e polpo
+                      </div>
+                      <div class="ac-line ac-s">
+                        Bresaola con grana e insalata
+                      </div>
+                      <div class="ac-line ac-c">Broccoli al vapore</div>
+                      <div class="ac-note">
+                        Calcio sera — carbo extra a cena
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day">Ven</span
+                      ><span class="ac-lbl"
+                        >Venerdì 06/06 🏋/⚽ — Mensa Elmec</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-p">
+                        Insalata di pasta con salmone e fave
+                      </div>
+                      <div class="ac-line ac-s">Filetto di trota in saor</div>
+                      <div class="ac-line ac-c">Carote al vapore</div>
+                      <div class="ac-note green">
+                        Palestra o partita — vedi settimana
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day we">Sab</span
+                      ><span class="ac-lbl">Sabato — Ristorante Tigros</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-s">
+                        🥇 Insalatona con pollo grigliato + verdure miste + uova
+                      </div>
+                      <div class="ac-line ac-s">
+                        🥇 Insalatona con tonno + pomodori + mais + uova
+                      </div>
+                      <div class="ac-line ac-s">
+                        🥈 Piatto freddo del giorno con proteina (pesce, pollo,
+                        affettato)
+                      </div>
+                      <div class="ac-line ac-p">
+                        + acqua o tè freddo non zuccherato
+                      </div>
+                      <div class="ac-line ac-c">
+                        Cosa chiedere: "qualcosa di proteico, leggero, senza
+                        fritto"
+                      </div>
+                      <div class="ac-line ac-c">
+                        Evita: paste ripiene cremose, piatti con salse pesanti,
+                        dolci
+                      </div>
+                      <div class="ac-note">
+                        Weekend senza palestra — punta sulla proteina, carbo
+                        moderati
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ac-item">
+                    <div class="ac-h" onclick="swAcc(this)">
+                      <span class="ac-day we">Dom</span
+                      ><span class="ac-lbl">Domenica — Ristorante Tigros</span
+                      ><span class="ac-chev">﹀</span>
+                    </div>
+                    <div class="ac-body">
+                      <div class="ac-line ac-s">
+                        🥇 Insalatona con mozzarella + prosciutto + verdure
+                        grigliate
+                      </div>
+                      <div class="ac-line ac-s">
+                        🥇 Piatto freddo: pollo o tacchino + contorno di verdure
+                      </div>
+                      <div class="ac-line ac-s">
+                        🥈 Riso freddo o pasta fredda con proteina (tonno,
+                        pollo)
+                      </div>
+                      <div class="ac-line ac-p">
+                        + acqua o tè freddo non zuccherato
+                      </div>
+                      <div class="ac-line ac-c">
+                        Cosa chiedere: "l'insalatona più proteica che avete"
+                      </div>
+                      <div class="ac-line ac-c">
+                        Evita: fritto, sughi pesanti, dessert
+                      </div>
+                      <div class="ac-note">
+                        Dom sera: cena abbondante e proteica — domani è lunedì
+                        di palestra
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tl-hint">
+                  ⚠️ Mensa: evita i piatti col triangolo arancione quando puoi
+                </div>
               </div>
             </div>
 
-            <div class="meal-toggle" role="tablist" aria-label="Orario palestra">
-              <button class="meal-toggle-btn on" type="button" role="tab" aria-selected="true" onclick="swMealPlan('post',this)">Cena post-workout</button>
-              <button class="meal-toggle-btn" type="button" role="tab" aria-selected="false" onclick="swMealPlan('pre',this)">Cena pre-workout</button>
+            <!-- 18-20 -->
+            <div class="tl-row">
+              <div class="tl-time">18–20</div>
+              <div class="tl-dot" style="background: var(--orange)"></div>
+              <div class="tl-body">
+                <div class="tl-title" style="color: var(--orange)">
+                  Merenda
+                  <span
+                    class="tl-pil"
+                    style="
+                      background: rgba(255, 179, 71, 0.1);
+                      color: var(--orange);
+                    "
+                    >~20g prot</span
+                  >
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: var(--lime);
+                    text-transform: uppercase;
+                    letter-spacing: 0.07em;
+                    margin-bottom: 6px;
+                  "
+                >
+                  🏋 Dopo palestra (ore 20) — Lun · Mer · Ven
+                </div>
+                <div class="tl-items" style="margin-bottom: 12px">
+                  <div class="tl-item main">
+                    Shaker whey + banana — recupero immediato, fallo appena
+                    entri in casa
+                  </div>
+                  <div class="tl-item">
+                    Oppure: yogurt greco + miele + gallette di riso
+                  </div>
+                  <div class="tl-item alt">
+                    Poi ceni normalmente alle 21:30/22 — aspetta almeno 1,5 ore
+                  </div>
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: var(--orange);
+                    text-transform: uppercase;
+                    letter-spacing: 0.07em;
+                    margin-bottom: 6px;
+                  "
+                >
+                  ⚽ Prima del calcio (ore 18) — Mar · Gio
+                </div>
+                <div class="tl-items">
+                  <div class="tl-item main">
+                    Banana + yogurt greco + cucchiaino di miele — carbo rapidi,
+                    proteina moderata
+                  </div>
+                  <div class="tl-item">
+                    Oppure: pane integrale + marmellata + yogurt greco
+                  </div>
+                  <div class="tl-item alt">
+                    Niente di pesante — devi giocare tra 1–2 ore
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="meal-plan on" id="meal-post">
-              <div class="tl-row">
-                <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino principale <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">trasportabile</span></div>
-                  <div class="tl-hint">Da portare al lavoro se vai direttamente in palestra</div>
-                  <div class="tl-items"><div class="tl-item main">Banana + yogurt greco o skyr + 2–3 gallette di riso</div><div class="tl-item">Senza frigorifero: banana + shaker con 30 g di whey da preparare con acqua + 2–4 gallette</div><div class="tl-item">Alternativa solida: piccolo panino con affettato magro + un frutto</div></div>
+            <!-- 22:00 -->
+            <div class="tl-row" style="margin-bottom: 0">
+              <div class="tl-time">22:00</div>
+              <div class="tl-dot" style="background: var(--pink)"></div>
+              <div class="tl-body" style="padding-bottom: 6px">
+                <div class="tl-title" style="color: var(--pink)">
+                  Cena
+                  <span
+                    class="tl-pil"
+                    style="
+                      background: rgba(255, 143, 171, 0.1);
+                      color: var(--pink);
+                    "
+                    >~40g prot</span
+                  >
                 </div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">18:30</div><div class="tl-dot" style="background:var(--blue)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--blue)">Richiamo facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div>
-                  <div class="tl-items"><div class="tl-item main">Se hai fame o inizi più tardi: una banana oppure 2–3 gallette</div><div class="tl-item alt">Non serve se lo spuntino delle 16–17 è stato sufficiente</div></div>
-                </div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">21–22</div><div class="tl-dot" style="background:var(--pink)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena post-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">completa</span></div>
-                  <div class="tl-items"><div class="tl-item main">Carne o pesce + verdure + riso, pasta o patate</div><div class="tl-item">Alternativa: uova o fiocchi di latte + pane o patate + verdure</div><div class="tl-item alt">Se ceni tardi, mantieni una cena completa ma digeribile</div></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="meal-plan" id="meal-pre">
-              <div class="tl-row">
-                <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino moderato <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">prima della cena</span></div>
-                  <div class="tl-items"><div class="tl-item main">Yogurt greco o skyr + una banana</div><div class="tl-item">Senza frigorifero: shaker con 30 g di whey + un frutto</div><div class="tl-item">Alternativa: piccolo panino con affettato magro</div><div class="tl-item alt">Evita di sommare un grande spuntino alla cena delle 19:30–20:00</div></div>
-                </div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">19:30</div><div class="tl-dot" style="background:var(--pink)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena pre-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">palestra 21–21:30</span></div>
-                  <div class="tl-items"><div class="tl-item main">Riso o pasta semplice + pollo, tacchino o pesce magro + poche verdure cotte</div><div class="tl-item">Alternativa rapida: panino con tacchino o bresaola + banana + yogurt greco se ben tollerato</div><div class="tl-item alt">Limita fritti, salse, formaggi grassi, legumi abbondanti e grandi quantità di verdure crude</div></div>
-                </div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">23:00</div><div class="tl-dot" style="background:var(--blue)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--blue)">Recupero facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div>
-                  <div class="tl-items"><div class="tl-item main">Se hai fame o la cena era leggera: yogurt greco, skyr oppure whey con acqua o latte</div><div class="tl-item">Aggiungi banana o qualche galletta solo se serve altra energia</div><div class="tl-item alt">Non è necessaria una seconda cena completa</div></div>
+                <div class="tl-items">
+                  <div class="tl-item main">
+                    🏋 Dopo palestra: carne/pesce + verdure + riso o patate
+                  </div>
+                  <div class="tl-item main">
+                    ⚽ Dopo calcio: pasta/riso + secondo proteico leggero
+                  </div>
+                  <div class="tl-item alt">
+                    Riposo: uova / fiocchi di latte / pesce + verdure
+                  </div>
+                  <div class="tl-item alt">
+                    Ceni tardi — non saltarla, il muscolo si costruisce di notte
+                  </div>
                 </div>
               </div>
             </div>
@@ -2242,16 +2419,6 @@
         row.classList.toggle("on", !open);
       }
 
-      function swMealPlan(id, btn) {
-        document.querySelectorAll(".meal-plan").forEach((p) => p.classList.remove("on"));
-        document.querySelectorAll(".meal-toggle-btn").forEach((b) => {
-          b.classList.remove("on");
-          b.setAttribute("aria-selected", "false");
-        });
-        document.getElementById("meal-" + id).classList.add("on");
-        btn.classList.add("on");
-        btn.setAttribute("aria-selected", "true");
-      }
       function swAcc(head) {
         const body = head.nextElementSibling;
         const open = body.classList.contains("on");
