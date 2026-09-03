@@ -775,6 +775,18 @@
         background: rgba(170, 255, 0, 0.06);
       }
 
+
+      .protein-check {background:var(--s1);border:1px solid rgba(170,255,0,.15);border-radius:var(--r);padding:12px 14px;margin:8px 0 12px}
+      .protein-row {display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid var(--s2);font-size:12px;color:var(--t2)}
+      .protein-row:last-child{border-bottom:0}.protein-row strong{color:var(--t1)}
+      .protein-total{margin-top:8px;color:var(--lime);font-family:"Syne",sans-serif;font-size:13px;font-weight:700}
+      .recovery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:10px}
+      .recovery-card{background:var(--s1);border-radius:var(--rs);padding:11px 9px;text-align:center}
+      .recovery-val{font-family:"Syne",sans-serif;font-weight:800;font-size:18px;color:var(--lime)}
+      .recovery-lbl{font-size:10px;color:var(--t3);margin-top:3px;line-height:1.35}
+      .evening-toggle{display:flex;gap:3px;padding:3px;background:var(--s2);border-radius:10px;margin-bottom:8px}
+      .evening-btn{flex:1;border:0;border-radius:8px;padding:8px 5px;background:transparent;color:var(--t3);font-family:"Syne",sans-serif;font-weight:700;font-size:10px}
+      .evening-btn.on{background:var(--s1);color:var(--lime)}.evening-plan{display:none}.evening-plan.on{display:block}
       /* ═══ CORPO ═══ */
       .sg {
         display: grid;
@@ -1654,6 +1666,16 @@
               <div class="pb-sub">obiettivo per costruire massa muscolare</div>
             </div>
           </div>
+          <div class="protein-check">
+            <div class="protein-row"><span>Colazione</span><strong>25–35 g</strong></div>
+            <div class="protein-row"><span>Spuntino mattutino</span><strong>0–10 g</strong></div>
+            <div class="protein-row"><span>Pranzo</span><strong>25–40 g</strong></div>
+            <div class="protein-row"><span>Merenda</span><strong>12–25 g</strong></div>
+            <div class="protein-row"><span>Cena</span><strong>30–40 g</strong></div>
+            <div class="protein-total">Totale reale raggiungibile: circa 92–150 g</div>
+            <div class="ac-note">Obiettivo pratico: punta ad almeno 130 g scegliendo una fonte proteica a ogni fascia principale.</div>
+            <div class="ac-note green">Se mancano 10–20 g: aggiungi 1 skyr da 150 g oppure 20–25 g di whey. Se mancano 20–30 g: aggiungi 30 g di whey oppure 80–100 g di fesa/bresaola. Le quantità del pranzo e della cena restano stime perché dipendono dalle porzioni reali.</div>
+          </div>
 
           <div class="tl">
             <!-- 08:00 -->
@@ -1726,7 +1748,7 @@
             <div class="meal-plan on" id="meal-post" role="tabpanel">
               <div class="tl-row">
                 <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino principale <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">trasportabile</span></div><div class="tl-hint">Da portare al lavoro se vai direttamente in palestra</div><div class="tl-items"><div class="tl-item main">Banana + yogurt greco o skyr + 2–3 gallette di riso</div><div class="tl-item">Senza frigorifero: banana + shaker con 30 g di whey da preparare con acqua + 2–4 gallette</div><div class="tl-item">Alternativa solida: piccolo panino con affettato magro + un frutto</div></div></div>
+                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino principale <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">trasportabile</span></div><div class="tl-hint">Preparabile in ufficio: frigorifero disponibile</div><div class="tl-items"><div class="tl-item main">Banana + yogurt greco o skyr + 2–3 gallette di riso</div><div class="tl-item">In ufficio: skyr o yogurt greco da 150 g + banana + 2–3 gallette; alternativa 30 g whey con acqua</div><div class="tl-item">Alternativa solida: piccolo panino con affettato magro + un frutto</div></div></div>
               </div>
               <div class="tl-row">
                 <div class="tl-time">18:30</div><div class="tl-dot" style="background:var(--blue)"></div>
@@ -1741,7 +1763,7 @@
             <div class="meal-plan" id="meal-pre" role="tabpanel">
               <div class="tl-row">
                 <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino moderato <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">prima della cena</span></div><div class="tl-items"><div class="tl-item main">Yogurt greco o skyr + una banana</div><div class="tl-item">Senza frigorifero: shaker con 30 g di whey + un frutto</div><div class="tl-item">Alternativa: piccolo panino con affettato magro</div><div class="tl-item alt">Evita di sommare uno spuntino grande alla cena delle 19:30–20:00</div></div></div>
+                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino moderato <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">prima della cena</span></div><div class="tl-items"><div class="tl-item main">Yogurt greco o skyr + una banana</div><div class="tl-item">In ufficio: skyr o yogurt greco da 150 g + un frutto; alternativa 30 g whey con acqua</div><div class="tl-item">Alternativa: piccolo panino con affettato magro</div><div class="tl-item alt">Evita di sommare uno spuntino grande alla cena delle 19:30–20:00</div></div></div>
               </div>
               <div class="tl-row">
                 <div class="tl-time">19:30</div><div class="tl-dot" style="background:var(--pink)"></div>
@@ -1772,6 +1794,20 @@
 
         <!-- ══════════ CORPO ══════════ -->
         <div class="pg" id="pg-corpo">
+          <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Recupero quotidiano</div></div>
+          <div class="recovery-grid">
+            <div class="recovery-card"><div class="recovery-val">2–2,5 L</div><div class="recovery-lbl">acqua al giorno, di più se sudi molto</div></div>
+            <div class="recovery-card"><div class="recovery-val">7–9 h</div><div class="recovery-lbl">sonno, verso 8–9 h nelle settimane da 4 sedute</div></div>
+            <div class="recovery-card"><div class="recovery-val">1–2</div><div class="recovery-lbl">giorni senza palestra per recuperare</div></div>
+          </div>
+          <div class="tip"><strong>La crescita avviene anche nel recupero:</strong> allenamento, proteine, idratazione e sonno lavorano insieme. Se prestazioni, tecnica o sonno peggiorano, riduci il lavoro extra serale.</div>
+          <div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Routine fisica serale facoltativa</div></div>
+          <div class="card">
+            <div class="evening-toggle"><button class="evening-btn on" onclick="swEvening('upper',this)">Dopo Upper</button><button class="evening-btn" onclick="swEvening('other',this)">Dopo Lower / riposo</button></div>
+            <div class="evening-plan on" id="evening-upper"><div class="ac-note">Niente flessioni: petto, spalle e tricipiti hanno già lavorato. Fai solo 5–8 minuti di mobilità leggera, respirazione e stretching non intenso.</div></div>
+            <div class="evening-plan" id="evening-other"><div class="ac-note green">Routine completa facoltativa: 2 serie di flessioni lasciando 2–3 ripetizioni in riserva, 2 serie di plank da 30–45 secondi e 5 minuti di mobilità. Saltala se senti fatica o se riduce il sonno.</div></div>
+          </div>
+
           <div class="sec">
             <div class="sec-dot" style="background: var(--lime)"></div>
             <div class="sec-lbl">Composizione corporea · 25 mag 2026</div>
@@ -2274,6 +2310,12 @@
         document.getElementById("meal-" + id).classList.add("on");
         btn.classList.add("on");
         btn.setAttribute("aria-selected", "true");
+      }
+      function swEvening(id, btn) {
+        document.querySelectorAll(".evening-plan").forEach((x) => x.classList.remove("on"));
+        document.querySelectorAll(".evening-btn").forEach((x) => x.classList.remove("on"));
+        document.getElementById("evening-" + id).classList.add("on");
+        btn.classList.add("on");
       }
       function swAcc(head) {
         const body = head.nextElementSibling;
