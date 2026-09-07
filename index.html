@@ -807,6 +807,38 @@
       .evening-toggle{display:flex;gap:3px;padding:3px;background:var(--s2);border-radius:10px;margin-bottom:8px}
       .evening-btn{flex:1;border:0;border-radius:8px;padding:8px 5px;background:transparent;color:var(--t3);font-family:"Syne",sans-serif;font-weight:700;font-size:10px}
       .evening-btn.on{background:var(--s1);color:var(--lime)}.evening-plan{display:none}.evening-plan.on{display:block}
+
+      /* DIARIO */
+      .diary-head,.diary-summary{background:var(--s1);border-radius:var(--r);padding:13px 14px;margin-bottom:10px}.diary-date{width:100%;background:var(--s2);color:var(--t1);border:1px solid var(--s3);border-radius:8px;padding:10px;font:inherit}.diary-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.diary-stat{text-align:center;background:var(--s2);border-radius:8px;padding:10px 5px}.diary-stat strong{display:block;color:var(--lime);font-family:"Syne",sans-serif;font-size:17px}.diary-stat span{font-size:9px;color:var(--t3)}.diary-meal{background:var(--s1);border-radius:var(--r);margin-bottom:9px;overflow:hidden}.diary-meal-h{padding:12px 14px;font-family:"Syne",sans-serif;font-size:13px;font-weight:700;color:var(--orange);border-bottom:1px solid var(--s2)}.diary-entries{padding:6px 12px}.diary-entry{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--s2)}.diary-entry:last-child{border:0}.diary-entry-main{flex:1;font-size:12px}.diary-entry-sub{font-size:10px;color:var(--t3);margin-top:2px}.diary-remove{border:0;background:var(--s2);color:var(--pink);border-radius:6px;padding:5px 8px}.diary-form{display:grid;grid-template-columns:1fr 74px 64px;gap:6px;padding:10px 12px;background:var(--s2)}.diary-form input,.diary-form select,.diary-custom{min-width:0;background:var(--s1);color:var(--t1);border:1px solid var(--s3);border-radius:7px;padding:8px;font:inherit;font-size:11px}.diary-add{grid-column:1/-1;border:0;border-radius:7px;background:var(--lime);color:#0a0a0a;padding:8px;font-family:"Syne";font-weight:800}.quick-foods{display:flex;flex-wrap:wrap;gap:5px;padding:10px 12px}.quick-food{border:1px solid var(--s3);background:var(--s2);color:var(--t2);border-radius:20px;padding:6px 9px;font-size:10px}.diary-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}.diary-action{border:1px solid var(--s3);background:var(--s1);color:var(--t1);border-radius:8px;padding:10px;font-family:"Syne";font-size:11px;font-weight:700}.diary-empty{font-size:11px;color:var(--t3);padding:10px 2px}.diary-history{background:var(--s1);border-radius:var(--r);padding:10px 13px}.history-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--s2);font-size:11px}.history-row:last-child{border:0}.history-row strong{color:var(--lime)}
+
+      .diary-presets{padding:10px 12px;background:rgba(123,200,246,.035)}
+      .diary-preset-label{font-size:10px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+      .diary-preset-grid{display:grid;grid-template-columns:1fr;gap:6px}
+      .diary-preset{border:1px solid var(--s3);background:var(--s2);color:var(--t1);border-radius:8px;padding:9px 10px;text-align:left;font-size:11px;line-height:1.4}
+      .diary-preset small{display:block;color:var(--t3);margin-top:2px}
+      .elmec-choice{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px 12px}
+      .elmec-btn{border:1px solid var(--s3);background:var(--s2);color:var(--t2);border-radius:8px;padding:9px 5px;font-family:"Syne",sans-serif;font-size:10px;font-weight:700}
+      .elmec-btn.primary{color:var(--lime);border-color:rgba(170,255,0,.25)}
+      .elmec-btn.alt{color:var(--orange);border-color:rgba(255,179,71,.25)}
+      .diary-form.hidden{display:none}
+
+      .diary-meal-h{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+      .diary-meal-h::after{content:"⌄";color:var(--t3);font-size:15px;transition:transform .2s}
+      .diary-meal-h.on::after{transform:rotate(180deg);color:var(--orange)}
+      .diary-meal-body{display:none;border-top:1px solid var(--s2)}
+      .diary-meal-body.on{display:block;animation:up .2s ease}
+      .diary-meal-count{font-family:"DM Sans",sans-serif;font-size:10px;font-weight:500;color:var(--t3);margin-left:auto;margin-right:8px}
+
+      .backup-panel{background:var(--s1);border:1px solid var(--s3);border-radius:var(--r);padding:12px 14px;margin-bottom:10px}
+      .backup-title{font-family:"Syne",sans-serif;font-size:13px;font-weight:800;margin-bottom:5px}
+      .backup-text{font-size:11px;color:var(--t2);line-height:1.55;margin-bottom:9px}
+      .backup-status{display:flex;align-items:center;gap:7px;font-size:11px;padding:8px 10px;border-radius:8px;background:var(--s2);color:var(--t2);margin-bottom:9px}
+      .backup-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime)}
+      .backup-status.dirty{color:var(--orange);background:rgba(255,179,71,.07)}
+      .backup-status.dirty::before{background:var(--orange)}
+      .backup-buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+      .backup-btn{border:1px solid var(--s3);background:var(--s2);color:var(--t1);border-radius:8px;padding:10px 7px;font-family:"Syne",sans-serif;font-size:10px;font-weight:700}
+      .backup-btn.save{background:var(--lime);border-color:var(--lime);color:#0a0a0a}
       /* ═══ CORPO ═══ */
       .sg {
         display: grid;
@@ -1220,6 +1252,8 @@
           </div>
         </div>
 
+        <!-- DIARIO -->
+        <div class="pg" id="pg-diario"><div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Diario alimentare</div></div><div class="backup-panel"><div class="backup-title">Backup per navigazione in incognito</div><div class="backup-text">All’apertura riprendi dall’ultimo file salvato. Prima di chiudere tutte le finestre Incognito, salva nuovamente il Diario.</div><div class="backup-status" id="backup-status">Nessuna modifica da salvare</div><div class="backup-buttons"><button class="backup-btn" onclick="document.getElementById('diary-import').click()">Riprendi da file</button><button class="backup-btn save" onclick="exportDiary()">Salva Diario su file</button></div></div><div class="diary-head"><input class="diary-date" id="diary-date" type="date" onchange="renderDiary()"><div class="tl-hint" style="margin-top:8px">Il salvataggio nel browser è temporaneo in Incognito. Il file JSON scaricato rimane sul dispositivo.</div></div><div class="diary-summary"><div class="diary-stat"><strong id="diary-protein">0 g</strong><span>proteine stimate</span></div><div class="diary-stat"><strong id="diary-meals">0/6</strong><span>pasti compilati</span></div><div class="diary-stat"><strong id="diary-items">0</strong><span>alimenti inseriti</span></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(0,this)"><span>Colazione</span><span class="diary-meal-count" id="diary-0-count">0 elementi</span></div><div class="diary-meal-body" id="diary-0-body"><div class="diary-entries" id="diary-0-entries"></div><div class="diary-presets" id="diary-0-quick"></div><div class="diary-form" id="diary-0-form"><input id="diary-0-name" placeholder="Alimento o piatto"><input id="diary-0-qty" placeholder="Quantità"><input id="diary-0-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><button class="diary-add" onclick="addDiaryEntry('0')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(1,this)"><span>Spuntino mattutino</span><span class="diary-meal-count" id="diary-1-count">0 elementi</span></div><div class="diary-meal-body" id="diary-1-body"><div class="diary-entries" id="diary-1-entries"></div><div class="diary-presets" id="diary-1-quick"></div><div class="diary-form" id="diary-1-form"><input id="diary-1-name" placeholder="Alimento o piatto"><input id="diary-1-qty" placeholder="Quantità"><input id="diary-1-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><button class="diary-add" onclick="addDiaryEntry('1')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(2,this)"><span>Pranzo</span><span class="diary-meal-count" id="diary-2-count">0 elementi</span></div><div class="diary-meal-body" id="diary-2-body"><div class="diary-entries" id="diary-2-entries"></div><div class="diary-presets" id="diary-2-quick"></div><div class="diary-form" id="diary-2-form"><input id="diary-2-name" placeholder="Alimento o piatto"><input id="diary-2-qty" placeholder="Quantità"><input id="diary-2-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><button class="diary-add" onclick="addDiaryEntry('2')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(3,this)"><span>Merenda</span><span class="diary-meal-count" id="diary-3-count">0 elementi</span></div><div class="diary-meal-body" id="diary-3-body"><div class="diary-entries" id="diary-3-entries"></div><div class="diary-presets" id="diary-3-quick"></div><div class="diary-form" id="diary-3-form"><input id="diary-3-name" placeholder="Alimento o piatto"><input id="diary-3-qty" placeholder="Quantità"><input id="diary-3-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><button class="diary-add" onclick="addDiaryEntry('3')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(4,this)"><span>Cena</span><span class="diary-meal-count" id="diary-4-count">0 elementi</span></div><div class="diary-meal-body" id="diary-4-body"><div class="diary-entries" id="diary-4-entries"></div><div class="diary-presets" id="diary-4-quick"></div><div class="diary-form" id="diary-4-form"><input id="diary-4-name" placeholder="Alimento o piatto"><input id="diary-4-qty" placeholder="Quantità"><input id="diary-4-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><button class="diary-add" onclick="addDiaryEntry('4')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(5,this)"><span>Extra</span><span class="diary-meal-count" id="diary-5-count">0 elementi</span></div><div class="diary-meal-body" id="diary-5-body"><div class="diary-entries" id="diary-5-entries"></div><div class="diary-presets" id="diary-5-quick"></div><div class="diary-form" id="diary-5-form"><input id="diary-5-name" placeholder="Alimento o piatto"><input id="diary-5-qty" placeholder="Quantità"><input id="diary-5-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><button class="diary-add" onclick="addDiaryEntry('5')">Aggiungi al diario</button></div></div></div><div class="diary-actions"><button class="diary-action" onclick="exportDiary()">Salva altra copia</button><button class="diary-action" onclick="document.getElementById('diary-import').click()">Riprendi da un backup</button><input id="diary-import" type="file" accept="application/json,.json" hidden onchange="importDiary(event)"></div><div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Ultimi giorni</div></div><div class="diary-history" id="diary-history"></div></div>
         <!-- ══════════ CORPO ══════════ -->
         <div class="pg" id="pg-corpo">
           <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Recupero quotidiano</div></div>
@@ -1642,6 +1676,7 @@
           <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z" /></svg>
           <span>Pasti</span>
         </button>
+        <button class="nb" onclick="swPage('diario', this)"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5" /></svg><span>Diario</span></button>
         <button class="nb" onclick="swPage('corpo', this)">
           <svg viewBox="0 0 24 24">
             <circle cx="12" cy="5" r="2" />
@@ -1774,6 +1809,78 @@
       }
       restoreWorkoutPlan();
       restoreWeekendPlan();
+
+      const DIARY_KEY = "healthcareDiaryV1";
+      let diaryDirty = false;
+      function setDiaryDirty(value){diaryDirty=value;const el=document.getElementById("backup-status");if(!el)return;el.classList.toggle("dirty",value);el.textContent=value?"Modifiche non salvate su file":"Backup aggiornato: nessuna modifica da salvare"}
+      window.addEventListener("beforeunload",function(event){if(!diaryDirty)return;event.preventDefault();event.returnValue=""});
+      const diaryMeals = ["Colazione","Spuntino mattutino","Pranzo","Merenda","Cena","Extra"];
+      const diaryPresets = {
+        0:[
+          {n:"Colazione completa workout",q:"30 g whey + 200 ml latte + 40 g avena + 1 banana piccola",p:37},
+          {n:"Colazione rapida workout",q:"30 g whey + 200 ml latte + 1 banana",p:32},
+          {n:"Colazione al cucchiaio",q:"150 g skyr + 40 g avena + 1 banana",p:22},
+          {n:"Colazione salata",q:"65 g pane di segale + 60 g fesa o bresaola + 1 frutto",p:20},
+          {n:"Colazione riposo con avena",q:"30 g whey + 200 ml latte + 35 g avena",p:36},
+          {n:"Colazione riposo con frutta",q:"30 g whey + 200 ml latte + 1 mela o banana",p:32},
+          {n:"Skyr, avena, mela e mandorle",q:"150 g skyr + 35 g avena + 1 mela + 15 g mandorle",p:24}
+        ],
+        1:[
+          {n:"Frutto",q:"1 mela, banana o pera",p:1},
+          {n:"Skyr o yogurt greco",q:"150 g",p:16},
+          {n:"Whey con acqua",q:"30 g",p:24},
+          {n:"Mandorle",q:"15–20 g",p:3}
+        ],
+        2:[
+          {n:"Pasta/riso/cous cous + carne o pesce + verdure + frutta",q:"1 pasto completo",p:35},
+          {n:"Uova + pane o patate + verdure + frutta",q:"3 uova e porzione di carboidrati",p:25},
+          {n:"Legumi + cereali + verdure + frutta",q:"1 pasto completo",p:25}
+        ],
+        3:[
+          {n:"Skyr, banana e gallette",q:"150 g skyr + 1 banana + 2–3 gallette",p:18},
+          {n:"Skyr e frutto",q:"150 g skyr + 1 mela o banana",p:17},
+          {n:"Panino con affettato magro",q:"60–70 g pane di segale + 60–80 g fesa, bresaola o cotto sgrassato + frutto",p:22},
+          {n:"Whey e banana",q:"30 g whey con acqua + 1 banana",p:25},
+          {n:"Richiamo: banana",q:"1 banana",p:1},
+          {n:"Richiamo: gallette",q:"2–3 gallette",p:2},
+          {n:"Richiamo: Oaties",q:"1 barretta da 40 g",p:3},
+          {n:"Mandorle facoltative",q:"15–20 g",p:3}
+        ],
+        4:[
+          {n:"Carne o pesce + verdure + riso, pasta o patate",q:"1 cena completa",p:35},
+          {n:"Uova o fiocchi di latte + pane o patate + verdure",q:"1 cena completa",p:30},
+          {n:"Cena pre-workout leggera",q:"Riso o pasta semplice + pollo, tacchino o pesce magro + poche verdure cotte",p:35},
+          {n:"Panino pre-workout",q:"Pane di segale + tacchino o bresaola + banana + yogurt greco",p:35},
+          {n:"Legumi + verdure + pane o patate",q:"1 cena completa",p:25}
+        ],
+        5:[
+          {n:"Skyr",q:"150 g",p:16},{n:"Whey",q:"20–30 g",p:20},{n:"Banana",q:"1",p:1},{n:"Mela",q:"1",p:0.5},{n:"Gallette",q:"2–3",p:2},{n:"Oaties",q:"40 g",p:3},{n:"Mandorle",q:"15–20 g",p:3}
+        ]
+      };
+      const elmecMenus={
+        "2026-09-07":{standard:{n:"Elmec · Standard",q:"Farro con gamberi, feta e fave + merluzzo gratinato + fagiolini + frutta",p:35},alternative:{n:"Elmec · Alternativa",q:"Pasta con crema di tonno e limone + lonza alla pizzaiola + fagiolini + frutta",p:35}},
+        "2026-09-08":{standard:{n:"Elmec · Standard",q:"Cous cous con manzo + orata con patate + carote + frutta",p:38},alternative:{n:"Elmec · Alternativa",q:"Risotto con gamberi e curry + spezzatino di vitello + carote + frutta",p:35}},
+        "2026-09-09":{standard:{n:"Elmec · Standard",q:"Riso con tonno, pomodorini e mais + pollo alla griglia + zucchine + frutta",p:40},alternative:{n:"Elmec · Alternativa",q:"Linguine alle vongole + tonno panato al sesamo + fave + frutta",p:35}},
+        "2026-09-10":{standard:{n:"Elmec · Standard",q:"Riso con gamberi, edamame e lime + nasello + piselli + frutta",p:38},alternative:{n:"Elmec · Alternativa",q:"Pasta con mozzarella e zucchine + nasello + pomodori gratinati + frutta",p:35}},
+        "2026-09-11":{standard:{n:"Elmec · Standard",q:"Cous cous con pollo e verdure + sgombro + carote + frutta",p:40},alternative:{n:"Elmec · Alternativa",q:"Riso rosso con salmone e zucchine + hamburger + ceci + frutta",p:38}}
+      };
+      function diaryLoad(){try{return JSON.parse(localStorage.getItem(DIARY_KEY)||"{}")}catch(e){return {}}}
+      function diarySave(x){localStorage.setItem(DIARY_KEY,JSON.stringify(x));setDiaryDirty(true)}
+      function localDateKey(d=new Date()){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,"0"),day=String(d.getDate()).padStart(2,"0");return `${y}-${m}-${day}`}
+      function addDiaryEntry(meal,name,qty,protein){name=name||document.getElementById(`diary-${meal}-name`).value.trim();qty=qty||document.getElementById(`diary-${meal}-qty`).value.trim();protein=protein??Number(document.getElementById(`diary-${meal}-prot`).value||0);if(!name)return;const data=diaryLoad(),date=document.getElementById("diary-date").value;data[date]=data[date]||{meals:{}};data[date].meals[meal]=data[date].meals[meal]||[];data[date].meals[meal].push({name,qty,protein:Number(protein)||0,id:Date.now()+Math.random()});diarySave(data);["name","qty","prot"].forEach(x=>document.getElementById(`diary-${meal}-${x}`).value="");renderDiary();const body=document.getElementById(`diary-${meal}-body`),head=body.previousElementSibling;body.classList.add("on");head.classList.add("on")}
+      function removeDiaryEntry(meal,id){const data=diaryLoad(),date=document.getElementById("diary-date").value;if(!data[date]||!data[date].meals[meal])return;data[date].meals[meal]=data[date].meals[meal].filter(x=>x.id!==id);diarySave(data);renderDiary()}
+      function addPreset(meal,i){const x=diaryPresets[meal][i];addDiaryEntry(String(meal),x.n,x.q,x.p)}
+      function elmecChoice(type){const date=document.getElementById("diary-date").value,menu=elmecMenus[date];if(type==="other"){document.getElementById("diary-2-form").classList.remove("hidden");document.getElementById("diary-2-name").focus();return}if(!menu){alert("Per questa data non è presente un menu Elmec. Usa Altro.");return}const x=menu[type];addDiaryEntry("2",x.n,x.q,x.p)}
+      function renderPresets(meal,date){const box=document.getElementById(`diary-${meal}-quick`);if(meal===2){document.getElementById("diary-2-form").classList.add("hidden");box.innerHTML=`<div class="diary-preset-label">Pranzo Elmec</div><div class="elmec-choice"><button class="elmec-btn primary" onclick="elmecChoice('standard')">Standard</button><button class="elmec-btn alt" onclick="elmecChoice('alternative')">Alternativa</button><button class="elmec-btn" onclick="elmecChoice('other')">Altro</button></div><div class="diary-preset-label">Oppure pranzo fuori mensa</div><div class="diary-preset-grid">${diaryPresets[2].map((x,i)=>`<button class="diary-preset" onclick="addPreset(2,${i})">${escapeHtml(x.n)}<small>${escapeHtml(x.q)}</small></button>`).join("")}</div>`;return}box.innerHTML=`<div class="diary-preset-label">Scegli un’opzione predefinita</div><div class="diary-preset-grid">${diaryPresets[meal].map((x,i)=>`<button class="diary-preset" onclick="addPreset(${meal},${i})">${escapeHtml(x.n)}<small>${escapeHtml(x.q)}</small></button>`).join("")}</div>`}
+      function toggleDiaryMeal(meal,head){const body=document.getElementById(`diary-${meal}-body`),open=body.classList.contains("on");body.classList.toggle("on",!open);head.classList.toggle("on",!open)}
+      function renderDiary(){const input=document.getElementById("diary-date"),date=input.value||localDateKey();input.value=date;const data=diaryLoad(),day=data[date]||{meals:{}};let prot=0,count=0,filled=0;diaryMeals.forEach((m,i)=>{const list=day.meals[i]||[];if(list.length)filled++;count+=list.length;prot+=list.reduce((a,x)=>a+(Number(x.protein)||0),0);document.getElementById(`diary-${i}-count`).textContent=list.length===1?"1 elemento":`${list.length} elementi`;document.getElementById(`diary-${i}-entries`).innerHTML=list.length?list.map(x=>`<div class="diary-entry"><div class="diary-entry-main">${escapeHtml(x.name)}<div class="diary-entry-sub">${escapeHtml(x.qty||"quantità non indicata")} · ${Number(x.protein||0).toFixed(1)} g proteine</div></div><button class="diary-remove" onclick="removeDiaryEntry('${i}',${x.id})">×</button></div>`).join(""):'<div class="diary-empty">Nessun alimento inserito</div>';renderPresets(i,date)});document.getElementById("diary-protein").textContent=`${prot.toFixed(1)} g`;document.getElementById("diary-meals").textContent=`${filled}/6`;document.getElementById("diary-items").textContent=count;renderDiaryHistory(data)}
+      function escapeHtml(x){return String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+      function renderDiaryHistory(data){const rows=Object.keys(data).sort().reverse().slice(0,10).map(date=>{const meals=data[date].meals||{},items=Object.values(meals).flat(),p=items.reduce((a,x)=>a+(Number(x.protein)||0),0);return `<div class="history-row"><span>${date} · ${items.length} alimenti</span><strong>${p.toFixed(1)} g</strong></div>`});document.getElementById("diary-history").innerHTML=rows.join("")||'<div class="diary-empty">Lo storico comparirà qui</div>'}
+      function exportDiary(){const now=new Date(),stamp=`${localDateKey(now)}_${String(now.getHours()).padStart(2,"0")}-${String(now.getMinutes()).padStart(2,"0")}-${String(now.getSeconds()).padStart(2,"0")}`,blob=new Blob([JSON.stringify({version:3,exportedAt:now.toISOString(),diary:diaryLoad()},null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`diario-alimentare_${stamp}.json`;document.body.appendChild(a);a.click();a.remove();setDiaryDirty(false);setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+      function importDiary(event){const file=event.target.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{try{const parsed=JSON.parse(r.result),incoming=parsed.diary||parsed;if(!incoming||typeof incoming!=="object"||Array.isArray(incoming))throw new Error();const current=diaryLoad();Object.keys(incoming).forEach(date=>{current[date]=incoming[date]});diarySave(current);renderDiary();setDiaryDirty(false);alert("Diario ripristinato correttamente dal file")}catch(e){alert("File non valido: importa un JSON esportato dal Diario")}event.target.value=""};r.readAsText(file)}
+      document.getElementById("diary-date").value=localDateKey();
+      renderDiary();
+      setDiaryDirty(false);
       function swAcc(head) {
         const body = head.nextElementSibling;
         const open = body.classList.contains("on");
