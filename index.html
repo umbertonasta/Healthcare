@@ -1,29 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-    />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="theme-color" content="#0A0A0A" />
-    <meta name="apple-mobile-web-app-title" content="La Mia Routine" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
-    <link rel="manifest" href="./manifest.webmanifest" />
-    <title>La Mia Routine</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <style>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="#0A0A0A" name="theme-color"/>
+<meta content="La Mia Routine" name="apple-mobile-web-app-title"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<link href="./apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="./favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="./icon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="./manifest.webmanifest" rel="manifest"/>
+<title>La Mia Routine</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
       *,
       *::before,
       *::after {
@@ -1072,512 +1064,455 @@
         color: var(--orange);
       }
     </style>
-  </head>
-  <body>
-    <div class="app">
-      <!-- HEADER -->
-      <div class="hdr">
-        <div>
-          <div class="h-title">La Mia <em>Routine</em></div>
-          <div class="h-sub">
+</head>
+<body>
+<div class="app">
+<!-- HEADER -->
+<div class="hdr">
+<div>
+<div class="h-title">La Mia <em>Routine</em></div>
+<div class="h-sub">
             Allenamento · Alimentazione · Corpo · Skincare
           </div>
-        </div>
-        <div class="h-date" id="dateEl"></div>
-      </div>
-
-      <!-- CONTENT -->
-      <div class="cnt" id="cnt">
-        <!-- ══════════ WORKOUT ══════════ -->
-        <div class="pg on" id="pg-workout">
-          <div class="sec"><div class="sec-dot" style="background:var(--lime)"></div><div class="sec-lbl">Schema settimanale</div></div>
-          <div class="wtoggle" role="tablist" aria-label="Numero di allenamenti settimanali"><button class="wtb on std" id="workout-three-btn" onclick="swWorkoutPlan('three',this)">3 giorni</button><button class="wtb alt" id="workout-four-btn" onclick="swWorkoutPlan('four',this)">4 giorni</button></div><div class="progression-guide"><div class="progression-guide-title">Sistema di progressione dei carichi</div><p><strong>Regola delle 2 sessioni:</strong> aumenta il peso solo quando completi tutte le serie al limite alto del range, con tecnica pulita e 1–2 ripetizioni in riserva, per 2 sessioni consecutive dello stesso esercizio.</p><p><strong>Incremento:</strong> +2,5 kg sui compound upper; +5 kg sui compound lower o con bilanciere. Se la macchina o i manubri non permettono questo salto, usa l’incremento minimo disponibile.</p><p>Dopo l’aumento riparti dal limite basso del range. Se non completi le serie, mantieni il carico. Se la tecnica peggiora, riduci il peso del 5–10%.</p></div>
-          <div class="workout-plan on" id="workout-three"><div class="week"><div class="wd gym"><div class="wd-n">Lun</div><div class="wd-b a">A</div></div><div class="wd rest"><div class="wd-n">Mar</div><div class="wd-b r">—</div></div><div class="wd gym"><div class="wd-n">Mer</div><div class="wd-b b">B</div></div><div class="wd rest"><div class="wd-n">Gio</div><div class="wd-b r">—</div></div><div class="wd gym"><div class="wd-n">Ven</div><div class="wd-b c">C</div></div><div class="wd rest"><div class="wd-n">Sab</div><div class="wd-b r">—</div></div><div class="wd rest"><div class="wd-n">Dom</div><div class="wd-b r">—</div></div></div><div class="plan-note"><strong>3 giorni:</strong> Split leggero A/B/C con coinvolgimento di tutto il corpo e un’enfasi diversa in ogni seduta, lunedì, mercoledì e venerdì.</div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge a">A</span><div class="wo-info"><div class="wo-title">Split leggero A · Spinta + Quad</div><div class="wo-meta">Lunedì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Riscaldamento</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bike o Treadmill</div><div class="ex-mus">Cardio leggero</div></div><div class="ex-right"><div class="ex-sets">7–8 min</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Ritmo facile, devi riuscire a parlare</div><div class="tech-item">Aumenta gradualmente temperatura e mobilità</div></div></div><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Press</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div><div class="progression-rule"><strong>Progressione lower:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg o dello scatto minimo disponibile.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Curl</div><div class="ex-mus">Femorali</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Upper</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Chest Press</div><div class="ex-mus">Petto, tricipiti</div></div><div class="ex-right"><div class="ex-sets">3×6–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto del range per 2 sessioni consecutive, aumenta di 2,5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Lat Pulldown</div><div class="ex-mus">Dorsali, bicipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Alzate laterali</div><div class="ex-mus">Spalle</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Core</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Crunch macchina</div><div class="ex-mus">Addominali</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge b">B</span><div class="wo-info"><div class="wo-title">Split leggero B · Tirata + Posteriore</div><div class="wo-meta">Mercoledì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Riscaldamento</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bike o Skillrow</div><div class="ex-mus">Cardio leggero</div></div><div class="ex-right"><div class="ex-sets">7–8 min</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Ritmo facile, devi riuscire a parlare</div><div class="tech-item">Aumenta gradualmente temperatura e mobilità</div></div></div><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Smith Machine RDL</div><div class="ex-mus">Femorali, glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Schiena neutra e ginocchia morbide</div><div class="tech-item">Spingi i fianchi indietro</div><div class="tech-item">Fermati quando senti tensione nei femorali</div><div class="progression-rule"><strong>Progressione lower con bilanciere:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Extension</div><div class="ex-mus">Quadricipiti</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Upper</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Seated Cable Row</div><div class="ex-mus">Schiena</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Panca inclinata manubri</div><div class="ex-mus">Petto alto</div></div><div class="ex-right"><div class="ex-sets">3×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> dopo 2 sessioni consecutive al limite alto, aumenta complessivamente di circa 2–2,5 kg, oppure usa il salto minimo disponibile dei manubri.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Face Pull</div><div class="ex-mus">Deltoidi posteriori</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Braccia</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Curl manubri</div><div class="ex-mus">Bicipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Tricep Pushdown</div><div class="ex-mus">Tricipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge a">C</span><div class="wo-info"><div class="wo-title">Split leggero C · Bilanciato</div><div class="wo-meta">Venerdì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Riscaldamento</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bike o Treadmill</div><div class="ex-mus">Cardio leggero</div></div><div class="ex-right"><div class="ex-sets">7–8 min</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Ritmo facile, devi riuscire a parlare</div><div class="tech-item">Aumenta gradualmente temperatura e mobilità</div></div></div><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bulgarian Split Squat</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–10/lato</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Curl</div><div class="ex-mus">Femorali</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Calf Raises</div><div class="ex-mus">Polpacci</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Upper</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Chest Press</div><div class="ex-mus">Petto, tricipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto del range per 2 sessioni consecutive, aumenta di 2,5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Lat Pulldown</div><div class="ex-mus">Dorsali, bicipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Dumbbell Overhead Press</div><div class="ex-mus">Spalle, tricipiti</div></div><div class="ex-right"><div class="ex-sets">2×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> dopo 2 sessioni consecutive al limite alto, aumenta complessivamente di circa 2–2,5 kg, oppure usa il salto minimo disponibile dei manubri.</div></div></div><div class="ex-sec"><span>Core</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Plank</div><div class="ex-mus">Core</div></div><div class="ex-right"><div class="ex-sets">3×30–45 sec</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div></div></div></div>
-          <div class="workout-plan" id="workout-four"><div class="week"><div class="wd gym"><div class="wd-n">Lun</div><div class="wd-b a">UA</div></div><div class="wd rest"><div class="wd-n">Mar</div><div class="wd-b r">—</div></div><div class="wd gym"><div class="wd-n">Mer</div><div class="wd-b b">LA</div></div><div class="wd gym"><div class="wd-n">Gio</div><div class="wd-b a">UB</div></div><div class="wd rest"><div class="wd-n">Ven</div><div class="wd-b r">—</div></div><div class="wd nogym"><div class="wd-n">Sab</div><div class="wd-b p">LB</div></div><div class="wd nogym"><div class="wd-n">Dom</div><div class="wd-b p">ALT</div></div></div><div class="plan-note"><strong>4 giorni · settimana 28 settembre–4 ottobre:</strong> Upper A completato lunedì; riposo martedì; Lower A mercoledì; Upper B giovedì; riposo venerdì; Lower B sabato oppure domenica. Esegui Lower B una sola volta.</div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge a">UA</span><div class="wo-info"><div class="wo-title">Upper A · Enfasi spinta</div><div class="wo-meta">Lunedì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Petto e schiena</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Chest Press o Panca piana</div><div class="ex-mus">Petto, tricipiti</div></div><div class="ex-right"><div class="ex-sets">4×6–8</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto del range per 2 sessioni consecutive, aumenta di 2,5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Lat Pulldown</div><div class="ex-mus">Dorsali, bicipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Panca inclinata manubri</div><div class="ex-mus">Petto alto</div></div><div class="ex-right"><div class="ex-sets">3×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> dopo 2 sessioni consecutive al limite alto, aumenta complessivamente di circa 2–2,5 kg, oppure usa il salto minimo disponibile dei manubri.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Seated Cable Row</div><div class="ex-mus">Schiena</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-sec"><span>Spalle e braccia</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Alzate laterali</div><div class="ex-mus">Spalle</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Tricep Pushdown</div><div class="ex-mus">Tricipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Curl manubri</div><div class="ex-mus">Bicipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge b">LA</span><div class="wo-info"><div class="wo-title">Lower A · Enfasi quadricipiti</div><div class="wo-meta">Mercoledì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Press o Hack Squat</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">4×6–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div><div class="progression-rule"><strong>Progressione lower:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg o dello scatto minimo disponibile.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bulgarian Split Squat</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–10/lato</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Extension</div><div class="ex-mus">Quadricipiti</div></div><div class="ex-right"><div class="ex-sets">3×10–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Curl</div><div class="ex-mus">Femorali</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Calf Raises</div><div class="ex-mus">Polpacci</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Core</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Crunch macchina</div><div class="ex-mus">Addominali</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge a">UB</span><div class="wo-info"><div class="wo-title">Upper B · Enfasi tirata</div><div class="wo-meta">Giovedì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Schiena e petto</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Lat Pulldown</div><div class="ex-mus">Dorsali, bicipiti</div></div><div class="ex-right"><div class="ex-sets">4×6–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Chest Press o Panca inclinata</div><div class="ex-mus">Petto, tricipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto del range per 2 sessioni consecutive, aumenta di 2,5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Rematore macchina o cavo</div><div class="ex-mus">Schiena</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Dumbbell Overhead Press</div><div class="ex-mus">Spalle, tricipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> dopo 2 sessioni consecutive al limite alto, aumenta complessivamente di circa 2–2,5 kg, oppure usa il salto minimo disponibile dei manubri.</div></div></div><div class="ex-sec"><span>Spalle e braccia</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Rear Delt Fly o Face Pull</div><div class="ex-mus">Deltoidi posteriori</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Curl manubri</div><div class="ex-mus">Bicipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Tricep Pushdown</div><div class="ex-mus">Tricipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge b">LB</span><div class="wo-info"><div class="wo-title">Lower B · Enfasi posteriore</div><div class="wo-meta">Sabato o domenica · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Smith Machine RDL</div><div class="ex-mus">Femorali, glutei</div></div><div class="ex-right"><div class="ex-sets">4×6–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Schiena neutra e ginocchia morbide</div><div class="tech-item">Spingi i fianchi indietro</div><div class="tech-item">Fermati quando senti tensione nei femorali</div><div class="progression-rule"><strong>Progressione lower con bilanciere:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Hip Thrust macchina o bilanciere</div><div class="ex-mus">Glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div><div class="progression-rule"><strong>Progressione lower:</strong> dopo 2 sessioni consecutive al limite alto, aumenta di 5 kg; sulla macchina usa lo scatto minimo se diverso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Curl</div><div class="ex-mus">Femorali</div></div><div class="ex-right"><div class="ex-sets">3×10–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Press</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div><div class="progression-rule"><strong>Progressione lower:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg o dello scatto minimo disponibile.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Calf Raises</div><div class="ex-mus">Polpacci</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Core e presa</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Farmer Walk</div><div class="ex-mus">Core, presa</div></div><div class="ex-right"><div class="ex-sets">3×30–40 m</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Plank</div><div class="ex-mus">Core</div></div><div class="ex-right"><div class="ex-sets">3×30–45 sec</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div></div></div></div>
-          <div class="tip"><strong>Progressione compound:</strong> completa il limite alto del range per 2 sessioni consecutive, poi aumenta di 2,5 kg sugli upper o 5 kg sui lower/con bilanciere e riparti dal limite basso.<br><br><strong>Accessori e isolamenti:</strong> usa l’incremento minimo disponibile solo dopo 2 sessioni consecutive al limite alto, senza perdere controllo o tecnica.<br><br><strong>Recupero:</strong> 2–3 minuti sui principali, 60–90 secondi sugli isolamenti.</div>
-          <div class="sec"><div class="sec-dot" style="background:var(--lime)"></div><div class="sec-lbl">1RM rilevati</div></div>
-          <div class="rm-grid"><div class="rm-c"><div class="rm-n">Chest Press</div><div><span class="rm-v">45</span><span class="rm-u"> kg</span></div></div><div class="rm-c"><div class="rm-n">Leg Extension</div><div><span class="rm-v">75</span><span class="rm-u"> kg</span></div></div><div class="rm-c"><div class="rm-n">Leg Press</div><div><span class="rm-v">98</span><span class="rm-u"> kg</span></div></div></div>
-        </div>
-        <!-- ══════════ PASTI ══════════ -->
-        <div class="pg" id="pg-pasti">
-          <div class="prot-banner">
-            <div class="pb-icon">🥩</div>
-            <div>
-              <div class="pb-val">130g proteine/giorno</div>
-              <div class="pb-sub">obiettivo per costruire massa muscolare</div>
-            </div>
-          </div>
-          <div class="protein-check">
-            <div class="protein-row"><span>Colazione</span><strong>25–35 g</strong></div>
-            <div class="protein-row"><span>Spuntino mattutino · facoltativo</span><strong>0–10 g</strong></div>
-            <div class="protein-row"><span>Pranzo</span><strong>25–40 g</strong></div>
-            <div class="protein-row"><span>Merenda</span><strong>12–25 g</strong></div>
-            <div class="protein-row"><span>Cena</span><strong>30–40 g</strong></div>
-            <div class="protein-total">Totale reale raggiungibile: circa 92–150 g</div>
-            <div class="ac-note">Obiettivo pratico: punta ad almeno 130 g scegliendo una fonte proteica a ogni fascia principale.</div>
-            <div class="ac-note">Mandorle: 15–20 g facoltativi a colazione o nello spuntino dei giorni di riposo quando hai più fame. Non sono frutta fresca e non sostituiscono mela o banana. Evitale nel richiamo immediatamente pre-workout, dove sono preferibili carboidrati più semplici.</div>
-            <div class="ac-note green">Se mancano 10–20 g: aggiungi 1 skyr da 150 g oppure 20–25 g di whey. Se mancano 20–30 g: aggiungi 30 g di whey oppure 80–100 g di fesa/bresaola. Le quantità del pranzo e della cena restano stime perché dipendono dalle porzioni reali.</div><div class="ac-note">Kcal: inseriscile quando sono note o stimabili. Per i menu Elmec vengono sommate automaticamente; a casa puoi usare una stima del piatto intero. Se non sai il valore, lascia il campo vuoto: il Diario mostrerà una copertura parziale senza penalizzare la giornata.</div>
-          </div>
-
-          <div class="tl">
-            <!-- 08:00 -->
-            <div class="tl-row">
-              <div class="tl-time">08:00</div>
-              <div class="tl-dot" style="background: var(--lime)"></div>
-              <div class="tl-body">
-                <div class="tl-title" style="color: var(--lime)">
+</div>
+<div class="h-date" id="dateEl"></div>
+</div>
+<!-- CONTENT -->
+<div class="cnt" id="cnt">
+<!-- ══════════ WORKOUT ══════════ -->
+<div class="pg on" id="pg-workout">
+<div class="sec"><div class="sec-dot" style="background:var(--lime)"></div><div class="sec-lbl">Schema settimanale</div></div>
+<div aria-label="Numero di allenamenti settimanali" class="wtoggle" role="tablist"><button class="wtb on std" id="workout-three-btn" onclick="swWorkoutPlan('three',this)">3 giorni</button><button class="wtb alt" id="workout-four-btn" onclick="swWorkoutPlan('four',this)">4 giorni</button></div><div class="progression-guide"><div class="progression-guide-title">Sistema di progressione dei carichi</div><p><strong>Regola delle 2 sessioni:</strong> aumenta il peso solo quando completi tutte le serie al limite alto del range, con tecnica pulita e 1–2 ripetizioni in riserva, per 2 sessioni consecutive dello stesso esercizio.</p><p><strong>Incremento:</strong> +2,5 kg sui compound upper; +5 kg sui compound lower o con bilanciere. Se la macchina o i manubri non permettono questo salto, usa l’incremento minimo disponibile.</p><p>Dopo l’aumento riparti dal limite basso del range. Se non completi le serie, mantieni il carico. Se la tecnica peggiora, riduci il peso del 5–10%.</p></div>
+<div class="workout-plan on" id="workout-three"><div class="week"><div class="wd gym"><div class="wd-n">Lun</div><div class="wd-b a">A</div></div><div class="wd rest"><div class="wd-n">Mar</div><div class="wd-b r">—</div></div><div class="wd gym"><div class="wd-n">Mer</div><div class="wd-b b">B</div></div><div class="wd rest"><div class="wd-n">Gio</div><div class="wd-b r">—</div></div><div class="wd gym"><div class="wd-n">Ven</div><div class="wd-b c">C</div></div><div class="wd rest"><div class="wd-n">Sab</div><div class="wd-b r">—</div></div><div class="wd rest"><div class="wd-n">Dom</div><div class="wd-b r">—</div></div></div><div class="plan-note"><strong>3 giorni:</strong> Split leggero A/B/C con coinvolgimento di tutto il corpo e un’enfasi diversa in ogni seduta, lunedì, mercoledì e venerdì.</div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge a">A</span><div class="wo-info"><div class="wo-title">Split leggero A · Spinta + Quad</div><div class="wo-meta">Lunedì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Riscaldamento</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bike o Treadmill</div><div class="ex-mus">Cardio leggero</div></div><div class="ex-right"><div class="ex-sets">7–8 min</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Ritmo facile, devi riuscire a parlare</div><div class="tech-item">Aumenta gradualmente temperatura e mobilità</div></div></div><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Press</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div><div class="progression-rule"><strong>Progressione lower:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg o dello scatto minimo disponibile.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Curl</div><div class="ex-mus">Femorali</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Upper</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Chest Press</div><div class="ex-mus">Petto, tricipiti</div></div><div class="ex-right"><div class="ex-sets">3×6–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto del range per 2 sessioni consecutive, aumenta di 2,5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Lat Pulldown</div><div class="ex-mus">Dorsali, bicipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Alzate laterali</div><div class="ex-mus">Spalle</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Core</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Crunch macchina</div><div class="ex-mus">Addominali</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge b">B</span><div class="wo-info"><div class="wo-title">Split leggero B · Tirata + Posteriore</div><div class="wo-meta">Mercoledì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Riscaldamento</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bike o Skillrow</div><div class="ex-mus">Cardio leggero</div></div><div class="ex-right"><div class="ex-sets">7–8 min</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Ritmo facile, devi riuscire a parlare</div><div class="tech-item">Aumenta gradualmente temperatura e mobilità</div></div></div><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Smith Machine RDL</div><div class="ex-mus">Femorali, glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Schiena neutra e ginocchia morbide</div><div class="tech-item">Spingi i fianchi indietro</div><div class="tech-item">Fermati quando senti tensione nei femorali</div><div class="progression-rule"><strong>Progressione lower con bilanciere:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Extension</div><div class="ex-mus">Quadricipiti</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Upper</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Seated Cable Row</div><div class="ex-mus">Schiena</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Panca inclinata manubri</div><div class="ex-mus">Petto alto</div></div><div class="ex-right"><div class="ex-sets">3×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> dopo 2 sessioni consecutive al limite alto, aumenta complessivamente di circa 2–2,5 kg, oppure usa il salto minimo disponibile dei manubri.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Face Pull</div><div class="ex-mus">Deltoidi posteriori</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Braccia</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Curl manubri</div><div class="ex-mus">Bicipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Tricep Pushdown</div><div class="ex-mus">Tricipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge a">C</span><div class="wo-info"><div class="wo-title">Split leggero C · Bilanciato</div><div class="wo-meta">Venerdì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Riscaldamento</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bike o Treadmill</div><div class="ex-mus">Cardio leggero</div></div><div class="ex-right"><div class="ex-sets">7–8 min</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Ritmo facile, devi riuscire a parlare</div><div class="tech-item">Aumenta gradualmente temperatura e mobilità</div></div></div><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bulgarian Split Squat</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–10/lato</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Curl</div><div class="ex-mus">Femorali</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Calf Raises</div><div class="ex-mus">Polpacci</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Upper</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Chest Press</div><div class="ex-mus">Petto, tricipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto del range per 2 sessioni consecutive, aumenta di 2,5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Lat Pulldown</div><div class="ex-mus">Dorsali, bicipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Dumbbell Overhead Press</div><div class="ex-mus">Spalle, tricipiti</div></div><div class="ex-right"><div class="ex-sets">2×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> dopo 2 sessioni consecutive al limite alto, aumenta complessivamente di circa 2–2,5 kg, oppure usa il salto minimo disponibile dei manubri.</div></div></div><div class="ex-sec"><span>Core</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Plank</div><div class="ex-mus">Core</div></div><div class="ex-right"><div class="ex-sets">3×30–45 sec</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div></div></div></div>
+<div class="workout-plan" id="workout-four"><div class="week"><div class="wd gym"><div class="wd-n">Lun</div><div class="wd-b a">UA</div></div><div class="wd rest"><div class="wd-n">Mar</div><div class="wd-b r">—</div></div><div class="wd gym"><div class="wd-n">Mer</div><div class="wd-b b">LA</div></div><div class="wd gym"><div class="wd-n">Gio</div><div class="wd-b a">UB</div></div><div class="wd rest"><div class="wd-n">Ven</div><div class="wd-b r">—</div></div><div class="wd nogym"><div class="wd-n">Sab</div><div class="wd-b p">LB</div></div><div class="wd nogym"><div class="wd-n">Dom</div><div class="wd-b p">ALT</div></div></div><div class="plan-note"><strong>4 giorni · settimana 21–27 settembre:</strong> Upper A completato lunedì; riposo martedì; Lower A mercoledì; Upper B giovedì; riposo venerdì; Lower B sabato oppure domenica. Esegui Lower B una sola volta.</div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge a">UA</span><div class="wo-info"><div class="wo-title">Upper A · Enfasi spinta</div><div class="wo-meta">Lunedì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Petto e schiena</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Chest Press o Panca piana</div><div class="ex-mus">Petto, tricipiti</div></div><div class="ex-right"><div class="ex-sets">4×6–8</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto del range per 2 sessioni consecutive, aumenta di 2,5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Lat Pulldown</div><div class="ex-mus">Dorsali, bicipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Panca inclinata manubri</div><div class="ex-mus">Petto alto</div></div><div class="ex-right"><div class="ex-sets">3×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> dopo 2 sessioni consecutive al limite alto, aumenta complessivamente di circa 2–2,5 kg, oppure usa il salto minimo disponibile dei manubri.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Seated Cable Row</div><div class="ex-mus">Schiena</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-sec"><span>Spalle e braccia</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Alzate laterali</div><div class="ex-mus">Spalle</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Tricep Pushdown</div><div class="ex-mus">Tricipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Curl manubri</div><div class="ex-mus">Bicipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge b">LA</span><div class="wo-info"><div class="wo-title">Lower A · Enfasi quadricipiti</div><div class="wo-meta">Mercoledì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Press o Hack Squat</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">4×6–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div><div class="progression-rule"><strong>Progressione lower:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg o dello scatto minimo disponibile.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Bulgarian Split Squat</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–10/lato</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Extension</div><div class="ex-mus">Quadricipiti</div></div><div class="ex-right"><div class="ex-sets">3×10–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Curl</div><div class="ex-mus">Femorali</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Calf Raises</div><div class="ex-mus">Polpacci</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Core</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Crunch macchina</div><div class="ex-mus">Addominali</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge a">UB</span><div class="wo-info"><div class="wo-title">Upper B · Enfasi tirata</div><div class="wo-meta">Giovedì · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Schiena e petto</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Lat Pulldown</div><div class="ex-mus">Dorsali, bicipiti</div></div><div class="ex-right"><div class="ex-sets">4×6–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Chest Press o Panca inclinata</div><div class="ex-mus">Petto, tricipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto del range per 2 sessioni consecutive, aumenta di 2,5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Rematore macchina o cavo</div><div class="ex-mus">Schiena</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Petto aperto e busto stabile</div><div class="tech-item">Guida il movimento con i gomiti</div><div class="tech-item">Ritorno lento e controllato</div><div class="progression-rule"><strong>Progressione upper:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 2,5 kg o dello scatto minimo della macchina.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Dumbbell Overhead Press</div><div class="ex-mus">Spalle, tricipiti</div></div><div class="ex-right"><div class="ex-sets">3×8–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Scapole stabili e schiena appoggiata</div><div class="tech-item">Discesa controllata</div><div class="tech-item">Mantieni 1–2 ripetizioni in riserva</div><div class="progression-rule"><strong>Progressione upper:</strong> dopo 2 sessioni consecutive al limite alto, aumenta complessivamente di circa 2–2,5 kg, oppure usa il salto minimo disponibile dei manubri.</div></div></div><div class="ex-sec"><span>Spalle e braccia</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Rear Delt Fly o Face Pull</div><div class="ex-mus">Deltoidi posteriori</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Curl manubri</div><div class="ex-mus">Bicipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Tricep Pushdown</div><div class="ex-mus">Tricipiti</div></div><div class="ex-right"><div class="ex-sets">2×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div></div></div><div class="wo"><div class="wo-h" onclick="swWo(this)"><span class="wo-badge b">LB</span><div class="wo-info"><div class="wo-title">Lower B · Enfasi posteriore</div><div class="wo-meta">Sabato o domenica · ~60 min</div></div><span class="wo-chev">﹀</span></div><div class="wo-body"><div class="ex-sec"><span>Gambe</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Smith Machine RDL</div><div class="ex-mus">Femorali, glutei</div></div><div class="ex-right"><div class="ex-sets">4×6–10</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Schiena neutra e ginocchia morbide</div><div class="tech-item">Spingi i fianchi indietro</div><div class="tech-item">Fermati quando senti tensione nei femorali</div><div class="progression-rule"><strong>Progressione lower con bilanciere:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg e riparti dal limite basso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Hip Thrust macchina o bilanciere</div><div class="ex-mus">Glutei</div></div><div class="ex-right"><div class="ex-sets">3×8–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div><div class="progression-rule"><strong>Progressione lower:</strong> dopo 2 sessioni consecutive al limite alto, aumenta di 5 kg; sulla macchina usa lo scatto minimo se diverso.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Curl</div><div class="ex-mus">Femorali</div></div><div class="ex-right"><div class="ex-sets">3×10–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Leg Press</div><div class="ex-mus">Quadricipiti, glutei</div></div><div class="ex-right"><div class="ex-sets">3×10–12</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Piedi stabili e ginocchia in linea</div><div class="tech-item">Movimento controllato senza rimbalzo</div><div class="tech-item">Non sacrificare la tecnica per il carico</div><div class="progression-rule"><strong>Progressione lower:</strong> quando completi tutte le serie al limite alto per 2 sessioni consecutive, aumenta di 5 kg o dello scatto minimo disponibile.</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Calf Raises</div><div class="ex-mus">Polpacci</div></div><div class="ex-right"><div class="ex-sets">3×12–15</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Usa un carico gestibile</div><div class="tech-item">Evita slancio</div><div class="tech-item">Controlla anche la fase di ritorno</div></div></div><div class="ex-sec"><span>Core e presa</span></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Farmer Walk</div><div class="ex-mus">Core, presa</div></div><div class="ex-right"><div class="ex-sets">3×30–40 m</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div><div class="ex-wrap"><div class="ex-r" onclick="swTech(this)"><div class="ex-left"><div class="ex-name">Plank</div><div class="ex-mus">Core</div></div><div class="ex-right"><div class="ex-sets">3×30–45 sec</div><div class="ex-ico">ⓘ</div></div></div><div class="ex-tech"><div class="tech-title">Tecnica</div><div class="tech-item">Mantieni addome e glutei attivi</div><div class="tech-item">Respira senza perdere la posizione</div><div class="tech-item">Interrompi quando la tecnica cede</div></div></div></div></div></div>
+<div class="tip"><strong>Progressione compound:</strong> completa il limite alto del range per 2 sessioni consecutive, poi aumenta di 2,5 kg sugli upper o 5 kg sui lower/con bilanciere e riparti dal limite basso.<br/><br/><strong>Accessori e isolamenti:</strong> usa l’incremento minimo disponibile solo dopo 2 sessioni consecutive al limite alto, senza perdere controllo o tecnica.<br/><br/><strong>Recupero:</strong> 2–3 minuti sui principali, 60–90 secondi sugli isolamenti.</div>
+<div class="sec"><div class="sec-dot" style="background:var(--lime)"></div><div class="sec-lbl">1RM rilevati</div></div>
+<div class="rm-grid"><div class="rm-c"><div class="rm-n">Chest Press</div><div><span class="rm-v">45</span><span class="rm-u"> kg</span></div></div><div class="rm-c"><div class="rm-n">Leg Extension</div><div><span class="rm-v">75</span><span class="rm-u"> kg</span></div></div><div class="rm-c"><div class="rm-n">Leg Press</div><div><span class="rm-v">98</span><span class="rm-u"> kg</span></div></div></div>
+</div>
+<!-- ══════════ PASTI ══════════ -->
+<div class="pg" id="pg-pasti">
+<div class="prot-banner">
+<div class="pb-icon">🥩</div>
+<div>
+<div class="pb-val">130g proteine/giorno</div>
+<div class="pb-sub">obiettivo per costruire massa muscolare</div>
+</div>
+</div>
+<div class="protein-check">
+<div class="protein-row"><span>Colazione</span><strong>25–35 g</strong></div>
+<div class="protein-row"><span>Spuntino mattutino · facoltativo</span><strong>0–10 g</strong></div>
+<div class="protein-row"><span>Pranzo</span><strong>25–40 g</strong></div>
+<div class="protein-row"><span>Merenda</span><strong>12–25 g</strong></div>
+<div class="protein-row"><span>Cena</span><strong>30–40 g</strong></div>
+<div class="protein-total">Totale reale raggiungibile: circa 92–150 g</div>
+<div class="ac-note">Obiettivo pratico: punta ad almeno 130 g scegliendo una fonte proteica a ogni fascia principale.</div>
+<div class="ac-note">Mandorle: 15–20 g facoltativi a colazione o nello spuntino dei giorni di riposo quando hai più fame. Non sono frutta fresca e non sostituiscono mela o banana. Evitale nel richiamo immediatamente pre-workout, dove sono preferibili carboidrati più semplici.</div>
+<div class="ac-note green">Se mancano 10–20 g: aggiungi 1 skyr da 150 g oppure 20–25 g di whey. Se mancano 20–30 g: aggiungi 30 g di whey oppure 80–100 g di fesa/bresaola. Le quantità del pranzo e della cena restano stime perché dipendono dalle porzioni reali.</div><div class="ac-note">Kcal: inseriscile quando sono note o stimabili. Per i menu Elmec vengono sommate automaticamente; a casa puoi usare una stima del piatto intero. Se non sai il valore, lascia il campo vuoto: il Diario mostrerà una copertura parziale senza penalizzare la giornata.</div>
+</div>
+<div class="tl">
+<!-- 08:00 -->
+<div class="tl-row">
+<div class="tl-time">08:00</div>
+<div class="tl-dot" style="background: var(--lime)"></div>
+<div class="tl-body">
+<div class="tl-title" style="color: var(--lime)">
                   Colazione
                   <span class="tl-pil" style="background:rgba(170,255,0,.1);color:var(--lime)">~25–35g prot</span>
-                </div>
-                <div class="tl-hint">Scegli il tipo di giornata e poi una sola combinazione</div>
-                <div class="breakfast-toggle" role="tablist" aria-label="Colazione per giorno di allenamento o riposo">
-                  <button class="breakfast-toggle-btn on" type="button" role="tab" aria-selected="true" aria-controls="breakfast-workout" onclick="swBreakfast('workout', this)">Giorno workout</button>
-                  <button class="breakfast-toggle-btn" type="button" role="tab" aria-selected="false" aria-controls="breakfast-rest" onclick="swBreakfast('rest', this)">Giorno di riposo</button>
-                </div>
-
-                <div class="breakfast-plan on" id="breakfast-workout" role="tabpanel">
-                  <div class="tl-items">
-                    <div class="tl-item main">Completa: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 40 g fiocchi d’avena + ½ banana o 1 banana piccola</div>
-                    <div class="tl-item">Rapida: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 1 banana</div>
-                    <div class="tl-item">Al cucchiaio: 1 skyr Mila da 150 g + 40 g fiocchi d’avena + 1 banana</div>
-                    <div class="tl-item">Salata: 60–70 g pane di segale integrale + 60 g fesa di tacchino o bresaola + 1 banana o 1 mela</div>
-                    <div class="tl-item alt">Questa settimana: lunedì, mercoledì, giovedì e sabato oppure domenica.</div>
-                  </div>
-                </div>
-
-                <div class="breakfast-plan" id="breakfast-rest" role="tabpanel">
-                  <div class="tl-items">
-                    <div class="tl-item main">Con avena: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 30–40 g fiocchi d’avena</div>
-                    <div class="tl-item">Con frutta: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 1 mela o 1 banana</div>
-                    <div class="tl-item">Al cucchiaio: 1 skyr Mila o yogurt greco Tigros da 150 g + 30–40 g fiocchi d’avena + 1 mela. Aggiungi 15 g di mandorle solo se vuoi più sazietà o la colazione deve durare più a lungo</div>
-                    <div class="tl-item">Salata: 60–70 g pane di segale integrale + 60 g fesa di tacchino o bresaola + 1 mela</div>
-                    <div class="tl-item alt">Questa settimana: martedì, venerdì e il giorno del weekend senza allenamento.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 13:00 -->
-            <div class="tl-row">
-              <div class="tl-time">13:00</div>
-              <div class="tl-dot" style="background: var(--blue)"></div>
-              <div class="tl-body">
-                <div class="tl-title" style="color: var(--blue)">
+</div>
+<div class="tl-hint">Scegli il tipo di giornata e poi una sola combinazione</div>
+<div aria-label="Colazione per giorno di allenamento o riposo" class="breakfast-toggle" role="tablist">
+<button aria-controls="breakfast-workout" aria-selected="true" class="breakfast-toggle-btn on" onclick="swBreakfast('workout', this)" role="tab" type="button">Giorno workout</button>
+<button aria-controls="breakfast-rest" aria-selected="false" class="breakfast-toggle-btn" onclick="swBreakfast('rest', this)" role="tab" type="button">Giorno di riposo</button>
+</div>
+<div class="breakfast-plan on" id="breakfast-workout" role="tabpanel">
+<div class="tl-items">
+<div class="tl-item main">Completa: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 40 g fiocchi d’avena + ½ banana o 1 banana piccola</div>
+<div class="tl-item">Rapida: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 1 banana</div>
+<div class="tl-item">Al cucchiaio: 1 skyr Mila da 150 g + 40 g fiocchi d’avena + 1 banana</div>
+<div class="tl-item">Salata: 60–70 g pane di segale integrale + 60 g fesa di tacchino o bresaola + 1 banana o 1 mela</div>
+<div class="tl-item alt">Questa settimana: lunedì, mercoledì, giovedì e sabato oppure domenica.</div>
+</div>
+</div>
+<div class="breakfast-plan" id="breakfast-rest" role="tabpanel">
+<div class="tl-items">
+<div class="tl-item main">Con avena: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 30–40 g fiocchi d’avena</div>
+<div class="tl-item">Con frutta: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 1 mela o 1 banana</div>
+<div class="tl-item">Al cucchiaio: 1 skyr Mila o yogurt greco Tigros da 150 g + 30–40 g fiocchi d’avena + 1 mela. Aggiungi 15 g di mandorle solo se vuoi più sazietà o la colazione deve durare più a lungo</div>
+<div class="tl-item">Salata: 60–70 g pane di segale integrale + 60 g fesa di tacchino o bresaola + 1 mela</div>
+<div class="tl-item alt">Questa settimana: martedì, venerdì e il giorno del weekend senza allenamento.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 13:00 -->
+<div class="tl-row">
+<div class="tl-time">13:00</div>
+<div class="tl-dot" style="background: var(--blue)"></div>
+<div class="tl-body">
+<div class="tl-title" style="color: var(--blue)">
                   Pranzo
-                  <span
-                    class="tl-pil"
-                    style="
+                  <span class="tl-pil" style="
                       background: rgba(123, 200, 246, 0.1);
                       color: var(--blue);
-                    "
-                    >~35g prot</span
-                  >
-                </div>
-                <div class="tl-hint">
+                    ">~35g prot</span>
+</div>
+<div class="tl-hint">
                   Tocca il giorno per vedere cosa mangiare
                 </div>
-                <div class="acc"><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Lun</span><span class="ac-lbl">Lunedì 28/09 · Workout Upper A</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di pasta con tonno, pomodorini e basilico</span> <span class="ac-c">· 428 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Bocconcini di tacchino al curry</span> <span class="ac-c">· 215 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Fagiolini all’olio</span> <span class="ac-c">· 75 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 718 kcal + frutta · ~42 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Riso basmati con verdure di stagione + filetto di branzino con patate e olive + carote al vapore + frutta (600 kcal + frutta · ~32 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Giorno Upper A: la scelta principale combina carboidrati sufficienti e due fonti proteiche. Se la palestra è serale, mantieni lo spuntino pre-workout previsto senza aggiungere automaticamente anche Oaties e gallette.</div></div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mar</span><span class="ac-lbl">Martedì 29/09 · Riposo</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Cavatelli con cozze, cannellini e pomodorini</span> <span class="ac-c">· 449 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Bresaola, grana e insalatina</span> <span class="ac-c">· 134 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Verdure grigliate</span> <span class="ac-c">· 91 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 674 kcal + frutta · ~39 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Insalata di riso rosso con peperoni arrosto e prosciutto di Praga + nodino di maiale alla griglia + zucchine al forno + frutta (596 kcal + frutta · ~35 g proteine).</div><div class="ac-note"><strong>Se ti alleni martedì (Lower A):</strong> sostituisci le verdure grigliate con le patate al rosmarino (265 kcal). Il pranzo sale a circa 848 kcal + frutta e offre più carboidrati per la seduta gambe. In quel caso fai la merenda pre-workout prevista, senza sommare automaticamente Oaties e gallette.</div><div class="ac-line ac-c" style="margin-top:8px">Se martedì resta giorno di riposo, mantieni invece le verdure grigliate, una merenda moderata e nessun richiamo pre-workout.</div></div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mer</span><span class="ac-lbl">Mercoledì 23/09 · Workout Lower A</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Linguine con cozze, vongole e prezzemolo</span> <span class="ac-c">· 508 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Burger di pesce con olive, basilico e pomodorini</span> <span class="ac-c">· 150 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Spinaci al formaggio</span> <span class="ac-c">· 99 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 757 kcal + frutta · ~37 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Insalata di farro con gamberi, feta e mandorle + burger di pesce + spinaci al formaggio + frutta (691 kcal + frutta · ~35 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Giorno Lower A: la scelta principale offre più carboidrati per la seduta gambe. Mantieni lo spuntino pre-workout digeribile e scegli un solo richiamo se serve.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Gio</span><span class="ac-lbl">Giovedì 24/09 · Workout Upper B</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Risotto con zucchine e gamberetti</span> <span class="ac-c">· 457 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Involtino di manzo con ricotta e pistacchio</span> <span class="ac-c">· 370 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Coste all’olio</span> <span class="ac-c">· 70 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 897 kcal + frutta · ~39 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Cous cous con fagioli, cipolla e pollo + girelle di nasello con panatura di mandorle e noci + carote al vapore + frutta (1017 kcal + frutta · ~42 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Giorno Upper B: combinazione energetica e proteica. Se la palestra è serale, fai una merenda moderata; non serve un richiamo abbondante dopo questo pranzo.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Ven</span><span class="ac-lbl">Venerdì 25/09 · Riposo</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di riso rosso con sgombro, basilico e pomodorini</span> <span class="ac-c">· 350 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Hamburger di manzo alla griglia</span> <span class="ac-c">· 150 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Scarola stufata</span> <span class="ac-c">· 98 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 598 kcal + frutta · ~36 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Insalata di pasta con verdure spadellate + filetto di gallinella con pomodorini e origano + fagiolini al vapore + frutta (689 kcal + frutta · ~34 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Giorno di riposo: scelta più leggera ma ancora proteica. Mantieni carboidrati moderati a cena e nessun richiamo pre-workout.</div></div></div></div><div class="tl-hint">Menu aziendale da lunedì a venerdì. Sabato e domenica sono gestiti nella sezione Weekend qui sotto.</div>
-                
-              </div>
-            </div>
-
-            <div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Weekend · Lower B sabato oppure domenica</div></div><div class="ac-note green" style="margin-bottom:10px">Scegli un solo giorno per Lower B. Nell’altro usa colazione, spuntino e cena da giorno di riposo. Se ti alleni al mattino, lascia 90–120 minuti dalla colazione e pranza entro circa 60–90 minuti dalla fine.</div><div class="weekend-toggle" role="tablist" aria-label="Orario allenamento nel weekend"><button class="weekend-btn on" id="weekend-morning-btn" onclick="swWeekend('morning',this)">Palestra mattina</button><button class="weekend-btn" id="weekend-later-btn" onclick="swWeekend('later',this)">Palestra pomeriggio/sera</button></div><div class="weekend-plan on" id="weekend-morning"><div class="weekend-card"><div class="weekend-title">Lower B · allenamento al mattino</div><div class="weekend-slot"><div class="weekend-time">07:30–08:30 · Colazione</div><div class="weekend-meal">Whey + latte + avena + banana, oppure skyr + avena + banana.</div><div class="weekend-alt">Inizio palestra ideale dopo 90–120 minuti. Se senti fame 30–45 minuti prima, scegli solo banana, 2 gallette oppure 1 Oaties.</div></div><div class="weekend-slot"><div class="weekend-time">Entro 60–90 min dalla fine · Pranzo</div><div class="weekend-meal">Pasta, riso o patate + carne/pesce/uova + verdure + frutta.</div><div class="weekend-alt">Obiettivo: 30–40 g proteine e una porzione piena di carboidrati.</div></div><div class="weekend-slot"><div class="weekend-time">16:30–17:30 · Merenda</div><div class="weekend-meal">Skyr o yogurt greco + frutto.</div></div><div class="weekend-slot"><div class="weekend-time">20:00–21:00 · Cena</div><div class="weekend-meal">Proteina magra + verdure + carboidrati moderati.</div></div></div></div><div class="weekend-plan" id="weekend-later"><div class="weekend-card"><div class="weekend-title">Lower B · allenamento pomeriggio/sera</div><div class="weekend-slot"><div class="weekend-time">08:00–09:30 · Colazione</div><div class="weekend-meal">Colazione workout completa.</div></div><div class="weekend-slot"><div class="weekend-time">12:30–13:30 · Pranzo</div><div class="weekend-meal">Carboidrati + proteina magra + verdure.</div></div><div class="weekend-slot"><div class="weekend-time">60–90 min prima · Spuntino</div><div class="weekend-meal">Skyr + banana, oppure whey + banana.</div><div class="weekend-alt">Aggiungi 2 gallette o una Oaties solo se servono più carboidrati.</div></div><div class="weekend-slot"><div class="weekend-time">Dopo allenamento · Cena</div><div class="weekend-meal">Proteina magra + riso/pasta/patate + verdure.</div></div></div></div>
-            <!-- Percorso alimentare selezionabile -->
-            <div class="meal-toggle" role="tablist" aria-label="Posizione della cena rispetto all’allenamento">
-              <button class="meal-toggle-btn on" type="button" role="tab" aria-selected="true" aria-controls="meal-post" onclick="swMealPlan('post', this)">Cena post-workout</button>
-              <button class="meal-toggle-btn" type="button" role="tab" aria-selected="false" aria-controls="meal-pre" onclick="swMealPlan('pre', this)">Cena pre-workout</button>
-              <button class="meal-toggle-btn" type="button" role="tab" aria-selected="false" aria-controls="meal-rest" onclick="swMealPlan('rest', this)">Giorno di riposo</button>
-            </div>
-
-            <div class="meal-plan on" id="meal-post" role="tabpanel">
-              <div class="tl-row">
-                <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino principale <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">trasportabile</span></div><div class="tl-hint">Preparabile in ufficio: frigorifero disponibile</div><div class="tl-items"><div class="tl-item main">Banana + yogurt greco o skyr + 2–3 gallette di riso</div><div class="tl-item">In ufficio: skyr o yogurt greco da 150 g + banana + 2–3 gallette; alternativa 30 g whey con acqua</div><div class="tl-item">Alternativa solida: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato) + un frutto</div></div></div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">18:30</div><div class="tl-dot" style="background:var(--blue)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--blue)">Richiamo facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div><div class="tl-items"><div class="tl-item main">Se hai fame o inizi più tardi: una banana oppure 2–3 gallette</div><div class="tl-item">In alternativa: una barretta semplice e facilmente digeribile</div><div class="tl-item alt">Non serve se lo spuntino delle 16–17 è stato sufficiente</div></div></div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">21–22</div><div class="tl-dot" style="background:var(--pink)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena post-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">completa</span></div><div class="tl-items"><div class="tl-item main">Carne o pesce + verdure + riso, pasta o patate</div><div class="tl-item">Alternativa: uova o fiocchi di latte + pane o patate + verdure</div><div class="tl-item alt">Se ceni tardi, mantieni una cena completa ma digeribile</div></div></div>
-              </div>
-            </div>
-
-            <div class="meal-plan" id="meal-pre" role="tabpanel">
-              <div class="tl-row">
-                <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino moderato <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">prima della cena</span></div><div class="tl-items"><div class="tl-item main">Yogurt greco o skyr + una banana</div><div class="tl-item">In ufficio: skyr o yogurt greco da 150 g + un frutto; alternativa 30 g whey con acqua</div><div class="tl-item">Alternativa: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato)</div><div class="tl-item alt">Evita di sommare uno spuntino grande alla cena delle 19:30–20:00</div></div></div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">19:30</div><div class="tl-dot" style="background:var(--pink)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena pre-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">palestra 21–21:30</span></div><div class="tl-items"><div class="tl-item main">Riso o pasta semplice + pollo, tacchino o pesce magro + poche verdure cotte</div><div class="tl-item">Alternativa rapida: panino con tacchino o bresaola + banana + yogurt greco, se ben tollerato</div><div class="tl-item alt">Limita fritti, salse, formaggi grassi, legumi abbondanti e grandi quantità di verdure crude</div></div></div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">23:00</div><div class="tl-dot" style="background:var(--blue)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--blue)">Recupero facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div><div class="tl-items"><div class="tl-item main">Se hai fame o la cena era leggera: yogurt greco, skyr oppure whey con acqua o latte</div><div class="tl-item">Aggiungi una banana o qualche galletta soltanto se serve altra energia</div><div class="tl-item alt">Non è necessaria una seconda cena completa</div></div></div>
-              </div>
-            </div>
-
-            <div class="meal-plan" id="meal-rest" role="tabpanel">
-              <div class="tl-row">
-                <div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino giorno di riposo <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">moderato</span></div><div class="tl-hint">Questa settimana: martedì, venerdì e il giorno del weekend senza allenamento.</div><div class="tl-items"><div class="tl-item main">Skyr o yogurt greco + una mela, pera o altro frutto</div><div class="tl-item">Alternativa: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato) + un frutto</div><div class="tl-item">Mandorle facoltative: aggiungi 15–20 g solo se hai più fame o mancano molte ore alla cena. Sono frutta a guscio, non sostituiscono il frutto fresco</div><div class="tl-item alt">Non servono gallette, miele o un richiamo alle 18:30, salvo fame particolare</div></div></div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">19–20</div><div class="tl-dot" style="background:var(--blue)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--blue)">Nessun richiamo pre-workout <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">riposo</span></div><div class="tl-items"><div class="tl-item main">Attendi normalmente la cena senza fare un secondo spuntino</div><div class="tl-item alt">Se la cena è lontana e hai realmente fame: un frutto oppure uno yogurt semplice</div></div></div>
-              </div>
-              <div class="tl-row">
-                <div class="tl-time">20–21</div><div class="tl-dot" style="background:var(--pink)"></div>
-                <div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena giorno di riposo <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">normale</span></div><div class="tl-items"><div class="tl-item main">Proteina magra + verdure + una porzione moderata di riso, pasta, pane o patate</div><div class="tl-item">Alternativa: uova, pesce o legumi + verdure + pane o patate</div><div class="tl-item alt">Non serve eliminare i carboidrati: mantieni una porzione meno abbondante rispetto al post-workout</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- DIARIO -->
-        <div class="pg" id="pg-diario"><div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Diario alimentare</div></div><div class="backup-panel"><div class="backup-title">Backup per navigazione in incognito</div><div class="backup-text">All’apertura riprendi dall’ultimo file salvato. Prima di chiudere tutte le finestre Incognito, salva nuovamente il Diario.</div><div class="backup-status" id="backup-status">Nessuna modifica da salvare</div><div class="backup-buttons"><button class="backup-btn" onclick="document.getElementById('diary-import').click()">Riprendi da file</button><button class="backup-btn save" onclick="exportDiary()">Salva Diario su file</button></div></div><div class="diary-head"><input class="diary-date" id="diary-date" type="date" onchange="renderDiary()"><div class="tl-hint" style="margin-top:8px">Il salvataggio nel browser è temporaneo in Incognito. Il file JSON scaricato rimane sul dispositivo.</div></div><div class="diary-summary"><div class="diary-stat"><strong id="diary-protein">0 g</strong><span>proteine stimate</span></div><div class="diary-stat"><strong id="diary-kcal">0 kcal</strong><span>calorie registrate</span></div><div class="diary-stat"><strong id="diary-meals">0/4</strong><span>pasti principali</span></div><div class="diary-stat"><strong id="diary-coverage">0%</strong><span>copertura kcal</span></div></div><div class="ac-note" style="margin-bottom:10px">Le kcal sono facoltative e possono essere approssimate. Il totale mostra solo le voci per cui hai inserito una stima; non viene interpretato come introito completo se la copertura è bassa.</div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(0,this)"><span>Colazione</span><span class="diary-meal-count" id="diary-0-count">0 elementi</span></div><div class="diary-meal-body" id="diary-0-body"><div class="diary-entries" id="diary-0-entries"></div><div class="diary-presets" id="diary-0-quick"></div><div class="diary-form" id="diary-0-form"><input id="diary-0-name" placeholder="Alimento o piatto"><input id="diary-0-qty" placeholder="Quantità"><input id="diary-0-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><input id="diary-0-kcal" type="number" min="0" step="1" placeholder="kcal"><button class="diary-add" onclick="addDiaryEntry('0')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(1,this)"><span>Spuntino mattutino</span><span class="diary-meal-count" id="diary-1-count">0 elementi</span></div><div class="diary-meal-body" id="diary-1-body"><div class="diary-entries" id="diary-1-entries"></div><div class="diary-presets" id="diary-1-quick"></div><div class="diary-form" id="diary-1-form"><input id="diary-1-name" placeholder="Alimento o piatto"><input id="diary-1-qty" placeholder="Quantità"><input id="diary-1-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><input id="diary-1-kcal" type="number" min="0" step="1" placeholder="kcal"><button class="diary-add" onclick="addDiaryEntry('1')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(2,this)"><span>Pranzo</span><span class="diary-meal-count" id="diary-2-count">0 elementi</span></div><div class="diary-meal-body" id="diary-2-body"><div class="diary-entries" id="diary-2-entries"></div><div class="diary-presets" id="diary-2-quick"></div><div class="diary-form" id="diary-2-form"><input id="diary-2-name" placeholder="Alimento o piatto"><input id="diary-2-qty" placeholder="Quantità"><input id="diary-2-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><input id="diary-2-kcal" type="number" min="0" step="1" placeholder="kcal"><button class="diary-add" onclick="addDiaryEntry('2')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(3,this)"><span>Merenda</span><span class="diary-meal-count" id="diary-3-count">0 elementi</span></div><div class="diary-meal-body" id="diary-3-body"><div class="diary-entries" id="diary-3-entries"></div><div class="diary-presets" id="diary-3-quick"></div><div class="diary-form" id="diary-3-form"><input id="diary-3-name" placeholder="Alimento o piatto"><input id="diary-3-qty" placeholder="Quantità"><input id="diary-3-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><input id="diary-3-kcal" type="number" min="0" step="1" placeholder="kcal"><button class="diary-add" onclick="addDiaryEntry('3')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(4,this)"><span>Cena</span><span class="diary-meal-count" id="diary-4-count">0 elementi</span></div><div class="diary-meal-body" id="diary-4-body"><div class="diary-entries" id="diary-4-entries"></div><div class="diary-presets" id="diary-4-quick"></div><div class="diary-form" id="diary-4-form"><input id="diary-4-name" placeholder="Alimento o piatto"><input id="diary-4-qty" placeholder="Quantità"><input id="diary-4-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><input id="diary-4-kcal" type="number" min="0" step="1" placeholder="kcal"><button class="diary-add" onclick="addDiaryEntry('4')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(5,this)"><span>Extra · solo se presenti</span><span class="diary-meal-count" id="diary-5-count">0 elementi</span></div><div class="diary-meal-body" id="diary-5-body"><div class="diary-entries" id="diary-5-entries"></div><div class="diary-presets" id="diary-5-quick"></div><div class="diary-form" id="diary-5-form"><input id="diary-5-name" placeholder="Alimento o piatto"><input id="diary-5-qty" placeholder="Quantità"><input id="diary-5-prot" type="number" min="0" step="0.1" placeholder="Prot. g"><input id="diary-5-kcal" type="number" min="0" step="1" placeholder="kcal"><button class="diary-add" onclick="addDiaryEntry('5')">Aggiungi al diario</button></div></div></div><div class="diary-actions"><button class="diary-action" onclick="exportDiary()">Salva altra copia</button><button class="diary-action" onclick="document.getElementById('diary-import').click()">Riprendi da un backup</button><input id="diary-import" type="file" accept="application/json,.json" hidden onchange="importDiary(event)"></div><div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Ultimi giorni</div></div><div class="diary-history" id="diary-history"></div></div>
-        <!-- ══════════ CORPO ══════════ -->
-        <div class="pg" id="pg-corpo">
-          <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Recupero quotidiano</div></div>
-          <div class="recovery-grid">
-            <div class="recovery-card"><div class="recovery-val">2–2,5 L</div><div class="recovery-lbl">acqua al giorno, di più se sudi molto</div></div>
-            <div class="recovery-card"><div class="recovery-val">7–9 h</div><div class="recovery-lbl">sonno, verso 8–9 h nelle settimane da 4 sedute</div></div>
-            <div class="recovery-card"><div class="recovery-val">1–2</div><div class="recovery-lbl">giorni senza palestra per recuperare</div></div>
-          </div>
-          <div class="tip"><strong>La crescita avviene anche nel recupero:</strong> allenamento, proteine, idratazione e sonno lavorano insieme. Se prestazioni, tecnica o sonno peggiorano, riduci il lavoro extra serale.</div>
-          <div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Routine fisica serale facoltativa</div></div>
-          <div class="card">
-            <div class="evening-toggle"><button class="evening-btn on" onclick="swEvening('upper',this)">Dopo Upper</button><button class="evening-btn" onclick="swEvening('other',this)">Dopo Lower / riposo</button></div>
-            <div class="evening-plan on" id="evening-upper"><div class="ac-note">Niente flessioni: petto, spalle e tricipiti hanno già lavorato. Fai solo 5–8 minuti di mobilità leggera, respirazione e stretching non intenso.</div></div>
-            <div class="evening-plan" id="evening-other"><div class="ac-note green">Routine completa facoltativa: 2 serie di flessioni lasciando 2–3 ripetizioni in riserva, 2 serie di plank da 30–45 secondi e 5 minuti di mobilità. Saltala se senti fatica o se riduce il sonno.</div></div>
-          </div>
-
-          <div class="sec">
-            <div class="sec-dot" style="background: var(--lime)"></div>
-            <div class="sec-lbl">BIA InBody · 7 set 2026, ore 19:19</div>
-          </div>
-          <div class="sg">
-            <div class="sc"><div class="sc-lbl">Peso</div><div><span class="sc-val">64,1</span><span class="sc-unit"> kg</span></div><div class="sc-badge bg">range InBody</div></div>
-            <div class="sc"><div class="sc-lbl">Massa grassa</div><div><span class="sc-val">21,3</span><span class="sc-unit">%</span></div><div class="sc-badge bg">13,7 kg</div></div>
-            <div class="sc"><div class="sc-lbl">Massa muscolare scheletrica</div><div><span class="sc-val">28,0</span><span class="sc-unit"> kg</span></div><div class="sc-badge bw">da monitorare</div></div>
-            <div class="sc"><div class="sc-lbl">Massa magra</div><div><span class="sc-val">50,4</span><span class="sc-unit"> kg</span></div><div class="sc-badge bw">sotto range 51,5–63</div></div>
-            <div class="sc"><div class="sc-lbl">BMI</div><div><span class="sc-val">20,9</span></div><div class="sc-badge bg">normale</div></div>
-            <div class="sc"><div class="sc-lbl">BMR</div><div><span class="sc-val">1460</span><span class="sc-unit"> kcal</span></div><div class="sc-badge bg">range InBody</div></div>
-            <div class="sc"><div class="sc-lbl">Grasso viscerale</div><div><span class="sc-val">5</span></div><div class="sc-badge bg">basso</div></div>
-            <div class="sc"><div class="sc-lbl">Punteggio InBody</div><div><span class="sc-val">70</span><span class="sc-unit">/100</span></div><div class="sc-badge bg">stabile</div></div>
-          </div>
-
-          <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Idratazione e parametri cellulari</div></div>
-          <div class="goal-card">
-            <div class="gr"><span class="gr-l">Acqua corporea totale</span><span style="font-weight:500">37,1 L <span style="color:var(--orange);font-size:11px">(range 37,9–46,3)</span></span></div>
-            <div class="gr"><span class="gr-l">Proteine corporee</span><span style="font-weight:500">9,9 kg <span style="color:var(--orange);font-size:11px">(range 10,2–12,4)</span></span></div>
-            <div class="gr"><span class="gr-l">Minerali</span><span style="font-weight:500">3,40 kg <span style="color:var(--orange);font-size:11px">(range 3,50–4,28)</span></span></div>
-            <div class="gr"><span class="gr-l">Angolo di fase</span><span style="font-weight:500">5,6°</span></div>
-            <div class="gr"><span class="gr-l">SMI</span><span style="font-weight:500">7,2 kg/m²</span></div>
-            <div class="gr"><span class="gr-l">Rapporto vita/fianchi</span><span style="font-weight:500">0,80</span></div>
-          </div>
-          <div class="ac-note">Acqua, proteine e minerali risultano leggermente sotto gli intervalli del referto. Questo può influenzare la stima della massa magra, ma il singolo test non consente di diagnosticare da solo una disidratazione.</div>
-
-          <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Confronto 25 mag → 7 set</div></div>
-          <div class="goal-card">
-            <div class="gr"><span class="gr-l">Peso</span><span style="font-weight:500">64,9 → <span style="color:var(--orange)">64,1 kg</span> <span style="color:var(--t3);font-size:11px">(-0,8)</span></span></div>
-            <div class="gr"><span class="gr-l">Massa muscolare scheletrica</span><span style="font-weight:500">28,8 → <span style="color:var(--orange)">28,0 kg</span> <span style="color:var(--t3);font-size:11px">(-0,8)</span></span></div>
-            <div class="gr"><span class="gr-l">Massa grassa %</span><span style="font-weight:500">19,8% → <span style="color:var(--orange)">21,3%</span> <span style="color:var(--t3);font-size:11px">(+1,5 punti)</span></span></div>
-            <div class="gr"><span class="gr-l">BMI</span><span style="font-weight:500">21,2 → 20,9</span></div>
-            <div class="gr"><span class="gr-l">BMR</span><span style="font-weight:500">1494 → 1460 kcal <span style="color:var(--t3);font-size:11px">(-34)</span></span></div>
-            <div class="gr"><span class="gr-l">Grasso viscerale</span><span style="font-weight:500">5 → <span style="color:var(--lime)">5</span></span></div>
-            <div class="gr"><span class="gr-l">Punteggio InBody</span><span style="font-weight:500">72 → 70 <span style="color:var(--t3);font-size:11px">(-2)</span></span></div>
-          </div>
-
-          <div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Analisi segmentale</div></div>
-          <div class="goal-card">
-            <div class="gr"><span class="gr-l">Braccio sinistro / destro</span><span style="font-weight:500">2,59 / 2,58 kg · 84,9% / 84,6%</span></div>
-            <div class="gr"><span class="gr-l">Tronco</span><span style="font-weight:500">22,2 kg · 91,3%</span></div>
-            <div class="gr"><span class="gr-l">Gamba sinistra / destra</span><span style="font-weight:500">8,51 / 8,50 kg · 100,3% / 100,2%</span></div>
-          </div>
-          <div class="ac-note green">La distribuzione è molto simmetrica tra lato sinistro e destro. Le gambe risultano nel range normale; braccia e tronco sono le aree con maggiore margine relativo secondo l'analisi segmentale.</div>
-
-          <div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Obiettivo e controllo</div></div>
-          <div class="goal-card">
-            <div class="gr"><span class="gr-l">Target InBody</span><span style="font-weight:500">67,3 kg <span style="color:var(--lime);font-size:11px">(+3,2 kg netti)</span></span></div>
-            <div class="gr"><span class="gr-l">Indicazione macchina</span><span style="font-weight:500">+6,8 kg muscolo / -3,6 kg grasso</span></div>
-            <div class="gr"><span class="gr-l">Target personale</span><span style="font-weight:500;color:var(--lime)">68 kg</span></div>
-            <div class="gr"><span class="gr-l">Prossimo confronto</span><span style="font-weight:500">stessa ora e condizioni standardizzate</span></div>
-          </div>
-
-          <div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Lettura pratica</div></div>
-          <div class="card" style="border-left:2px solid var(--orange);font-size:13px;color:var(--t2);line-height:1.8">
-            <div>• Rispetto al 25 maggio il test mostra meno peso e massa muscolare stimata, con percentuale di grasso più alta.</div>
-            <div>• Poiché acqua corporea, proteine e minerali sono sotto i range del referto, la variazione della massa magra va confermata e non interpretata come perdita certa di 0,8 kg di muscolo.</div>
-            <div>• Il grasso viscerale resta basso a 5 e il rapporto vita/fianchi è 0,80.</div>
-            <div>• Per il prossimo BIA: stessa fascia oraria, idratazione abituale, niente allenamento immediatamente prima, condizioni di pasti e vescica il più possibile simili.</div>
-          </div>
-        </div>
-        <!-- ══════════ SKINCARE ══════════ -->
-        <div class="pg" id="pg-skin">
-          <div class="sec">
-            <div class="sec-dot" style="background: var(--pink)"></div>
-            <div class="sec-lbl">Routine mattutina — in ordine</div>
-          </div>
-
-          <div class="step">
-            <div class="step-n n1">1</div>
-            <div>
-              <div class="step-prod">Blemish Control Cleanser</div>
-              <div class="step-brand">CeraVe</div>
-              <div class="step-tags">
-                <span class="tag">Acido salicilico</span
-                ><span class="tag">Ceramidi</span
-                ><span class="tag">Niacinamide</span
-                ><span class="tag">Sblocca i pori</span>
-              </div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-n n2">2</div>
-            <div>
-              <div class="step-prod">Niacinamide 10% + Zinc 1%</div>
-              <div class="step-brand">The Ordinary</div>
-              <div class="step-tags">
-                <span class="tag">Riduce sebo</span
-                ><span class="tag">Chiude i pori</span
-                ><span class="tag">Sbiadisce segni</span>
-              </div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-n n3">3</div>
-            <div>
-              <div class="step-prod">Oil-Free Ultra Moisturizing Lotion</div>
-              <div class="step-brand">COSRX</div>
-              <div class="step-tags">
-                <span class="tag">Oil-free</span
-                ><span class="tag">Non comedogenico</span
-                ><span class="tag">Linfa di betulla</span>
-              </div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-n n4">4</div>
-            <div>
-              <div class="step-prod">Anthelios UVMUNE 400 SPF50+</div>
-              <div class="step-brand">La Roche-Posay</div>
-              <div class="step-tags">
-                <span class="tag">SPF50+</span><span class="tag">Invisible</span
-                ><span class="tag">Ultimo step sempre</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tip">
-            <strong>Ordine fondamentale:</strong> detergente → siero → idratante
+<div class="acc"><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Lun</span><span class="ac-lbl">Lunedì 28/09 · Workout Upper A</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di pasta con tonno, pomodorini e basilico</span> <span class="ac-c">· 428 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Bocconcini di tacchino al curry</span> <span class="ac-c">· 215 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Fagiolini all’olio</span> <span class="ac-c">· 75 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 718 kcal + frutta · ~42 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Riso basmati con verdure di stagione + filetto di branzino con patate e olive + carote al vapore + frutta (600 kcal + frutta · ~32 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Giorno Upper A: pasta, tonno e tacchino forniscono carboidrati e una buona quota proteica. Se la palestra è serale, mantieni lo spuntino pre-workout previsto.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mar</span><span class="ac-lbl">Martedì 29/09 · Riposo / Lower A facoltativo</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Cavatelli con cozze, cannellini e pomodorini</span> <span class="ac-c">· 449 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Bresaola, grana e insalatina</span> <span class="ac-c">· 134 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno riposo:</span> <span class="ac-s">Verdure grigliate</span> <span class="ac-c">· 91 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta riposo · 674 kcal + frutta · ~39 g proteine</div><div class="ac-note"><strong>Se fai Lower A:</strong> sostituisci le verdure grigliate con le patate al rosmarino (265 kcal). Il pranzo diventa circa 848 kcal + frutta, con una quota di carboidrati più adatta alla seduta gambe.</div><div class="ac-note"><strong>Alternativa:</strong> Insalata di riso rosso con peperoni arrosto e prosciutto di Praga + nodino di maiale alla griglia + zucchine al forno + frutta (596 kcal + frutta · ~35 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Se resti a riposo, mantieni le verdure grigliate e non fare richiami pre-workout. Se ti alleni, usa la merenda workout senza sommare automaticamente banana, gallette e Oaties.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mer</span><span class="ac-lbl">Mercoledì 30/09 · Mensa non disponibile</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="diary-empty">Nessun menu Elmec disponibile per questa giornata. Registra il pranzo manualmente nel Diario usando “Altro”.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Gio</span><span class="ac-lbl">Giovedì 01/10 · Mensa non disponibile</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="diary-empty">Nessun menu Elmec disponibile per questa giornata. Registra il pranzo manualmente nel Diario usando “Altro”.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Ven</span><span class="ac-lbl">Venerdì 02/10 · Mensa non disponibile</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="diary-empty">Nessun menu Elmec disponibile per questa giornata. Registra il pranzo manualmente nel Diario usando “Altro”.</div></div></div></div><div class="tl-hint">Menu Elmec disponibile solo lunedì e martedì. Da mercoledì a venerdì inserisci manualmente il pranzo nel Diario. Sabato e domenica sono gestiti nella sezione Weekend qui sotto.</div>
+</div>
+</div>
+<div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Weekend · Lower B sabato oppure domenica</div></div><div class="ac-note green" style="margin-bottom:10px">Scegli un solo giorno per Lower B. Nell’altro usa colazione, spuntino e cena da giorno di riposo. Se ti alleni al mattino, lascia 90–120 minuti dalla colazione e pranza entro circa 60–90 minuti dalla fine.</div><div aria-label="Orario allenamento nel weekend" class="weekend-toggle" role="tablist"><button class="weekend-btn on" id="weekend-morning-btn" onclick="swWeekend('morning',this)">Palestra mattina</button><button class="weekend-btn" id="weekend-later-btn" onclick="swWeekend('later',this)">Palestra pomeriggio/sera</button></div><div class="weekend-plan on" id="weekend-morning"><div class="weekend-card"><div class="weekend-title">Lower B · allenamento al mattino</div><div class="weekend-slot"><div class="weekend-time">07:30–08:30 · Colazione</div><div class="weekend-meal">Whey + latte + avena + banana, oppure skyr + avena + banana.</div><div class="weekend-alt">Inizio palestra ideale dopo 90–120 minuti. Se senti fame 30–45 minuti prima, scegli solo banana, 2 gallette oppure 1 Oaties.</div></div><div class="weekend-slot"><div class="weekend-time">Entro 60–90 min dalla fine · Pranzo</div><div class="weekend-meal">Pasta, riso o patate + carne/pesce/uova + verdure + frutta.</div><div class="weekend-alt">Obiettivo: 30–40 g proteine e una porzione piena di carboidrati.</div></div><div class="weekend-slot"><div class="weekend-time">16:30–17:30 · Merenda</div><div class="weekend-meal">Skyr o yogurt greco + frutto.</div></div><div class="weekend-slot"><div class="weekend-time">20:00–21:00 · Cena</div><div class="weekend-meal">Proteina magra + verdure + carboidrati moderati.</div></div></div></div><div class="weekend-plan" id="weekend-later"><div class="weekend-card"><div class="weekend-title">Lower B · allenamento pomeriggio/sera</div><div class="weekend-slot"><div class="weekend-time">08:00–09:30 · Colazione</div><div class="weekend-meal">Colazione workout completa.</div></div><div class="weekend-slot"><div class="weekend-time">12:30–13:30 · Pranzo</div><div class="weekend-meal">Carboidrati + proteina magra + verdure.</div></div><div class="weekend-slot"><div class="weekend-time">60–90 min prima · Spuntino</div><div class="weekend-meal">Skyr + banana, oppure whey + banana.</div><div class="weekend-alt">Aggiungi 2 gallette o una Oaties solo se servono più carboidrati.</div></div><div class="weekend-slot"><div class="weekend-time">Dopo allenamento · Cena</div><div class="weekend-meal">Proteina magra + riso/pasta/patate + verdure.</div></div></div></div>
+<!-- Percorso alimentare selezionabile -->
+<div aria-label="Posizione della cena rispetto all’allenamento" class="meal-toggle" role="tablist">
+<button aria-controls="meal-post" aria-selected="true" class="meal-toggle-btn on" onclick="swMealPlan('post', this)" role="tab" type="button">Cena post-workout</button>
+<button aria-controls="meal-pre" aria-selected="false" class="meal-toggle-btn" onclick="swMealPlan('pre', this)" role="tab" type="button">Cena pre-workout</button>
+<button aria-controls="meal-rest" aria-selected="false" class="meal-toggle-btn" onclick="swMealPlan('rest', this)" role="tab" type="button">Giorno di riposo</button>
+</div>
+<div class="meal-plan on" id="meal-post" role="tabpanel">
+<div class="tl-row">
+<div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino principale <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">trasportabile</span></div><div class="tl-hint">Preparabile in ufficio: frigorifero disponibile</div><div class="tl-items"><div class="tl-item main">Banana + yogurt greco o skyr + 2–3 gallette di riso</div><div class="tl-item">In ufficio: skyr o yogurt greco da 150 g + banana + 2–3 gallette; alternativa 30 g whey con acqua</div><div class="tl-item">Alternativa solida: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato) + un frutto</div></div></div>
+</div>
+<div class="tl-row">
+<div class="tl-time">18:30</div><div class="tl-dot" style="background:var(--blue)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--blue)">Richiamo facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div><div class="tl-items"><div class="tl-item main">Se hai fame o inizi più tardi: una banana oppure 2–3 gallette</div><div class="tl-item">In alternativa: una barretta semplice e facilmente digeribile</div><div class="tl-item alt">Non serve se lo spuntino delle 16–17 è stato sufficiente</div></div></div>
+</div>
+<div class="tl-row">
+<div class="tl-time">21–22</div><div class="tl-dot" style="background:var(--pink)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena post-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">completa</span></div><div class="tl-items"><div class="tl-item main">Carne o pesce + verdure + riso, pasta o patate</div><div class="tl-item">Alternativa: uova o fiocchi di latte + pane o patate + verdure</div><div class="tl-item alt">Se ceni tardi, mantieni una cena completa ma digeribile</div></div></div>
+</div>
+</div>
+<div class="meal-plan" id="meal-pre" role="tabpanel">
+<div class="tl-row">
+<div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino moderato <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">prima della cena</span></div><div class="tl-items"><div class="tl-item main">Yogurt greco o skyr + una banana</div><div class="tl-item">In ufficio: skyr o yogurt greco da 150 g + un frutto; alternativa 30 g whey con acqua</div><div class="tl-item">Alternativa: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato)</div><div class="tl-item alt">Evita di sommare uno spuntino grande alla cena delle 19:30–20:00</div></div></div>
+</div>
+<div class="tl-row">
+<div class="tl-time">19:30</div><div class="tl-dot" style="background:var(--pink)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena pre-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">palestra 21–21:30</span></div><div class="tl-items"><div class="tl-item main">Riso o pasta semplice + pollo, tacchino o pesce magro + poche verdure cotte</div><div class="tl-item">Alternativa rapida: panino con tacchino o bresaola + banana + yogurt greco, se ben tollerato</div><div class="tl-item alt">Limita fritti, salse, formaggi grassi, legumi abbondanti e grandi quantità di verdure crude</div></div></div>
+</div>
+<div class="tl-row">
+<div class="tl-time">23:00</div><div class="tl-dot" style="background:var(--blue)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--blue)">Recupero facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div><div class="tl-items"><div class="tl-item main">Se hai fame o la cena era leggera: yogurt greco, skyr oppure whey con acqua o latte</div><div class="tl-item">Aggiungi una banana o qualche galletta soltanto se serve altra energia</div><div class="tl-item alt">Non è necessaria una seconda cena completa</div></div></div>
+</div>
+</div>
+<div class="meal-plan" id="meal-rest" role="tabpanel">
+<div class="tl-row">
+<div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino giorno di riposo <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">moderato</span></div><div class="tl-hint">Questa settimana: martedì, venerdì e il giorno del weekend senza allenamento.</div><div class="tl-items"><div class="tl-item main">Skyr o yogurt greco + una mela, pera o altro frutto</div><div class="tl-item">Alternativa: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato) + un frutto</div><div class="tl-item">Mandorle facoltative: aggiungi 15–20 g solo se hai più fame o mancano molte ore alla cena. Sono frutta a guscio, non sostituiscono il frutto fresco</div><div class="tl-item alt">Non servono gallette, miele o un richiamo alle 18:30, salvo fame particolare</div></div></div>
+</div>
+<div class="tl-row">
+<div class="tl-time">19–20</div><div class="tl-dot" style="background:var(--blue)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--blue)">Nessun richiamo pre-workout <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">riposo</span></div><div class="tl-items"><div class="tl-item main">Attendi normalmente la cena senza fare un secondo spuntino</div><div class="tl-item alt">Se la cena è lontana e hai realmente fame: un frutto oppure uno yogurt semplice</div></div></div>
+</div>
+<div class="tl-row">
+<div class="tl-time">20–21</div><div class="tl-dot" style="background:var(--pink)"></div>
+<div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena giorno di riposo <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">normale</span></div><div class="tl-items"><div class="tl-item main">Proteina magra + verdure + una porzione moderata di riso, pasta, pane o patate</div><div class="tl-item">Alternativa: uova, pesce o legumi + verdure + pane o patate</div><div class="tl-item alt">Non serve eliminare i carboidrati: mantieni una porzione meno abbondante rispetto al post-workout</div></div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- DIARIO -->
+<div class="pg" id="pg-diario"><div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Diario alimentare</div></div><div class="backup-panel"><div class="backup-title">Backup per navigazione in incognito</div><div class="backup-text">All’apertura riprendi dall’ultimo file salvato. Prima di chiudere tutte le finestre Incognito, salva nuovamente il Diario.</div><div class="backup-status" id="backup-status">Nessuna modifica da salvare</div><div class="backup-buttons"><button class="backup-btn" onclick="document.getElementById('diary-import').click()">Riprendi da file</button><button class="backup-btn save" onclick="exportDiary()">Salva Diario su file</button></div></div><div class="diary-head"><input class="diary-date" id="diary-date" onchange="renderDiary()" type="date"/><div class="tl-hint" style="margin-top:8px">Il salvataggio nel browser è temporaneo in Incognito. Il file JSON scaricato rimane sul dispositivo.</div></div><div class="diary-summary"><div class="diary-stat"><strong id="diary-protein">0 g</strong><span>proteine stimate</span></div><div class="diary-stat"><strong id="diary-kcal">0 kcal</strong><span>calorie registrate</span></div><div class="diary-stat"><strong id="diary-meals">0/4</strong><span>pasti principali</span></div><div class="diary-stat"><strong id="diary-coverage">0%</strong><span>copertura kcal</span></div></div><div class="ac-note" style="margin-bottom:10px">Le kcal sono facoltative e possono essere approssimate. Il totale mostra solo le voci per cui hai inserito una stima; non viene interpretato come introito completo se la copertura è bassa.</div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(0,this)"><span>Colazione</span><span class="diary-meal-count" id="diary-0-count">0 elementi</span></div><div class="diary-meal-body" id="diary-0-body"><div class="diary-entries" id="diary-0-entries"></div><div class="diary-presets" id="diary-0-quick"></div><div class="diary-form" id="diary-0-form"><input id="diary-0-name" placeholder="Alimento o piatto"/><input id="diary-0-qty" placeholder="Quantità"/><input id="diary-0-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-0-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('0')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(1,this)"><span>Spuntino mattutino</span><span class="diary-meal-count" id="diary-1-count">0 elementi</span></div><div class="diary-meal-body" id="diary-1-body"><div class="diary-entries" id="diary-1-entries"></div><div class="diary-presets" id="diary-1-quick"></div><div class="diary-form" id="diary-1-form"><input id="diary-1-name" placeholder="Alimento o piatto"/><input id="diary-1-qty" placeholder="Quantità"/><input id="diary-1-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-1-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('1')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(2,this)"><span>Pranzo</span><span class="diary-meal-count" id="diary-2-count">0 elementi</span></div><div class="diary-meal-body" id="diary-2-body"><div class="diary-entries" id="diary-2-entries"></div><div class="diary-presets" id="diary-2-quick"></div><div class="diary-form" id="diary-2-form"><input id="diary-2-name" placeholder="Alimento o piatto"/><input id="diary-2-qty" placeholder="Quantità"/><input id="diary-2-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-2-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('2')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(3,this)"><span>Merenda</span><span class="diary-meal-count" id="diary-3-count">0 elementi</span></div><div class="diary-meal-body" id="diary-3-body"><div class="diary-entries" id="diary-3-entries"></div><div class="diary-presets" id="diary-3-quick"></div><div class="diary-form" id="diary-3-form"><input id="diary-3-name" placeholder="Alimento o piatto"/><input id="diary-3-qty" placeholder="Quantità"/><input id="diary-3-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-3-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('3')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(4,this)"><span>Cena</span><span class="diary-meal-count" id="diary-4-count">0 elementi</span></div><div class="diary-meal-body" id="diary-4-body"><div class="diary-entries" id="diary-4-entries"></div><div class="diary-presets" id="diary-4-quick"></div><div class="diary-form" id="diary-4-form"><input id="diary-4-name" placeholder="Alimento o piatto"/><input id="diary-4-qty" placeholder="Quantità"/><input id="diary-4-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-4-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('4')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(5,this)"><span>Extra · solo se presenti</span><span class="diary-meal-count" id="diary-5-count">0 elementi</span></div><div class="diary-meal-body" id="diary-5-body"><div class="diary-entries" id="diary-5-entries"></div><div class="diary-presets" id="diary-5-quick"></div><div class="diary-form" id="diary-5-form"><input id="diary-5-name" placeholder="Alimento o piatto"/><input id="diary-5-qty" placeholder="Quantità"/><input id="diary-5-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-5-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('5')">Aggiungi al diario</button></div></div></div><div class="diary-actions"><button class="diary-action" onclick="exportDiary()">Salva altra copia</button><button class="diary-action" onclick="document.getElementById('diary-import').click()">Riprendi da un backup</button><input accept="application/json,.json" hidden="" id="diary-import" onchange="importDiary(event)" type="file"/></div><div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Ultimi giorni</div></div><div class="diary-history" id="diary-history"></div></div>
+<!-- ══════════ CORPO ══════════ -->
+<div class="pg" id="pg-corpo">
+<div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Recupero quotidiano</div></div>
+<div class="recovery-grid">
+<div class="recovery-card"><div class="recovery-val">2–2,5 L</div><div class="recovery-lbl">acqua al giorno, di più se sudi molto</div></div>
+<div class="recovery-card"><div class="recovery-val">7–9 h</div><div class="recovery-lbl">sonno, verso 8–9 h nelle settimane da 4 sedute</div></div>
+<div class="recovery-card"><div class="recovery-val">1–2</div><div class="recovery-lbl">giorni senza palestra per recuperare</div></div>
+</div>
+<div class="tip"><strong>La crescita avviene anche nel recupero:</strong> allenamento, proteine, idratazione e sonno lavorano insieme. Se prestazioni, tecnica o sonno peggiorano, riduci il lavoro extra serale.</div>
+<div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Routine fisica serale facoltativa</div></div>
+<div class="card">
+<div class="evening-toggle"><button class="evening-btn on" onclick="swEvening('upper',this)">Dopo Upper</button><button class="evening-btn" onclick="swEvening('other',this)">Dopo Lower / riposo</button></div>
+<div class="evening-plan on" id="evening-upper"><div class="ac-note">Niente flessioni: petto, spalle e tricipiti hanno già lavorato. Fai solo 5–8 minuti di mobilità leggera, respirazione e stretching non intenso.</div></div>
+<div class="evening-plan" id="evening-other"><div class="ac-note green">Routine completa facoltativa: 2 serie di flessioni lasciando 2–3 ripetizioni in riserva, 2 serie di plank da 30–45 secondi e 5 minuti di mobilità. Saltala se senti fatica o se riduce il sonno.</div></div>
+</div>
+<div class="sec">
+<div class="sec-dot" style="background: var(--lime)"></div>
+<div class="sec-lbl">BIA InBody · 7 set 2026, ore 19:19</div>
+</div>
+<div class="sg">
+<div class="sc"><div class="sc-lbl">Peso</div><div><span class="sc-val">64,1</span><span class="sc-unit"> kg</span></div><div class="sc-badge bg">range InBody</div></div>
+<div class="sc"><div class="sc-lbl">Massa grassa</div><div><span class="sc-val">21,3</span><span class="sc-unit">%</span></div><div class="sc-badge bg">13,7 kg</div></div>
+<div class="sc"><div class="sc-lbl">Massa muscolare scheletrica</div><div><span class="sc-val">28,0</span><span class="sc-unit"> kg</span></div><div class="sc-badge bw">da monitorare</div></div>
+<div class="sc"><div class="sc-lbl">Massa magra</div><div><span class="sc-val">50,4</span><span class="sc-unit"> kg</span></div><div class="sc-badge bw">sotto range 51,5–63</div></div>
+<div class="sc"><div class="sc-lbl">BMI</div><div><span class="sc-val">20,9</span></div><div class="sc-badge bg">normale</div></div>
+<div class="sc"><div class="sc-lbl">BMR</div><div><span class="sc-val">1460</span><span class="sc-unit"> kcal</span></div><div class="sc-badge bg">range InBody</div></div>
+<div class="sc"><div class="sc-lbl">Grasso viscerale</div><div><span class="sc-val">5</span></div><div class="sc-badge bg">basso</div></div>
+<div class="sc"><div class="sc-lbl">Punteggio InBody</div><div><span class="sc-val">70</span><span class="sc-unit">/100</span></div><div class="sc-badge bg">stabile</div></div>
+</div>
+<div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Idratazione e parametri cellulari</div></div>
+<div class="goal-card">
+<div class="gr"><span class="gr-l">Acqua corporea totale</span><span style="font-weight:500">37,1 L <span style="color:var(--orange);font-size:11px">(range 37,9–46,3)</span></span></div>
+<div class="gr"><span class="gr-l">Proteine corporee</span><span style="font-weight:500">9,9 kg <span style="color:var(--orange);font-size:11px">(range 10,2–12,4)</span></span></div>
+<div class="gr"><span class="gr-l">Minerali</span><span style="font-weight:500">3,40 kg <span style="color:var(--orange);font-size:11px">(range 3,50–4,28)</span></span></div>
+<div class="gr"><span class="gr-l">Angolo di fase</span><span style="font-weight:500">5,6°</span></div>
+<div class="gr"><span class="gr-l">SMI</span><span style="font-weight:500">7,2 kg/m²</span></div>
+<div class="gr"><span class="gr-l">Rapporto vita/fianchi</span><span style="font-weight:500">0,80</span></div>
+</div>
+<div class="ac-note">Acqua, proteine e minerali risultano leggermente sotto gli intervalli del referto. Questo può influenzare la stima della massa magra, ma il singolo test non consente di diagnosticare da solo una disidratazione.</div>
+<div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Confronto 25 mag → 7 set</div></div>
+<div class="goal-card">
+<div class="gr"><span class="gr-l">Peso</span><span style="font-weight:500">64,9 → <span style="color:var(--orange)">64,1 kg</span> <span style="color:var(--t3);font-size:11px">(-0,8)</span></span></div>
+<div class="gr"><span class="gr-l">Massa muscolare scheletrica</span><span style="font-weight:500">28,8 → <span style="color:var(--orange)">28,0 kg</span> <span style="color:var(--t3);font-size:11px">(-0,8)</span></span></div>
+<div class="gr"><span class="gr-l">Massa grassa %</span><span style="font-weight:500">19,8% → <span style="color:var(--orange)">21,3%</span> <span style="color:var(--t3);font-size:11px">(+1,5 punti)</span></span></div>
+<div class="gr"><span class="gr-l">BMI</span><span style="font-weight:500">21,2 → 20,9</span></div>
+<div class="gr"><span class="gr-l">BMR</span><span style="font-weight:500">1494 → 1460 kcal <span style="color:var(--t3);font-size:11px">(-34)</span></span></div>
+<div class="gr"><span class="gr-l">Grasso viscerale</span><span style="font-weight:500">5 → <span style="color:var(--lime)">5</span></span></div>
+<div class="gr"><span class="gr-l">Punteggio InBody</span><span style="font-weight:500">72 → 70 <span style="color:var(--t3);font-size:11px">(-2)</span></span></div>
+</div>
+<div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Analisi segmentale</div></div>
+<div class="goal-card">
+<div class="gr"><span class="gr-l">Braccio sinistro / destro</span><span style="font-weight:500">2,59 / 2,58 kg · 84,9% / 84,6%</span></div>
+<div class="gr"><span class="gr-l">Tronco</span><span style="font-weight:500">22,2 kg · 91,3%</span></div>
+<div class="gr"><span class="gr-l">Gamba sinistra / destra</span><span style="font-weight:500">8,51 / 8,50 kg · 100,3% / 100,2%</span></div>
+</div>
+<div class="ac-note green">La distribuzione è molto simmetrica tra lato sinistro e destro. Le gambe risultano nel range normale; braccia e tronco sono le aree con maggiore margine relativo secondo l'analisi segmentale.</div>
+<div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Obiettivo e controllo</div></div>
+<div class="goal-card">
+<div class="gr"><span class="gr-l">Target InBody</span><span style="font-weight:500">67,3 kg <span style="color:var(--lime);font-size:11px">(+3,2 kg netti)</span></span></div>
+<div class="gr"><span class="gr-l">Indicazione macchina</span><span style="font-weight:500">+6,8 kg muscolo / -3,6 kg grasso</span></div>
+<div class="gr"><span class="gr-l">Target personale</span><span style="font-weight:500;color:var(--lime)">68 kg</span></div>
+<div class="gr"><span class="gr-l">Prossimo confronto</span><span style="font-weight:500">stessa ora e condizioni standardizzate</span></div>
+</div>
+<div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Lettura pratica</div></div>
+<div class="card" style="border-left:2px solid var(--orange);font-size:13px;color:var(--t2);line-height:1.8">
+<div>• Rispetto al 25 maggio il test mostra meno peso e massa muscolare stimata, con percentuale di grasso più alta.</div>
+<div>• Poiché acqua corporea, proteine e minerali sono sotto i range del referto, la variazione della massa magra va confermata e non interpretata come perdita certa di 0,8 kg di muscolo.</div>
+<div>• Il grasso viscerale resta basso a 5 e il rapporto vita/fianchi è 0,80.</div>
+<div>• Per il prossimo BIA: stessa fascia oraria, idratazione abituale, niente allenamento immediatamente prima, condizioni di pasti e vescica il più possibile simili.</div>
+</div>
+</div>
+<!-- ══════════ SKINCARE ══════════ -->
+<div class="pg" id="pg-skin">
+<div class="sec">
+<div class="sec-dot" style="background: var(--pink)"></div>
+<div class="sec-lbl">Routine mattutina — in ordine</div>
+</div>
+<div class="step">
+<div class="step-n n1">1</div>
+<div>
+<div class="step-prod">Blemish Control Cleanser</div>
+<div class="step-brand">CeraVe</div>
+<div class="step-tags">
+<span class="tag">Acido salicilico</span><span class="tag">Ceramidi</span><span class="tag">Niacinamide</span><span class="tag">Sblocca i pori</span>
+</div>
+</div>
+</div>
+<div class="step">
+<div class="step-n n2">2</div>
+<div>
+<div class="step-prod">Niacinamide 10% + Zinc 1%</div>
+<div class="step-brand">The Ordinary</div>
+<div class="step-tags">
+<span class="tag">Riduce sebo</span><span class="tag">Chiude i pori</span><span class="tag">Sbiadisce segni</span>
+</div>
+</div>
+</div>
+<div class="step">
+<div class="step-n n3">3</div>
+<div>
+<div class="step-prod">Oil-Free Ultra Moisturizing Lotion</div>
+<div class="step-brand">COSRX</div>
+<div class="step-tags">
+<span class="tag">Oil-free</span><span class="tag">Non comedogenico</span><span class="tag">Linfa di betulla</span>
+</div>
+</div>
+</div>
+<div class="step">
+<div class="step-n n4">4</div>
+<div>
+<div class="step-prod">Anthelios UVMUNE 400 SPF50+</div>
+<div class="step-brand">La Roche-Posay</div>
+<div class="step-tags">
+<span class="tag">SPF50+</span><span class="tag">Invisible</span><span class="tag">Ultimo step sempre</span>
+</div>
+</div>
+</div>
+<div class="tip">
+<strong>Ordine fondamentale:</strong> detergente → siero → idratante
             → SPF. L'SPF va sempre per ultimo, ogni mattina, anche in inverno.
           </div>
-
-          <div class="sec">
-            <div class="sec-dot" style="background: var(--pink)"></div>
-            <div class="sec-lbl">Routine serale — in ordine</div>
-          </div>
-
-          <div class="step">
-            <div class="step-n n1">1</div>
-            <div>
-              <div class="step-prod">Blemish Control Cleanser</div>
-              <div class="step-brand">CeraVe</div>
-              <div class="step-tags">
-                <span class="tag">Stesso del mattino</span>
-              </div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-n n2">2</div>
-            <div>
-              <div class="step-prod">Niacinamide 10% + Zinc 1%</div>
-              <div class="step-brand">The Ordinary</div>
-              <div class="step-tags">
-                <span class="tag">3-4 gocce sul palmo</span>
-              </div>
-            </div>
-          </div>
-          <div class="step">
-            <div
-              class="step-n n3"
-              style="background: rgba(255, 179, 71, 0.12); color: var(--orange)"
-            >
+<div class="sec">
+<div class="sec-dot" style="background: var(--pink)"></div>
+<div class="sec-lbl">Routine serale — in ordine</div>
+</div>
+<div class="step">
+<div class="step-n n1">1</div>
+<div>
+<div class="step-prod">Blemish Control Cleanser</div>
+<div class="step-brand">CeraVe</div>
+<div class="step-tags">
+<span class="tag">Stesso del mattino</span>
+</div>
+</div>
+</div>
+<div class="step">
+<div class="step-n n2">2</div>
+<div>
+<div class="step-prod">Niacinamide 10% + Zinc 1%</div>
+<div class="step-brand">The Ordinary</div>
+<div class="step-tags">
+<span class="tag">3-4 gocce sul palmo</span>
+</div>
+</div>
+</div>
+<div class="step">
+<div class="step-n n3" style="background: rgba(255, 179, 71, 0.12); color: var(--orange)">
               3
             </div>
-            <div>
-              <div class="step-prod">Retinol 1% in Squalane</div>
-              <div class="step-brand">The Ordinary</div>
-              <div class="step-tags">
-                <span class="tag">Solo sera</span
-                ><span class="tag">1× sett. le prime 2 sett.</span
-                ><span class="tag">Poi 2× sett.</span
-                ><span class="tag">Evita occhi/bocca</span>
-              </div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-n n4">4</div>
-            <div>
-              <div class="step-prod">Oil-Free Ultra Moisturizing Lotion</div>
-              <div class="step-brand">COSRX</div>
-              <div class="step-tags">
-                <span class="tag">Sempre dopo retinolo</span
-                ><span class="tag">Riduce irritazione</span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="tip"
-            style="
+<div>
+<div class="step-prod">Retinol 1% in Squalane</div>
+<div class="step-brand">The Ordinary</div>
+<div class="step-tags">
+<span class="tag">Solo sera</span><span class="tag">1× sett. le prime 2 sett.</span><span class="tag">Poi 2× sett.</span><span class="tag">Evita occhi/bocca</span>
+</div>
+</div>
+</div>
+<div class="step">
+<div class="step-n n4">4</div>
+<div>
+<div class="step-prod">Oil-Free Ultra Moisturizing Lotion</div>
+<div class="step-brand">COSRX</div>
+<div class="step-tags">
+<span class="tag">Sempre dopo retinolo</span><span class="tag">Riduce irritazione</span>
+</div>
+</div>
+</div>
+<div class="tip" style="
               border-color: rgba(255, 179, 71, 0.25);
               background: rgba(255, 179, 71, 0.05);
-            "
-          >
-            <strong style="color: var(--orange)">⚠️ Retinolo:</strong> pelle
+            ">
+<strong style="color: var(--orange)">⚠️ Retinolo:</strong> pelle
             completamente asciutta prima di applicarlo. Se compare eccessiva
             secchezza o rossore, salta una settimana e riprendi.
           </div>
-
-          <!-- ROUTINE SCHIENA -->
-          <div class="sec">
-            <div class="sec-dot" style="background: var(--blue)"></div>
-            <div class="sec-lbl">Routine schiena e spalle — in doccia</div>
-          </div>
-
-          <div class="back-flow">
-            <div class="back-step">
-              <div class="back-num bn-orange">0</div>
-              <div class="back-info">
-                <div class="back-label" style="color: var(--orange)">
+<!-- ROUTINE SCHIENA -->
+<div class="sec">
+<div class="sec-dot" style="background: var(--blue)"></div>
+<div class="sec-lbl">Routine schiena e spalle — in doccia</div>
+</div>
+<div class="back-flow">
+<div class="back-step">
+<div class="back-num bn-orange">0</div>
+<div class="back-info">
+<div class="back-label" style="color: var(--orange)">
                   Prima di tutto
                 </div>
-                <div class="back-prod">Risciacqua i capelli</div>
-                <div class="back-note">
+<div class="back-prod">Risciacqua i capelli</div>
+<div class="back-note">
                   I residui di shampoo e balsamo che colano sulla schiena sono
                   una causa principale dei brufoli. Risciacqua sempre la testa
                   prima di lavare la schiena.
                 </div>
-              </div>
-            </div>
-            <div class="back-step">
-              <div class="back-num bn-blue">1</div>
-              <div class="back-info">
-                <div class="back-label" style="color: var(--blue)">
+</div>
+</div>
+<div class="back-step">
+<div class="back-num bn-blue">1</div>
+<div class="back-info">
+<div class="back-label" style="color: var(--blue)">
                   In doccia
                 </div>
-                <div class="back-prod">SA Smoothing Cleanser</div>
-                <div class="back-brand">CeraVe · 2 flaconi da 236ml</div>
-                <div class="back-note">
+<div class="back-prod">SA Smoothing Cleanser</div>
+<div class="back-brand">CeraVe · 2 flaconi da 236ml</div>
+<div class="back-note">
                   Applica con la fascia esfoliante sulla schiena. Lascia agire
                   1-2 minuti prima di risciacquare — il BHA ha bisogno di tempo
                   per penetrare nei pori.
                 </div>
-                <div class="back-tags">
-                  <span class="tag">Acido salicilico</span
-                  ><span class="tag">Ceramidi</span
-                  ><span class="tag">Niacinamide</span
-                  ><span class="tag">Ogni doccia</span>
-                </div>
-              </div>
-            </div>
-            <div class="back-step">
-              <div class="back-num bn-lime">2</div>
-              <div class="back-info">
-                <div class="back-label" style="color: var(--lime)">
+<div class="back-tags">
+<span class="tag">Acido salicilico</span><span class="tag">Ceramidi</span><span class="tag">Niacinamide</span><span class="tag">Ogni doccia</span>
+</div>
+</div>
+</div>
+<div class="back-step">
+<div class="back-num bn-lime">2</div>
+<div class="back-info">
+<div class="back-label" style="color: var(--lime)">
                   Dopo la doccia — su pelle asciutta
                 </div>
-                <div class="back-prod">Acniben Body Spray</div>
-                <div class="back-brand">ISDIN · 150ml</div>
-                <div class="back-note">
+<div class="back-prod">Acniben Body Spray</div>
+<div class="back-brand">ISDIN · 150ml</div>
+<div class="back-note">
                   Spruzza sulla schiena asciutta, lascia assorbire senza
                   risciacquare. Trattamento localizzato che agisce sui brufoli
                   esistenti e previene i nuovi.
                 </div>
-                <div class="back-tags">
-                  <span class="tag">Acido salicilico</span
-                  ><span class="tag">Acido glicolico</span
-                  ><span class="tag">Non risciacquare</span
-                  ><span class="tag">2-3× a settimana</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="warn-card">
-            <strong>Regole extra:</strong> Cambia la maglietta dopo aver sudato
+<div class="back-tags">
+<span class="tag">Acido salicilico</span><span class="tag">Acido glicolico</span><span class="tag">Non risciacquare</span><span class="tag">2-3× a settimana</span>
+</div>
+</div>
+</div>
+</div>
+<div class="warn-card">
+<strong>Regole extra:</strong> Cambia la maglietta dopo aver sudato
             · Doccia subito dopo la palestra · Cambia le lenzuola ogni settimana
             · Non toccare i brufoli sulla schiena
           </div>
-
-          <div class="sec">
-            <div class="sec-dot" style="background: var(--pink)"></div>
-            <div class="sec-lbl">Cosa evitare — viso</div>
-          </div>
-          <div class="avoid-card">
-            <div class="avoid-row">
+<div class="sec">
+<div class="sec-dot" style="background: var(--pink)"></div>
+<div class="sec-lbl">Cosa evitare — viso</div>
+</div>
+<div class="avoid-card">
+<div class="avoid-row">
               • Non toccarti il viso durante il giorno
             </div>
-            <div class="avoid-row">
+<div class="avoid-row">
               • Niente scrub fisici aggressivi — hai già l'acido salicilico
             </div>
-            <div class="avoid-row">
+<div class="avoid-row">
               • Non saltare l'SPF — le imperfezioni scuriscono senza protezione
             </div>
-            <div class="avoid-row">
+<div class="avoid-row">
               • Aspetta 30 sec dopo il detergente prima della Niacinamide
             </div>
-            <div class="avoid-row">
+<div class="avoid-row">
               • Gel capelli: lavati le mani subito dopo — non toccarti la fronte
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- /cnt -->
-
-      <!-- NAV -->
-      <nav class="nav">
-        <button class="nb on" onclick="swPage('workout', this)">
-          <svg viewBox="0 0 24 24">
-            <path d="M6.5 6.5h11M6.5 12h11M6.5 17.5h11" />
-            <rect x="2" y="5" width="3" height="4" rx="1" />
-            <rect x="2" y="10.5" width="3" height="3" rx="1" />
-            <rect x="2" y="16" width="3" height="4" rx="1" />
-            <rect x="19" y="5" width="3" height="4" rx="1" />
-            <rect x="19" y="10.5" width="3" height="3" rx="1" />
-            <rect x="19" y="16" width="3" height="4" rx="1" />
-          </svg>
-          <span>Workout</span>
-        </button>
-        <button class="nb" onclick="swPage('pasti', this)">
-          <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z" /></svg>
-          <span>Pasti</span>
-        </button>
-        <button class="nb" onclick="swPage('diario', this)"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5" /></svg><span>Diario</span></button>
-        <button class="nb" onclick="swPage('corpo', this)">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="5" r="2" />
-            <path d="M12 7v6M9 12l-2 5M15 12l2 5M9.5 17h5" />
-          </svg>
-          <span>Corpo</span>
-        </button>
-        <button class="nb" onclick="swPage('skin', this)">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-            <path
-              d="M12 6c-1.5 2-2 4-2 6s.5 4 2 6M12 6c1.5 2 2 4 2 6s-.5 4-2 6M6 12h12"
-            />
-          </svg>
-          <span>Skin</span>
-        </button>
-      </nav>
-    </div>
-    <!-- /app -->
-
-    <script>
+</div>
+</div>
+</div>
+<!-- /cnt -->
+<!-- NAV -->
+<nav class="nav">
+<button class="nb on" onclick="swPage('workout', this)">
+<svg viewbox="0 0 24 24">
+<path d="M6.5 6.5h11M6.5 12h11M6.5 17.5h11"></path>
+<rect height="4" rx="1" width="3" x="2" y="5"></rect>
+<rect height="3" rx="1" width="3" x="2" y="10.5"></rect>
+<rect height="4" rx="1" width="3" x="2" y="16"></rect>
+<rect height="4" rx="1" width="3" x="19" y="5"></rect>
+<rect height="3" rx="1" width="3" x="19" y="10.5"></rect>
+<rect height="4" rx="1" width="3" x="19" y="16"></rect>
+</svg>
+<span>Workout</span>
+</button>
+<button class="nb" onclick="swPage('pasti', this)">
+<svg viewbox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"></path></svg>
+<span>Pasti</span>
+</button>
+<button class="nb" onclick="swPage('diario', this)"><svg viewbox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"></path></svg><span>Diario</span></button>
+<button class="nb" onclick="swPage('corpo', this)">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="5" r="2"></circle>
+<path d="M12 7v6M9 12l-2 5M15 12l2 5M9.5 17h5"></path>
+</svg>
+<span>Corpo</span>
+</button>
+<button class="nb" onclick="swPage('skin', this)">
+<svg viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 6c-1.5 2-2 4-2 6s.5 4 2 6M12 6c1.5 2 2 4 2 6s-.5 4-2 6M6 12h12"></path>
+</svg>
+<span>Skin</span>
+</button>
+</nav>
+</div>
+<!-- /app -->
+<script>
       const D = ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
         M = [
           "gen",
@@ -1740,7 +1675,7 @@
       };
       const elmecMenus={
         "2026-09-28":{standard:{n:"Elmec · Standard",q:"Pasta con tonno, pomodorini e basilico + bocconcini di tacchino al curry + fagiolini all’olio + frutta",p:42,k:718},alternative:{n:"Elmec · Alternativa",q:"Riso basmati con verdure + filetto di branzino con patate e olive + carote al vapore + frutta",p:32,k:600}},
-        "2026-09-29":{standard:{n:"Elmec · Standard",q:"Cavatelli con cozze, cannellini e pomodorini + bresaola, grana e insalatina + verdure grigliate + frutta",p:39,k:674},alternative:{n:"Elmec · Alternativa",q:"Riso rosso con peperoni e prosciutto di Praga + nodino di maiale + zucchine al forno + frutta",p:35,k:596}},
+        "2026-09-29":{standard:{n:"Elmec · Riposo",q:"Cavatelli con cozze, cannellini e pomodorini + bresaola, grana e insalatina + verdure grigliate + frutta",p:39,k:674},alternative:{n:"Elmec · Alternativa",q:"Riso rosso con peperoni e prosciutto di Praga + nodino di maiale + zucchine al forno + frutta",p:35,k:596}},
         "2026-09-21":{standard:{n:"Elmec · Standard",q:"Cous cous con ceci e tacchino + totano gratinato + carote al vapore + frutta",p:41,k:809},alternative:{n:"Elmec · Alternativa",q:"Pasta con spada, pinoli, uvetta e pomodorino + insalata di patate, salmone e sedano + carote + frutta",p:38,k:918}},
         "2026-09-22":{standard:{n:"Pranzo effettivo",q:"Hot dog di pollo con pane e 1 wurstel + patate fritte + 1 fetta di pizza",p:30,k:950},alternative:{n:"Elmec · Menu previsto",q:"Pasta con tonno, olive e pomodorini + straccetti di tacchino + patate al prezzemolo + frutta",p:43,k:899}},
         "2026-09-23":{standard:{n:"Elmec · Standard",q:"Linguine con cozze e vongole + burger di pesce + spinaci al formaggio + frutta",p:37,k:757},alternative:{n:"Elmec · Alternativa",q:"Farro con gamberi, feta e mandorle + burger di pesce + spinaci al formaggio + frutta",p:35,k:691}},
@@ -1781,5 +1716,5 @@
         }
       }
     </script>
-  </body>
+</body>
 </html>
