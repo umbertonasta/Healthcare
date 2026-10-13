@@ -1063,7 +1063,47 @@
       .warn-card strong {
         color: var(--orange);
       }
-    </style>
+    
+      .nutrition-hero{background:linear-gradient(135deg,rgba(170,255,0,.1),rgba(123,200,246,.05));border:1px solid rgba(170,255,0,.18);border-radius:var(--r);padding:14px;margin-bottom:10px}
+      .nutrition-hero-title{font-family:"Syne",sans-serif;font-size:17px;font-weight:800;color:var(--lime)}
+      .nutrition-hero-sub{font-size:11px;color:var(--t2);line-height:1.55;margin-top:4px}
+      .target-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
+      .target-card{background:rgba(10,10,10,.55);border-radius:9px;padding:10px;text-align:center}
+      .target-card strong{display:block;font-family:"Syne",sans-serif;font-size:15px;color:var(--t1)}
+      .target-card span{display:block;font-size:9px;color:var(--t3);margin-top:2px}
+      .food-folds{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+      .food-fold{background:var(--s1);border:1px solid var(--s2);border-radius:var(--r);overflow:hidden}
+      .food-fold summary{display:grid;grid-template-columns:50px 1fr auto;align-items:center;gap:8px;padding:13px 14px;cursor:pointer;list-style:none}
+      .food-fold summary::-webkit-details-marker{display:none}
+      .food-fold summary::after{content:"⌄";color:var(--t3);font-size:14px;margin-left:2px}
+      .food-fold[open] summary::after{transform:rotate(180deg);color:var(--lime)}
+      .food-time{font-family:"Syne",sans-serif;font-size:10px;color:var(--blue)}
+      .food-summary-main{font-family:"Syne",sans-serif;font-size:13px;font-weight:700}
+      .food-kcal{font-size:10px;color:var(--lime);white-space:nowrap}
+      .food-fold-body{padding:0 13px 13px;border-top:1px solid var(--s2)}
+      .food-choice{padding:10px 0;border-bottom:1px solid var(--s2)}
+      .food-choice:last-of-type{border-bottom:0}
+      .food-choice strong{display:block;font-size:10px;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+      .food-choice span{display:block;font-size:12px;color:var(--t1);line-height:1.55}
+      .food-choice small{display:block;font-size:10px;color:var(--t3);line-height:1.45;margin-top:4px}
+      .main-choice strong{color:var(--lime)}
+      .fold-note{font-size:10px;color:var(--t2);line-height:1.55;background:rgba(255,179,71,.06);border-left:2px solid var(--orange);padding:8px 10px;border-radius:6px;margin-top:9px}
+      .mini-label{font-family:"Syne",sans-serif;font-size:10px;color:var(--lime);text-transform:uppercase;letter-spacing:.07em;margin-top:11px}
+      .rest-label{color:var(--orange);margin-top:14px}
+      .decision-list{margin-top:8px}
+      .decision-list>div{padding:9px 0;border-bottom:1px solid var(--s2)}
+      .decision-list>div:last-child{border-bottom:0}
+      .decision-list b{display:block;font-size:11px;color:var(--t1);margin-bottom:2px}
+      .decision-list span{display:block;font-size:11px;color:var(--t2);line-height:1.5}
+      .backup-calories{display:grid;gap:7px;margin-top:10px}
+      .backup-calories>div{background:var(--s2);border-radius:8px;padding:9px 10px}
+      .backup-calories strong{display:block;color:var(--orange);font-size:11px;margin-bottom:3px}
+      .backup-calories span{font-size:11px;color:var(--t2);line-height:1.45}
+      .monitor-card{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:9px}
+      .monitor-card>div{background:var(--s1);border-radius:var(--rs);padding:11px 7px;text-align:center}
+      .monitor-card strong{display:block;font-family:"Syne",sans-serif;color:var(--lime);font-size:13px}
+      .monitor-card span{display:block;color:var(--t3);font-size:9px;line-height:1.4;margin-top:3px}
+</style>
 </head>
 <body>
 <div class="app">
@@ -1091,127 +1131,112 @@
 </div>
 <!-- ══════════ PASTI ══════════ -->
 <div class="pg" id="pg-pasti">
-<div class="prot-banner">
-<div class="pb-icon">🥩</div>
-<div>
-<div class="pb-val">130g proteine/giorno</div>
-<div class="pb-sub">obiettivo per costruire massa muscolare</div>
+<div class="nutrition-hero">
+  <div class="nutrition-hero-title">Piano massa · semplice e sostenibile</div>
+  <div class="nutrition-hero-sub">Aumenta le calorie con aggiunte che controlli tu, senza cambiare il pranzo Elmec o la cena preparata a casa.</div>
+  <div class="target-grid">
+    <div class="target-card"><strong>2.300–2.450</strong><span>kcal · riposo</span></div>
+    <div class="target-card"><strong>2.450–2.600</strong><span>kcal · workout</span></div>
+    <div class="target-card"><strong>120–140 g</strong><span>proteine</span></div>
+    <div class="target-card"><strong>+0,1–0,25</strong><span>kg a settimana</span></div>
+  </div>
 </div>
+<div class="tip"><strong>Regola principale:</strong> non devi mangiare sempre di più. Devi soprattutto evitare le giornate molto basse. Le aggiunte diventano facoltative quando pranzo o cena sono già particolarmente abbondanti.</div>
+
+<div class="sec"><div class="sec-dot" style="background:var(--lime)"></div><div class="sec-lbl">Routine giornaliera</div></div>
+<div class="food-folds">
+  <details class="food-fold" open>
+    <summary><span class="food-time">08:00</span><span class="food-summary-main">Colazione principale</span><span class="food-kcal">~620 kcal</span></summary>
+    <div class="food-fold-body">
+      <div class="food-choice main-choice"><strong>Scelta fissa</strong><span>30 g whey + 200 ml latte parzialmente scremato + 60 g fiocchi d’avena + 1 banana + 10–15 g mandorle</span><small>Circa 40–43 g di proteine. Se usi una mela al posto della banana, il totale può essere leggermente più basso.</small></div>
+      <div class="food-choice"><strong>Alternativa al cucchiaio</strong><span>200 g Skyr o yogurt greco + 60 g avena + frutta + 15 g mandorle</span></div>
+      <div class="food-choice"><strong>Alternativa salata</strong><span>80–100 g pane morbido ai cereali + 80 g fesa o bresaola + frutta + 10–15 g mandorle</span></div>
+      <div class="fold-note">Non aggiungere altra whey se la giornata supera già facilmente 140 g di proteine.</div>
+    </div>
+  </details>
+
+  <details class="food-fold">
+    <summary><span class="food-time">13:00</span><span class="food-summary-main">Pranzo Elmec + aggiunta da casa</span><span class="food-kcal">+~215 kcal</span></summary>
+    <div class="food-fold-body">
+      <div class="food-choice main-choice"><strong>Aggiunta scelta</strong><span>1 banana + 20 g di mandorle portate da casa</span><small>Circa 210–230 kcal e 4–5 g di proteine.</small></div>
+      <div class="decision-list">
+        <div><b>Pranzo sotto 650 kcal</b><span>Aggiunta consigliata.</span></div>
+        <div><b>Pranzo 650–800 kcal</b><span>Usala soprattutto nei workout o se hai fame.</span></div>
+        <div><b>Pranzo oltre 800 kcal</b><span>Facoltativa: puoi tenere banana o mandorle per più tardi.</span></div>
+      </div>
+      <div class="fold-note">Se il pranzo è già molto proteico, questa aggiunta serve per le calorie: non serve aggiungere anche Skyr o whey.</div>
+    </div>
+  </details>
+
+  <details class="food-fold">
+    <summary><span class="food-time">16–17</span><span class="food-summary-main">Spuntino</span><span class="food-kcal">300–400 kcal</span></summary>
+    <div class="food-fold-body">
+      <div class="mini-label">Giorno workout</div>
+      <div class="food-choice main-choice"><strong>Prima scelta</strong><span>Skyr o yogurt greco + banana + 2–3 gallette</span></div>
+      <div class="food-choice"><strong>Alternativa salata</strong><span>70–80 g pane ai cereali + 60–80 g fesa o bresaola + frutta</span></div>
+      <div class="food-choice"><strong>Alternativa rapida</strong><span>30 g whey con acqua + banana + 2–3 gallette</span></div>
+      <div class="mini-label rest-label">Giorno di riposo</div>
+      <div class="food-choice"><strong>Prima scelta</strong><span>Skyr o yogurt greco + frutta + 20–25 g mandorle</span></div>
+      <div class="food-choice"><strong>Alternativa</strong><span>70 g pane ai cereali + 40–60 g fesa + frutta</span></div>
+      <div class="fold-note">Oaties: piano B o piccolo richiamo pre-workout. Se mangi la barretta, riduci gallette o pane invece di sommare tutto.</div>
+    </div>
+  </details>
+
+  <details class="food-fold">
+    <summary><span class="food-time">20–21</span><span class="food-summary-main">Cena · correttore del pasto</span><span class="food-kcal">flessibile</span></summary>
+    <div class="food-fold-body">
+      <div class="decision-list">
+        <div><b>Proteina + verdure, pochi carboidrati</b><span>Aggiungi 80–100 g pane, oppure 250–350 g patate, oppure una porzione di riso.</span></div>
+        <div><b>Pasta/riso, poche proteine</b><span>Aggiungi 2–3 uova, tonno, 150–200 g fiocchi di latte oppure 80–100 g fesa/bresaola.</span></div>
+        <div><b>Cena già completa</b><span>Non aggiungere automaticamente nulla.</span></div>
+        <div><b>Cena molto abbondante</b><span>Nessun recupero serale obbligatorio.</span></div>
+      </div>
+      <div class="fold-note">Mangia normalmente quello che viene preparato. Correggi soltanto ciò che manca, senza trasformare l’aggiunta in una seconda cena.</div>
+    </div>
+  </details>
+
+  <details class="food-fold">
+    <summary><span class="food-time">22:00</span><span class="food-summary-main">Controllo finale facoltativo</span><span class="food-kcal">solo se serve</span></summary>
+    <div class="food-fold-body">
+      <div class="backup-calories">
+        <div><strong>Mancano 300–400 kcal</strong><span>250 ml latte + 40 g avena/cereali + banana</span></div>
+        <div><strong>Mancano ~200 kcal</strong><span>Skyr + 20 g mandorle, oppure 60 g pane + 15 g crema 100% arachidi</span></div>
+        <div><strong>Mancano ~100 kcal</strong><span>Frutto + 10 g mandorle, oppure 2–3 gallette</span></div>
+        <div><strong>Target raggiunto</strong><span>Non mangiare altro per forza.</span></div>
+      </div>
+    </div>
+  </details>
 </div>
-<div class="protein-check">
-<div class="protein-row"><span>Colazione</span><strong>25–35 g</strong></div>
-<div class="protein-row"><span>Spuntino mattutino · facoltativo</span><strong>0–10 g</strong></div>
-<div class="protein-row"><span>Pranzo</span><strong>25–40 g</strong></div>
-<div class="protein-row"><span>Merenda</span><strong>12–25 g</strong></div>
-<div class="protein-row"><span>Cena</span><strong>30–40 g</strong></div>
-<div class="protein-total">Totale reale raggiungibile: circa 92–150 g</div>
-<div class="ac-note">Obiettivo pratico: punta ad almeno 130 g scegliendo una fonte proteica a ogni fascia principale.</div>
-<div class="ac-note">Mandorle: 15–20 g facoltativi a colazione o nello spuntino dei giorni di riposo quando hai più fame. Non sono frutta fresca e non sostituiscono mela o banana. Evitale nel richiamo immediatamente pre-workout, dove sono preferibili carboidrati più semplici.</div>
-<div class="ac-note green">Se mancano 10–20 g: aggiungi 1 skyr da 150 g oppure 20–25 g di whey. Se mancano 20–30 g: aggiungi 30 g di whey oppure 80–100 g di fesa/bresaola. Le quantità del pranzo e della cena restano stime perché dipendono dalle porzioni reali.</div><div class="ac-note">Kcal: inseriscile quando sono note o stimabili. Per i menu Elmec vengono sommate automaticamente; a casa puoi usare una stima del piatto intero. Se non sai il valore, lascia il campo vuoto: il Diario mostrerà una copertura parziale senza penalizzare la giornata.</div>
+
+<div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Menu Elmec della settimana</div></div>
+<div class="tl-hint">Tocca il giorno per aprire la scelta consigliata e l’alternativa.</div>
+<div class="acc"><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Lun</span><span class="ac-lbl">Lunedì 05/10 · Workout Upper A</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Farro in insalata con gamberi, feta e fave</span> <span class="ac-c">· 406 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Merluzzo gratinato alla mediterranea</span> <span class="ac-c">· 212 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Fagiolini al vapore</span> <span class="ac-c">· 75 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 693 kcal + frutta · ~38 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Insalata di pasta con asparagi, pinoli e scaglie di pecorino + involtino di prosciutto cotto con capricciosa + spinaci al vapore + frutta (911 kcal + frutta · ~32 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Farro e gamberi danno proteine e carboidrati utili prima della palestra serale; il merluzzo mantiene il pasto leggero. Mantieni lo spuntino pre-workout verso le 18:30-19:00.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mar</span><span class="ac-lbl">Martedì 06/10 · Riposo / Lower A facoltativo</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Cous cous con straccetti di manzo e pomodorini</span> <span class="ac-c">· 390 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Spezzatino di vitello</span> <span class="ac-c">· 170 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno riposo:</span> <span class="ac-s">Carote al vapore</span> <span class="ac-c">· 115 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta riposo · 675 kcal + frutta · ~45 g proteine</div><div class="ac-note"><strong>Se fai Lower A:</strong> sostituisci le carote con le patate al forno (268 kcal). Il pranzo diventa circa 828 kcal + frutta, con più carboidrati per la seduta gambe.</div><div class="ac-note"><strong>Alternativa:</strong> Risotto con gamberi e curry + filetto di orata con patate e rosmarino + caponata di verdure + frutta (732 kcal + frutta · ~38 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Cous cous e vitello sono magri e proteici: scelta solida sia da riposo sia come base da integrare se decidi di allenarti.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mer</span><span class="ac-lbl">Mercoledì 07/10 · Workout Lower A</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Riso in insalata con tonno, pomodorini e mais</span> <span class="ac-c">· 429 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Pettio di pollo alla griglia</span> <span class="ac-c">· 215 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Fave al vapore</span> <span class="ac-c">· 62 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 706 kcal + frutta · ~48 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Pasta cacio e pepe + trancio di tonno panato al sesamo con pomodorini + zucchine trifolate + frutta (755 kcal + frutta · ~40 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Riso e tonno danno i carboidrati per la sessione gambe, il pollo chiude bene sulle proteine. Giorno pesante: non saltare la merenda pre-palestra.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Gio</span><span class="ac-lbl">Giovedì 08/10 · Giorno di allenamento</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di riso con gamberi, edamame e lime</span> <span class="ac-c">· 330 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Cosce di pollo al rosmarino</span> <span class="ac-c">· 322 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Piselli stufati</span> <span class="ac-c">· 150 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 802 kcal + frutta · ~51 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Insalata di pasta con mozzarella, zucchine e menta + trancio di nasello con olive e prezzemolo + pomodori al gratin + frutta (850 kcal + frutta · ~38 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Pasto leggero ma molto proteico, adatto sia a un giorno di allenamento sia di riposo. Se ti alleni in serata, aggiungi un frutto in più o le patate al forno (268 kcal) come carboidrato extra.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Ven</span><span class="ac-lbl">Venerdì 09/10 · Giorno di allenamento</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Cous cous con pollo e verdure</span> <span class="ac-c">· 458 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Hamburger alla griglia</span> <span class="ac-c">· 190 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Ceci in umido</span> <span class="ac-c">· 62 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 710 kcal + frutta · ~53 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Riso rosso in insalata con salmone e zucchine + sgombro con pomodorini e basilico + carote prezzemolate + frutta (710 kcal + frutta · ~42 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Cous cous con pollo copre bene i carboidrati, l'hamburger è magro e i ceci aggiungono proteine vegetali. Chiusura di settimana equilibrata.</div></div></div></div>
+<div class="tip"><strong>Mandorle + banana:</strong> sono un’aggiunta alla mensa, non fanno parte delle calorie indicate nei piatti Elmec. Se il pranzo supera già 800 kcal, puoi spostarle nello spuntino o non usarle.</div>
+
+<div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Weekend e sveglia tardiva</div></div>
+<details class="food-fold">
+  <summary><span class="food-time">WE</span><span class="food-summary-main">Se ti svegli direttamente a pranzo</span><span class="food-kcal">3 pasti</span></summary>
+  <div class="food-fold-body">
+    <div class="food-choice main-choice"><strong>Struttura</strong><span>Pranzo completo → merenda rinforzata → cena completa</span></div>
+    <div class="food-choice"><strong>Merenda rinforzata</strong><span>Whey + latte + avena + frutta, oppure Skyr + avena + frutta + mandorle</span></div>
+    <div class="fold-note">Non recuperare la colazione subito prima del pranzo. Recupera energia e proteine distribuendole nel pomeriggio e a cena.</div>
+  </div>
+</details>
+<details class="food-fold">
+  <summary><span class="food-time">WE</span><span class="food-summary-main">Se fai Lower B</span><span class="food-kcal">mattina o sera</span></summary>
+  <div class="food-fold-body">
+    <div class="food-choice"><strong>Allenamento mattutino</strong><span>Colazione completa 90–120 minuti prima; pranzo completo entro circa 60–90 minuti dalla fine.</span></div>
+    <div class="food-choice"><strong>Allenamento pomeriggio/sera</strong><span>Pranzo completo e spuntino workout 60–90 minuti prima.</span></div>
+  </div>
+</details>
+
+<div class="sec"><div class="sec-dot" style="background:var(--pink)"></div><div class="sec-lbl">Controllo del percorso</div></div>
+<div class="monitor-card">
+  <div><strong>4 pesate</strong><span>lun · mer · ven · dom, al mattino</span></div>
+  <div><strong>1 misura</strong><span>vita, una volta a settimana</span></div>
+  <div><strong>3 settimane</strong><span>prima di modificare le calorie</span></div>
 </div>
-<div class="tl">
-<!-- 08:00 -->
-<div class="tl-row">
-<div class="tl-time">08:00</div>
-<div class="tl-dot" style="background: var(--lime)"></div>
-<div class="tl-body">
-<div class="tl-title" style="color: var(--lime)">
-                  Colazione
-                  <span class="tl-pil" style="background:rgba(170,255,0,.1);color:var(--lime)">~25–35g prot</span>
-</div>
-<div class="tl-hint">Scegli il tipo di giornata e poi una sola combinazione</div>
-<div aria-label="Colazione per giorno di allenamento o riposo" class="breakfast-toggle" role="tablist">
-<button aria-controls="breakfast-workout" aria-selected="true" class="breakfast-toggle-btn on" onclick="swBreakfast('workout', this)" role="tab" type="button">Giorno workout</button>
-<button aria-controls="breakfast-rest" aria-selected="false" class="breakfast-toggle-btn" onclick="swBreakfast('rest', this)" role="tab" type="button">Giorno di riposo</button>
-</div>
-<div class="breakfast-plan on" id="breakfast-workout" role="tabpanel">
-<div class="tl-items">
-<div class="tl-item main">Completa: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 40 g fiocchi d’avena + ½ banana o 1 banana piccola</div>
-<div class="tl-item">Rapida: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 1 banana</div>
-<div class="tl-item">Al cucchiaio: 1 skyr Mila da 150 g + 40 g fiocchi d’avena + 1 banana</div>
-<div class="tl-item">Salata: 60–70 g pane di segale integrale + 60 g fesa di tacchino o bresaola + 1 banana o 1 mela</div>
-<div class="tl-item alt">Questa settimana: lunedì, mercoledì, giovedì e sabato oppure domenica.</div>
-</div>
-</div>
-<div class="breakfast-plan" id="breakfast-rest" role="tabpanel">
-<div class="tl-items">
-<div class="tl-item main">Con avena: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 30–40 g fiocchi d’avena</div>
-<div class="tl-item">Con frutta: 30 g whey Nutrend + 200 ml latte parzialmente scremato + 1 mela o 1 banana</div>
-<div class="tl-item">Al cucchiaio: 1 skyr Mila o yogurt greco Tigros da 150 g + 30–40 g fiocchi d’avena + 1 mela. Aggiungi 15 g di mandorle solo se vuoi più sazietà o la colazione deve durare più a lungo</div>
-<div class="tl-item">Salata: 60–70 g pane di segale integrale + 60 g fesa di tacchino o bresaola + 1 mela</div>
-<div class="tl-item alt">Questa settimana: martedì, venerdì e il giorno del weekend senza allenamento.</div>
-</div>
-</div>
-</div>
-</div>
-<!-- 13:00 -->
-<div class="tl-row">
-<div class="tl-time">13:00</div>
-<div class="tl-dot" style="background: var(--blue)"></div>
-<div class="tl-body">
-<div class="tl-title" style="color: var(--blue)">
-                  Pranzo
-                  <span class="tl-pil" style="
-                      background: rgba(123, 200, 246, 0.1);
-                      color: var(--blue);
-                    ">~35g prot</span>
-</div>
-<div class="tl-hint">
-                  Tocca il giorno per vedere cosa mangiare
-                </div>
-<div class="acc"><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Lun</span><span class="ac-lbl">Lunedì 12/10 · Workout Upper A</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Riso nero con gamberi, feta e noci</span> <span class="ac-c">· 350 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Pollo arrosto con aromi</span> <span class="ac-c">· 180 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Fagiolini saltati</span> <span class="ac-c">· 100 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 630 kcal + frutta · ~43 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Risotto alla pescatora + insalata di totani, patate e pomodorini + asparagi al vapore + frutta (633 kcal + frutta · ~34 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Pasto completo e ben proteico per Upper A: riso nero per i carboidrati, pollo e gamberi per la quota proteica. Mantieni la normale merenda pre-workout se la palestra è serale.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mar</span><span class="ac-lbl">Martedì 13/10 · Riposo / Lower A facoltativo</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Cous cous con tacchino e peperoni al forno</span> <span class="ac-c">· 350 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Filetto di ricciola con pomodorini e olive</span> <span class="ac-c">· 275 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Piselli e carote stufati</span> <span class="ac-c">· 150 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 775 kcal + frutta · ~50 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Riso integrale con calamari, pomodorini e basilico + insalata di pollo con sedano, uvetta e mele + macedonia di verdure + frutta (682 kcal + frutta · ~36 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">La scelta consigliata è ricca di proteine e va bene sia a riposo sia se fai Lower A. Se resti a riposo, mantieni una merenda moderata; se ti alleni, usa la merenda pre-workout prevista.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Mer</span><span class="ac-lbl">Mercoledì 14/10 · Workout Lower A</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di pasta tricolore con tonno e pomodorini</span> <span class="ac-c">· 428 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Platessa alla vicentina</span> <span class="ac-c">· 152 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Spinaci al vapore</span> <span class="ac-c">· 89 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 669 kcal + frutta · ~47 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Pasta con melanzane e ricotta + gamberi in insalata con lime, sedano e patate + purè di patate + frutta (947 kcal + frutta · ~40 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Scelta adatta a Lower A: pasta per i carboidrati e doppia fonte proteica da tonno e platessa, senza un contorno eccessivamente pesante.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Gio</span><span class="ac-lbl">Giovedì 15/10 · Workout Upper B</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di pasta con speck e zucchine</span> <span class="ac-c">· 430 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Merluzzo gratinato alla palermitana</span> <span class="ac-c">· 157 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Fagiolini saltati</span> <span class="ac-c">· 100 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 687 kcal + frutta · ~40 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Insalata di riso con verdure + pancia di vitello al forno + melanzane in funghetto + frutta (875 kcal + frutta · ~38 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">Buon equilibrio per Upper B: carboidrati dalla pasta e proteine da speck e merluzzo. L’alternativa è più ricca di grassi e calorie, quindi resta secondaria.</div></div></div><div class="ac-item"><div class="ac-h" onclick="swAcc(this)"><span class="ac-day">Ven</span><span class="ac-lbl">Venerdì 16/10 · Giorno di allenamento</span><span class="ac-chev">﹀</span></div><div class="ac-body"><div class="ac-line"><span class="ac-p">Primo:</span> <span class="ac-s">Insalata di pasta con salmone e fave</span> <span class="ac-c">· 451 kcal</span></div><div class="ac-line"><span class="ac-p">Secondo:</span> <span class="ac-s">Polpo in insalata con patate, fagiolini e pomodorini</span> <span class="ac-c">· 200 kcal</span></div><div class="ac-line"><span class="ac-p">Contorno:</span> <span class="ac-s">Lenticchie in umido</span> <span class="ac-c">· 160 kcal</span></div><div class="ac-line"><span class="ac-p">Finale:</span> <span class="ac-s">Frutta</span></div><div class="ac-note green">Scelta consigliata · 811 kcal + frutta · ~52 g proteine</div><div class="ac-note"><strong>Alternativa:</strong> Cous cous alla valenciana + filetto di trota in saor + verdure trifolate + frutta (689 kcal + frutta · ~37 g proteine).</div><div class="ac-line ac-c" style="margin-top:8px">È il pranzo più proteico della settimana: salmone, polpo e lenticchie sostengono bene il giorno di allenamento. L’alternativa è più leggera ma resta completa.</div></div></div></div><div class="tl-hint">Se per qualche giorno il menu Elmec non è disponibile, registra il pranzo manualmente nel Diario usando “Altro”. Weekend gestito nella sezione qui sotto.</div>
-</div>
-</div>
-<div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Weekend · Lower B sabato oppure domenica</div></div><div class="ac-note green" style="margin-bottom:10px">Scegli un solo giorno per Lower B. Nell’altro usa colazione, spuntino e cena da giorno di riposo. Se ti alleni al mattino, lascia 90–120 minuti dalla colazione e pranza entro circa 60–90 minuti dalla fine.</div><div aria-label="Orario allenamento nel weekend" class="weekend-toggle" role="tablist"><button class="weekend-btn on" id="weekend-morning-btn" onclick="swWeekend('morning',this)">Palestra mattina</button><button class="weekend-btn" id="weekend-later-btn" onclick="swWeekend('later',this)">Palestra pomeriggio/sera</button></div><div class="weekend-plan on" id="weekend-morning"><div class="weekend-card"><div class="weekend-title">Lower B · allenamento al mattino</div><div class="weekend-slot"><div class="weekend-time">07:30–08:30 · Colazione</div><div class="weekend-meal">Whey + latte + avena + banana, oppure skyr + avena + banana.</div><div class="weekend-alt">Inizio palestra ideale dopo 90–120 minuti. Se senti fame 30–45 minuti prima, scegli solo banana, 2 gallette oppure 1 Oaties.</div></div><div class="weekend-slot"><div class="weekend-time">Entro 60–90 min dalla fine · Pranzo</div><div class="weekend-meal">Pasta, riso o patate + carne/pesce/uova + verdure + frutta.</div><div class="weekend-alt">Obiettivo: 30–40 g proteine e una porzione piena di carboidrati.</div></div><div class="weekend-slot"><div class="weekend-time">16:30–17:30 · Merenda</div><div class="weekend-meal">Skyr o yogurt greco + frutto.</div></div><div class="weekend-slot"><div class="weekend-time">20:00–21:00 · Cena</div><div class="weekend-meal">Proteina magra + verdure + carboidrati moderati.</div></div></div></div><div class="weekend-plan" id="weekend-later"><div class="weekend-card"><div class="weekend-title">Lower B · allenamento pomeriggio/sera</div><div class="weekend-slot"><div class="weekend-time">08:00–09:30 · Colazione</div><div class="weekend-meal">Colazione workout completa.</div></div><div class="weekend-slot"><div class="weekend-time">12:30–13:30 · Pranzo</div><div class="weekend-meal">Carboidrati + proteina magra + verdure.</div></div><div class="weekend-slot"><div class="weekend-time">60–90 min prima · Spuntino</div><div class="weekend-meal">Skyr + banana, oppure whey + banana.</div><div class="weekend-alt">Aggiungi 2 gallette o una Oaties solo se servono più carboidrati.</div></div><div class="weekend-slot"><div class="weekend-time">Dopo allenamento · Cena</div><div class="weekend-meal">Proteina magra + riso/pasta/patate + verdure.</div></div></div></div>
-<!-- Percorso alimentare selezionabile -->
-<div aria-label="Posizione della cena rispetto all’allenamento" class="meal-toggle" role="tablist">
-<button aria-controls="meal-post" aria-selected="true" class="meal-toggle-btn on" onclick="swMealPlan('post', this)" role="tab" type="button">Cena post-workout</button>
-<button aria-controls="meal-pre" aria-selected="false" class="meal-toggle-btn" onclick="swMealPlan('pre', this)" role="tab" type="button">Cena pre-workout</button>
-<button aria-controls="meal-rest" aria-selected="false" class="meal-toggle-btn" onclick="swMealPlan('rest', this)" role="tab" type="button">Giorno di riposo</button>
-</div>
-<div class="meal-plan on" id="meal-post" role="tabpanel">
-<div class="tl-row">
-<div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino principale <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">trasportabile</span></div><div class="tl-hint">Preparabile in ufficio: frigorifero disponibile</div><div class="tl-items"><div class="tl-item main">Banana + yogurt greco o skyr + 2–3 gallette di riso</div><div class="tl-item">In ufficio: skyr o yogurt greco da 150 g + banana + 2–3 gallette; alternativa 30 g whey con acqua</div><div class="tl-item">Alternativa solida: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato) + un frutto</div></div></div>
-</div>
-<div class="tl-row">
-<div class="tl-time">18:30</div><div class="tl-dot" style="background:var(--blue)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--blue)">Richiamo facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div><div class="tl-items"><div class="tl-item main">Se hai fame o inizi più tardi: una banana oppure 2–3 gallette</div><div class="tl-item">In alternativa: una barretta semplice e facilmente digeribile</div><div class="tl-item alt">Non serve se lo spuntino delle 16–17 è stato sufficiente</div></div></div>
-</div>
-<div class="tl-row">
-<div class="tl-time">21–22</div><div class="tl-dot" style="background:var(--pink)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena post-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">completa</span></div><div class="tl-items"><div class="tl-item main">Carne o pesce + verdure + riso, pasta o patate</div><div class="tl-item">Alternativa: uova o fiocchi di latte + pane o patate + verdure</div><div class="tl-item alt">Se ceni tardi, mantieni una cena completa ma digeribile</div></div></div>
-</div>
-</div>
-<div class="meal-plan" id="meal-pre" role="tabpanel">
-<div class="tl-row">
-<div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino moderato <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">prima della cena</span></div><div class="tl-items"><div class="tl-item main">Yogurt greco o skyr + una banana</div><div class="tl-item">In ufficio: skyr o yogurt greco da 150 g + un frutto; alternativa 30 g whey con acqua</div><div class="tl-item">Alternativa: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato)</div><div class="tl-item alt">Evita di sommare uno spuntino grande alla cena delle 19:30–20:00</div></div></div>
-</div>
-<div class="tl-row">
-<div class="tl-time">19:30</div><div class="tl-dot" style="background:var(--pink)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena pre-workout <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">palestra 21–21:30</span></div><div class="tl-items"><div class="tl-item main">Riso o pasta semplice + pollo, tacchino o pesce magro + poche verdure cotte</div><div class="tl-item">Alternativa rapida: panino con tacchino o bresaola + banana + yogurt greco, se ben tollerato</div><div class="tl-item alt">Limita fritti, salse, formaggi grassi, legumi abbondanti e grandi quantità di verdure crude</div></div></div>
-</div>
-<div class="tl-row">
-<div class="tl-time">23:00</div><div class="tl-dot" style="background:var(--blue)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--blue)">Recupero facoltativo <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">solo se serve</span></div><div class="tl-items"><div class="tl-item main">Se hai fame o la cena era leggera: yogurt greco, skyr oppure whey con acqua o latte</div><div class="tl-item">Aggiungi una banana o qualche galletta soltanto se serve altra energia</div><div class="tl-item alt">Non è necessaria una seconda cena completa</div></div></div>
-</div>
-</div>
-<div class="meal-plan" id="meal-rest" role="tabpanel">
-<div class="tl-row">
-<div class="tl-time">16–17</div><div class="tl-dot" style="background:var(--orange)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--orange)">Spuntino giorno di riposo <span class="tl-pil" style="background:rgba(255,179,71,.1);color:var(--orange)">moderato</span></div><div class="tl-hint">Questa settimana: martedì, venerdì e il giorno del weekend senza allenamento.</div><div class="tl-items"><div class="tl-item main">Skyr o yogurt greco + una mela, pera o altro frutto</div><div class="tl-item">Alternativa: 60–70 g di pane di segale integrale + 60–80 g di affettato magro (fesa di tacchino, bresaola o prosciutto cotto sgrassato) + un frutto</div><div class="tl-item">Mandorle facoltative: aggiungi 15–20 g solo se hai più fame o mancano molte ore alla cena. Sono frutta a guscio, non sostituiscono il frutto fresco</div><div class="tl-item alt">Non servono gallette, miele o un richiamo alle 18:30, salvo fame particolare</div></div></div>
-</div>
-<div class="tl-row">
-<div class="tl-time">19–20</div><div class="tl-dot" style="background:var(--blue)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--blue)">Nessun richiamo pre-workout <span class="tl-pil" style="background:rgba(123,200,246,.1);color:var(--blue)">riposo</span></div><div class="tl-items"><div class="tl-item main">Attendi normalmente la cena senza fare un secondo spuntino</div><div class="tl-item alt">Se la cena è lontana e hai realmente fame: un frutto oppure uno yogurt semplice</div></div></div>
-</div>
-<div class="tl-row">
-<div class="tl-time">20–21</div><div class="tl-dot" style="background:var(--pink)"></div>
-<div class="tl-body"><div class="tl-title" style="color:var(--pink)">Cena giorno di riposo <span class="tl-pil" style="background:rgba(255,143,171,.1);color:var(--pink)">normale</span></div><div class="tl-items"><div class="tl-item main">Proteina magra + verdure + una porzione moderata di riso, pasta, pane o patate</div><div class="tl-item">Alternativa: uova, pesce o legumi + verdure + pane o patate</div><div class="tl-item alt">Non serve eliminare i carboidrati: mantieni una porzione meno abbondante rispetto al post-workout</div></div></div>
-</div>
-</div>
-</div>
+<div class="tip"><strong>Aggiusta poco alla volta:</strong> peso stabile per 3 settimane → +100–150 kcal. Aumento oltre 0,3–0,4 kg/settimana con vita in crescita rapida → -100–150 kcal, partendo dal recupero serale.</div>
 </div>
 <!-- DIARIO -->
 <div class="pg" id="pg-diario"><div class="sec"><div class="sec-dot" style="background:var(--orange)"></div><div class="sec-lbl">Diario alimentare</div></div><div class="backup-panel"><div class="backup-title">Backup per navigazione in incognito</div><div class="backup-text">All’apertura riprendi dall’ultimo file salvato. Prima di chiudere tutte le finestre Incognito, salva nuovamente il Diario.</div><div class="backup-status" id="backup-status">Nessuna modifica da salvare</div><div class="backup-buttons"><button class="backup-btn" onclick="document.getElementById('diary-import').click()">Riprendi da file</button><button class="backup-btn save" onclick="exportDiary()">Salva Diario su file</button></div></div><div class="diary-head"><input class="diary-date" id="diary-date" onchange="renderDiary()" type="date"/><div class="tl-hint" style="margin-top:8px">Il salvataggio nel browser è temporaneo in Incognito. Il file JSON scaricato rimane sul dispositivo.</div></div><div class="diary-summary"><div class="diary-stat"><strong id="diary-protein">0 g</strong><span>proteine stimate</span></div><div class="diary-stat"><strong id="diary-kcal">0 kcal</strong><span>calorie registrate</span></div><div class="diary-stat"><strong id="diary-meals">0/4</strong><span>pasti principali</span></div><div class="diary-stat"><strong id="diary-coverage">0%</strong><span>copertura kcal</span></div></div><div class="ac-note" style="margin-bottom:10px">Le kcal sono facoltative e possono essere approssimate. Il totale mostra solo le voci per cui hai inserito una stima; non viene interpretato come introito completo se la copertura è bassa.</div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(0,this)"><span>Colazione</span><span class="diary-meal-count" id="diary-0-count">0 elementi</span></div><div class="diary-meal-body" id="diary-0-body"><div class="diary-entries" id="diary-0-entries"></div><div class="diary-presets" id="diary-0-quick"></div><div class="diary-form" id="diary-0-form"><input id="diary-0-name" placeholder="Alimento o piatto"/><input id="diary-0-qty" placeholder="Quantità"/><input id="diary-0-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-0-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('0')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(1,this)"><span>Spuntino mattutino</span><span class="diary-meal-count" id="diary-1-count">0 elementi</span></div><div class="diary-meal-body" id="diary-1-body"><div class="diary-entries" id="diary-1-entries"></div><div class="diary-presets" id="diary-1-quick"></div><div class="diary-form" id="diary-1-form"><input id="diary-1-name" placeholder="Alimento o piatto"/><input id="diary-1-qty" placeholder="Quantità"/><input id="diary-1-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-1-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('1')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(2,this)"><span>Pranzo</span><span class="diary-meal-count" id="diary-2-count">0 elementi</span></div><div class="diary-meal-body" id="diary-2-body"><div class="diary-entries" id="diary-2-entries"></div><div class="diary-presets" id="diary-2-quick"></div><div class="diary-form" id="diary-2-form"><input id="diary-2-name" placeholder="Alimento o piatto"/><input id="diary-2-qty" placeholder="Quantità"/><input id="diary-2-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-2-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('2')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(3,this)"><span>Merenda</span><span class="diary-meal-count" id="diary-3-count">0 elementi</span></div><div class="diary-meal-body" id="diary-3-body"><div class="diary-entries" id="diary-3-entries"></div><div class="diary-presets" id="diary-3-quick"></div><div class="diary-form" id="diary-3-form"><input id="diary-3-name" placeholder="Alimento o piatto"/><input id="diary-3-qty" placeholder="Quantità"/><input id="diary-3-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-3-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('3')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(4,this)"><span>Cena</span><span class="diary-meal-count" id="diary-4-count">0 elementi</span></div><div class="diary-meal-body" id="diary-4-body"><div class="diary-entries" id="diary-4-entries"></div><div class="diary-presets" id="diary-4-quick"></div><div class="diary-form" id="diary-4-form"><input id="diary-4-name" placeholder="Alimento o piatto"/><input id="diary-4-qty" placeholder="Quantità"/><input id="diary-4-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-4-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('4')">Aggiungi al diario</button></div></div></div><div class="diary-meal"><div class="diary-meal-h" onclick="toggleDiaryMeal(5,this)"><span>Extra · solo se presenti</span><span class="diary-meal-count" id="diary-5-count">0 elementi</span></div><div class="diary-meal-body" id="diary-5-body"><div class="diary-entries" id="diary-5-entries"></div><div class="diary-presets" id="diary-5-quick"></div><div class="diary-form" id="diary-5-form"><input id="diary-5-name" placeholder="Alimento o piatto"/><input id="diary-5-qty" placeholder="Quantità"/><input id="diary-5-prot" min="0" placeholder="Prot. g" step="0.1" type="number"/><input id="diary-5-kcal" min="0" placeholder="kcal" step="1" type="number"/><button class="diary-add" onclick="addDiaryEntry('5')">Aggiungi al diario</button></div></div></div><div class="diary-actions"><button class="diary-action" onclick="exportDiary()">Salva altra copia</button><button class="diary-action" onclick="document.getElementById('diary-import').click()">Riprendi da un backup</button><input accept="application/json,.json" hidden="" id="diary-import" onchange="importDiary(event)" type="file"/></div><div class="sec"><div class="sec-dot" style="background:var(--blue)"></div><div class="sec-lbl">Ultimi giorni</div></div><div class="diary-history" id="diary-history"></div></div>
@@ -1632,10 +1657,10 @@
       const diaryMeals = ["Colazione","Spuntino mattutino","Pranzo","Merenda","Cena","Extra"];
       const diaryPresets = {
         0:[
-          {n:"Colazione completa workout",q:"30 g whey + 200 ml latte + 40 g avena + 1 banana piccola",p:37,k:430},
+          {n:"Colazione principale massa",q:"30 g whey + 200 ml latte + 60 g avena + 1 banana + 15 g mandorle",p:43,k:620},
           {n:"Colazione rapida workout",q:"30 g whey + 200 ml latte + 1 banana",p:32,k:330},
-          {n:"Colazione al cucchiaio",q:"150 g skyr + 40 g avena + 1 banana",p:22,k:340},
-          {n:"Colazione salata",q:"65 g pane di segale + 60 g fesa o bresaola + 1 frutto",p:20,k:360},
+          {n:"Colazione al cucchiaio",q:"200 g skyr + 60 g avena + 1 banana + 15 g mandorle",p:31,k:570},
+          {n:"Colazione salata",q:"90 g pane ai cereali + 80 g fesa o bresaola + 1 frutto + 15 g mandorle",p:30,k:550},
           {n:"Colazione riposo con avena",q:"30 g whey + 200 ml latte + 35 g avena",p:36,k:330},
           {n:"Colazione riposo con frutta",q:"30 g whey + 200 ml latte + 1 mela o banana",p:32,k:330},
           {n:"Skyr, avena, mela e mandorle",q:"150 g skyr + 35 g avena + 1 mela + 15 g mandorle",p:24,k:410}
@@ -1647,6 +1672,7 @@
           {n:"Mandorle",q:"15–20 g",p:3,k:110}
         ],
         2:[
+          {n:"Aggiunta Elmec",q:"1 banana + 20 g mandorle",p:5,k:220},
           {n:"Pranzo casa · riposo",q:"Carboidrato moderato + 100–120 g carne/pesce oppure 3 uova + verdure + frutta",p:30,k:600},
           {n:"Pasta/riso/cous cous + carne o pesce + verdure + frutta",q:"1 pasto completo",p:35,k:750},
           {n:"Uova + pane o patate + verdure + frutta",q:"3 uova e porzione di carboidrati",p:25,k:650},
@@ -1654,13 +1680,13 @@
         ],
         3:[
           {n:"Skyr, banana e gallette",q:"150 g skyr + 1 banana + 2–3 gallette",p:18,k:300},
-          {n:"Skyr e frutto",q:"150 g skyr + 1 mela o banana",p:17,k:190},
-          {n:"Panino con affettato magro",q:"60–70 g pane di segale + 60–80 g fesa, bresaola o cotto sgrassato + frutto",p:22,k:380},
+          {n:"Skyr, frutto e mandorle",q:"150 g skyr + 1 frutto + 20 g mandorle",p:21,k:310},
+          {n:"Panino con affettato magro",q:"70–80 g pane ai cereali + 60–80 g fesa o bresaola + frutto",p:24,k:400},
           {n:"Whey e banana",q:"30 g whey con acqua + 1 banana",p:25,k:220},
           {n:"Richiamo: banana",q:"1 banana",p:1,k:100},
           {n:"Richiamo: gallette",q:"2–3 gallette",p:2,k:90},
           {n:"Richiamo: Oaties",q:"1 barretta da 40 g",p:3,k:170},
-          {n:"Mandorle facoltative",q:"15–20 g",p:3,k:110}
+          {n:"Mandorle",q:"20 g",p:4,k:116}
         ],
         4:[
           {n:"Carne o pesce + verdure + riso, pasta o patate",q:"1 cena completa",p:35,k:700},
@@ -1674,11 +1700,6 @@
         ]
       };
       const elmecMenus={
-        "2026-10-12":{standard:{n:"Elmec · Standard",q:"Riso nero con gamberi, feta e noci + Pollo arrosto con aromi + Fagiolini saltati + frutta",p:43,k:630},alternative:{n:"Elmec · Alternativa",q:"Risotto alla pescatora + insalata di totani, patate e pomodorini + asparagi al vapore + frutta",p:34,k:633}},
-        "2026-10-13":{standard:{n:"Elmec · Standard",q:"Cous cous con tacchino e peperoni al forno + Filetto di ricciola con pomodorini e olive + Piselli e carote stufati + frutta",p:50,k:775},alternative:{n:"Elmec · Alternativa",q:"Riso integrale con calamari, pomodorini e basilico + insalata di pollo con sedano, uvetta e mele + macedonia di verdure + frutta",p:36,k:682}},
-        "2026-10-14":{standard:{n:"Elmec · Standard",q:"Insalata di pasta tricolore con tonno e pomodorini + Platessa alla vicentina + Spinaci al vapore + frutta",p:47,k:669},alternative:{n:"Elmec · Alternativa",q:"Pasta con melanzane e ricotta + gamberi in insalata con lime, sedano e patate + purè di patate + frutta",p:40,k:947}},
-        "2026-10-15":{standard:{n:"Elmec · Standard",q:"Insalata di pasta con speck e zucchine + Merluzzo gratinato alla palermitana + Fagiolini saltati + frutta",p:40,k:687},alternative:{n:"Elmec · Alternativa",q:"Insalata di riso con verdure + pancia di vitello al forno + melanzane in funghetto + frutta",p:38,k:875}},
-        "2026-10-16":{standard:{n:"Elmec · Standard",q:"Insalata di pasta con salmone e fave + Polpo in insalata con patate, fagiolini e pomodorini + Lenticchie in umido + frutta",p:52,k:811},alternative:{n:"Elmec · Alternativa",q:"Cous cous alla valenciana + filetto di trota in saor + verdure trifolate + frutta",p:37,k:689}},
         "2026-09-28":{standard:{n:"Elmec · Standard",q:"Pasta con tonno, pomodorini e basilico + bocconcini di tacchino al curry + fagiolini all’olio + frutta",p:42,k:718},alternative:{n:"Elmec · Alternativa",q:"Riso basmati con verdure + filetto di branzino con patate e olive + carote al vapore + frutta",p:32,k:600}},
         "2026-09-29":{standard:{n:"Elmec · Riposo",q:"Cavatelli con cozze, cannellini e pomodorini + bresaola, grana e insalatina + verdure grigliate + frutta",p:39,k:674},alternative:{n:"Elmec · Alternativa",q:"Riso rosso con peperoni e prosciutto di Praga + nodino di maiale + zucchine al forno + frutta",p:35,k:596}},
         "2026-09-21":{standard:{n:"Elmec · Standard",q:"Cous cous con ceci e tacchino + totano gratinato + carote al vapore + frutta",p:41,k:809},alternative:{n:"Elmec · Alternativa",q:"Pasta con spada, pinoli, uvetta e pomodorino + insalata di patate, salmone e sedano + carote + frutta",p:38,k:918}},
